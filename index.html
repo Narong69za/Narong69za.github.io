@@ -118,11 +118,11 @@
         ดูท่าทางก่อนใช้จริง จังหวะติด ใช้งานง่าย
       </p>
 
-      <div class="stats">
-        <span>🔥 7,000+ Views</span>
-        <span>⚡ 2,100+ Uses</span>
-      </div>
-
+    <div class="stats">
+  <span>🔥 <span id="views">0</span> Views</span>
+  <span>⚡ <span id="uses">0</span> Uses</span>
+    </div>
+      
       <div class="actions">
         <a class="btn primary" href="https://www.capcut.com/tv2/ZSaXRNRtr/" target="_blank">
           Use CapCut Template
@@ -219,9 +219,28 @@
 
 </section>
 <!-- END CTA SECTION -->
+  <script>
+function countUp(id, target) {
+  let el = document.getElementById(id)
+  let count = 0
+  let step = target / 80
+  let interval = setInterval(() => {
+    count += step
+    if (count >= target) {
+      count = target
+      clearInterval(interval)
+    }
+    el.innerText = Math.floor(count).toLocaleString() + "+"
+  }, 20)
+}
+
+countUp("views", 7000)
+countUp("uses", 2100)
+  </script>
 </body>
 
 </html>
+
 
 
 
