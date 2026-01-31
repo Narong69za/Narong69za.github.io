@@ -1,0 +1,21 @@
+
+body {
+  font-family: Montserrat, Arial, sans-serif;
+  background: #0e0e0e;
+  color: #ffffff;
+  margin: 0;
+}
+header, footer {
+  text-align: center;
+  padding: 20px;
+}
+nav a {
+  margin: 10px;
+  color: #f5c16c;
+  text-decoration: none;
+}
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 2em;
+}
