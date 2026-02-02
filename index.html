@@ -18,11 +18,21 @@
     }
 
     /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      padding: 100px 20px 80px;
-      background: #000;
-    }
+   .hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.85)
+    ),
+    url("assets/images/hero-blue-dark-index.png") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
 
     .hero h1 {
       font-size: 32px;
