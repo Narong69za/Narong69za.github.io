@@ -1,64 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SN Design Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SN Design Studio � AI Short Video & CapCut Template Creator">
+
   <style>
     body {
       margin: 0;
-      background: #050505;
-      color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+        url("assets/images/hero-blue-dark-sn.png") center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 280px;
+      padding: 14px;
+      margin: 10px auto;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .btn-red {
+      background: #e50914;
+      color: #fff;
+    }
+
+    .btn-green {
+      background: #00c853;
+      color: #000;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+
+    /* ===== FEATURED PERFORMANCE ===== */
+    .featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .box {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 30px;
       text-align: center;
     }
-    .container {
-      max-width: 720px;
-      margin: auto;
-      padding: 40px 16px;
-    }
-    h1 {
-      letter-spacing: 2px;
-    }
-    a {
-      display: block;
-      margin: 14px auto;
-      padding: 14px;
-      max-width: 320px;
-      background: #1a1a1a;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-    }
-    a:hover {
-      background: #2a2a2a;
-    }
-    footer {
-      margin-top: 60px;
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
       font-size: 12px;
-      color: #777;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .tag-green {
+      background: #00c853;
+      color: #000;
+    }
+
+    .box h3 {
+      margin: 15px 0 10px;
+      font-size: 18px;
+    }
+
+    .box p {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    .btn-link {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      background: #e50914;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    /* ===== WHY ===== */
+    .why {
+      background: #080808;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .why ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .why li {
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: #666;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="container">
+  <!-- HERO -->
+  <section class="hero">
     <h1>SN DESIGN STUDIO</h1>
-    <p>
-      AI Short Video Creator<br>
-      CapCut Template Creator<br>
-      Dark � Raw � Viral
-    </p>
+    <p>CapCut Template Creator · AI Short Video<br>Dark · Raw · Viral</p>
 
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a href="services.html" class="btn btn-red">🔥 Our Services</a>
+    <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
+  </section>
 
-    <footer>
-      � 2026 SN Design Studio
-    </footer>
-  </div>
+  <!-- FEATURED PERFORMANCE -->
+  <section class="section">
+    <h2>Featured Performance</h2>
+
+    <div class="featured">
+      <!-- YouTube -->
+      <div class="box">
+        <span class="tag tag-green">YouTube · Top View</span>
+        <h3>YouTube Short</h3>
+        <p>
+          Most viewed short from SN Design Studio.  
+          Proof of real audience reach.
+        </p>
+        <a
+          class="btn-link"
+          href="https://youtube.com/shorts/NI7WALIXStU?feature=share"
+          target="_blank"
+        >
+          ▶ Watch on YouTube
+        </a>
+      </div>
+
+      <!-- CapCut -->
+      <div class="box">
+        <span class="tag tag-green">Official CapCut Creator</span>
+        <h3>CapCut Template</h3>
+        <p>
+          High-usage CapCut template used by real creators worldwide.
+        </p>
+        <a
+          class="btn-link"
+          href="https://www.capcut.com/tv2/ZSasJmvvF/"
+          target="_blank"
+        >
+          ▶ View on CapCut
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section why">
+    <h2>Why SN Design Studio</h2>
+    <ul>
+      <li>✔ Real creator on real platforms</li>
+      <li>✔ YouTube views + CapCut usage proof</li>
+      <li>✔ Dark branding built for short-form</li>
+      <li>✔ Performance-focused, not hype</li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="hero">
+    <h2>Ready to Work?</h2>
+    <p>Let’s build something dark, sharp, and effective.</p>
+    <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
+  </section>
+
+  <footer>
+    © 2026 SN Design Studio
+  </footer>
 
 </body>
-</html>
+        </html>
