@@ -1,190 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SN Design Studio</title>
-
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#000;
-  color:#fff;
-}
-a{text-decoration:none}
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.85)),
-    url("assets/images/hero-blue-dark-sn.png") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:60px 20px;
-}
-.hero h1{font-size:32px;margin-bottom:10px}
-.hero p{color:#aaa;font-size:14px;margin-bottom:40px}
-
-.btn{
-  display:block;
-  max-width:320px;
-  margin:12px auto;
-  padding:15px;
-  border-radius:6px;
-  font-weight:bold;
-  text-align:center;
-}
-.btn-red{background:#e50914;color:#fff}
-.btn-green{background:#00c853;color:#000}
-
-/* SECTION */
-.section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-.section h2{text-align:center;margin-bottom:10px}
-.section .sub{text-align:center;color:#aaa;font-size:14px;margin-bottom:50px}
-
-/* FEATURED */
-.featured{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:24px;
-}
-.feature-card{
-  background:#111;
-  border:1px solid #222;
-  border-radius:14px;
-  padding:20px;
-  min-height:620px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-.badge{
-  display:inline-block;
-  background:#00c853;
-  color:#000;
-  padding:6px 12px;
-  font-size:12px;
-  border-radius:20px;
-  margin-bottom:12px;
-}
-.feature-card img{
-  width:100%;
-  border-radius:10px;
-  margin:15px 0;
-}
-.feature-card p{
-  color:#ccc;
-  font-size:14px;
-  line-height:1.6;
-}
-
-/* WHY */
-.why{
-  background:#080808;
-  border-top:1px solid #222;
-  border-bottom:1px solid #222;
-}
-.why ul{
-  list-style:none;
-  padding:0;
-  max-width:700px;
-  margin:auto;
-}
-.why li{
-  margin-bottom:12px;
-  color:#ccc;
-  font-size:14px;
-}
-
-footer{
-  text-align:center;
-  padding:40px 20px;
-  font-size:12px;
-  color:#666;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>SN Design Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SN Design Studio � AI Short Video & CapCut Template Creator">
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+    .container {
+      max-width: 720px;
+      margin: auto;
+      padding: 40px 16px;
+    }
+    h1 {
+      letter-spacing: 2px;
+    }
+    a {
+      display: block;
+      margin: 14px auto;
+      padding: 14px;
+      max-width: 320px;
+      background: #1a1a1a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    a:hover {
+      background: #2a2a2a;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
+  <div class="container">
     <h1>SN DESIGN STUDIO</h1>
-    <p>CapCut Template Creator · AI Short Video<br>Dark · Raw · Viral</p>
-    <a href="services.html" class="btn btn-red">🔥 Our Services</a>
-    <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
+    <p>
+      AI Short Video Creator<br>
+      CapCut Template Creator<br>
+      Dark � Raw � Viral
+    </p>
+
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <footer>
+      � 2026 SN Design Studio
+    </footer>
   </div>
-</section>
-
-<!-- FEATURED -->
-<section class="section">
-  <h2>Featured Performance</h2>
-  <p class="sub">Authority from YouTube · Real usage from CapCut</p>
-
-  <div class="featured">
-
-    <!-- YOUTUBE -->
-    <div class="feature-card">
-      <div>
-        <span class="badge">YouTube · Top View</span>
-        <img src="assets/images/youtube-preview.jpg" alt="YouTube Short Preview">
-        <p>
-          Most viewed short from SN Design Studio.<br>
-          Proof of real audience reach.
-        </p>
-      </div>
-      <a href="https://youtube.com/shorts/NI7WALIXStU" class="btn btn-red">
-        ▶ Watch on YouTube
-      </a>
-    </div>
-
-    <!-- CAPCUT -->
-    <div class="feature-card">
-      <div>
-        <span class="badge">Official CapCut Creator</span>
-        <img src="assets/images/capcut-template-preview.jpg" alt="CapCut Template Preview">
-        <p>
-          High-usage CapCut template used by real creators worldwide.<br>
-          Proof from real platform usage.
-        </p>
-      </div>
-      <a href="https://www.capcut.com/tv2/ZSasJmvvF/" class="btn btn-red">
-        ▶ View on CapCut
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="section why">
-  <h2>Why SN Design Studio</h2>
-  <ul>
-    <li>✔ Real creator on real platforms</li>
-    <li>✔ YouTube views + CapCut usage proof</li>
-    <li>✔ Dark branding built for short-form</li>
-    <li>✔ Performance-focused, not hype</li>
-  </ul>
-</section>
-
-<!-- CTA -->
-<section class="section" style="text-align:center">
-  <h2>Ready to Work?</h2>
-  <p class="sub">Let’s build something dark, sharp, and effective.</p>
-  <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
-</section>
-
-<footer>© 2026 SN Design Studio</footer>
 
 </body>
 </html>
