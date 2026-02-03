@@ -2,211 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Packages | SN Design Studio</title>
-  <meta name="description" content="All marketing packages by SN Design Studio. CapCut, YouTube, Facebook – clear pricing, Ads-grade system." />
-  <meta name="keywords" content="CapCut Package, YouTube Package, Facebook Package, SN Design Studio" />
-  <meta name="author" content="SN Design Studio" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
     body {
+      margin: 0;
       background: #000;
       color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
     }
-
-    /* ===== NAV ===== */
     header {
-      position: sticky;
-      top: 0;
-      background: #000;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 20px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: #000;
+      border-bottom: 1px solid #111;
     }
-
-    nav .logo {
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
+    nav a {
       color: #fff;
+      margin-left: 16px;
+      text-decoration: none;
       font-size: 14px;
-      opacity: 0.85;
     }
-
-    nav ul li a:hover {
-      color: #00ff99;
-      opacity: 1;
-    }
-
-    /* ===== SECTION ===== */
-    section {
+    .section {
+      padding: 48px 20px;
       max-width: 1200px;
       margin: auto;
-      padding: 80px 20px;
     }
-
-    .section-title {
+    .section h1 {
       text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h1 {
+      margin-bottom: 40px;
       font-size: 32px;
-      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
-
-    .section-title p {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-
-    /* ===== PACKAGE GRID ===== */
-    .package-grid {
+    .packages {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
-
-    .package-card {
-      background: #0b0b0b;
-      border: 1px solid rgba(255,255,255,0.08);
+    .card {
+      background: #0d0d0d;
       border-radius: 12px;
-      padding: 30px 24px;
-      text-align: center;
-      transition: all 0.25s ease;
+      overflow: hidden;
+      border: 1px solid #1a1a1a;
+      transition: transform 0.3s;
     }
-
-    .package-card:hover {
+    .card:hover {
       transform: translateY(-6px);
-      border-color: rgba(0,255,153,0.4);
     }
-
-    .package-card h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
+    .card img {
+      width: 100%;
+      display: block;
     }
-
-    .package-card p {
-      font-size: 14px;
-      opacity: 0.75;
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-
-    .package-card a {
-      display: inline-block;
-      padding: 14px 26px;
-      border-radius: 6px;
-      background: #e50914;
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .package-card a:hover {
-      opacity: 0.85;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.1);
+    .card-content {
+      padding: 20px;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 13px;
-      opacity: 0.6;
+    }
+    .price {
+      font-size: 22px;
+      margin: 12px 0;
+      color: #00ff99;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background: #00aa55;
+      color: #000;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <header>
-    <nav>
-      <div class="logo">SN DESIGN STUDIO</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="packages.html">Packages</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="capcut.html">Templates</a></li>
-        <li><a href="seo.html">SEO</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <strong>SN DESIGN STUDIO</strong>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="services.html">Services</a>
+    <a href="capcut.html">Templates</a>
+    <a href="seo.html">SEO</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- CONTENT -->
-  <section>
-    <div class="section-title">
-      <h1>Our Packages</h1>
-      <p>Choose the platform. Clear scope. Fixed price.</p>
+<section class="section">
+  <h1>Marketing Packages</h1>
+
+  <div class="packages">
+    <div class="card">
+      <img src="assets/images/capcut-package-1999.png" alt="CapCut Start">
+      <div class="card-content">
+        <h3>CapCut Start</h3>
+        <div class="price">฿1,999</div>
+        <a href="contact.html" class="btn">Get Started</a>
+      </div>
     </div>
 
-    <div class="package-grid">
-
-      <!-- CapCut -->
-      <div class="package-card">
-        <h2>CapCut Packages</h2>
-        <p>
-          Template-based viral system for creators.<br>
-          Fast production · Real usage · Monetization-ready
-        </p>
-        <a href="capcut.html">VIEW CAPCUT</a>
+    <div class="card">
+      <img src="assets/images/capcut-package-2999.png" alt="CapCut Pro">
+      <div class="card-content">
+        <h3>CapCut Pro</h3>
+        <div class="price">฿2,999</div>
+        <a href="contact.html" class="btn">Get Started</a>
       </div>
-
-      <!-- YouTube -->
-      <div class="package-card">
-        <h2>YouTube Packages</h2>
-        <p>
-          Shorts-focused growth system.<br>
-          Proof-driven · Algorithm-friendly · Scalable
-        </p>
-        <a href="youtube.html">VIEW YOUTUBE</a>
-      </div>
-
-      <!-- Facebook -->
-      <div class="package-card">
-        <h2>Facebook Packages</h2>
-        <p>
-          Fanpage & Ads-ready content system.<br>
-          Built for reach, trust and conversion
-        </p>
-        <a href="facebook.html">VIEW FACEBOOK</a>
-      </div>
-
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 SN Design Studio · All Packages · One System
-  </footer>
+    <div class="card">
+      <img src="assets/images/capcut-package-5999.png" alt="CapCut Elite">
+      <div class="card-content">
+        <h3>CapCut Elite</h3>
+        <div class="price">฿5,999</div>
+        <a href="contact.html" class="btn">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
