@@ -3,66 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packages | SN Design Studio</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Marketing packages for YouTube, CapCut, and Facebook by SN Design Studio." />
-  <meta name="keywords" content="YouTube Package, CapCut Package, Facebook Package, Viral Marketing" />
+  <title>Packages | SN Design Studio</title>
+  <meta name="description" content="All marketing packages by SN Design Studio. CapCut, YouTube, Facebook – clear pricing, Ads-grade system." />
+  <meta name="keywords" content="CapCut Package, YouTube Package, Facebook Package, SN Design Studio" />
   <meta name="author" content="SN Design Studio" />
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
       background: #000;
       color: #fff;
     }
 
+    /* ===== NAV ===== */
     header {
-      text-align: center;
-      padding: 24px 16px;
+      position: sticky;
+      top: 0;
+      background: #000;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    header h1 {
-      font-size: 26px;
-      margin-bottom: 6px;
-    }
-
-    header p {
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 28px;
-      padding: 16px;
-      max-width: 520px;
+    nav {
+      max-width: 1200px;
       margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .card {
-      display: block;
+    nav .logo {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
       text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      opacity: 0.85;
     }
 
-    .card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
+    nav ul li a:hover {
+      color: #00ff99;
+      opacity: 1;
     }
 
-    footer {
+    /* ===== SECTION ===== */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
       text-align: center;
-      padding: 24px 12px;
-      font-size: 12px;
+      margin-bottom: 50px;
+    }
+
+    .section-title h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    /* ===== PACKAGE GRID ===== */
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .package-card {
+      background: #0b0b0b;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .package-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,255,153,0.4);
+    }
+
+    .package-card h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .package-card p {
+      font-size: 14px;
+      opacity: 0.75;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .package-card a {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 6px;
+      background: #e50914;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .package-card a:hover {
+      opacity: 0.85;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
       opacity: 0.6;
     }
   </style>
@@ -70,30 +146,66 @@
 
 <body>
 
+  <!-- NAV -->
   <header>
-    <h1>Our Packages</h1>
-    <p>Choose your platform · Fixed price · Clear scope</p>
+    <nav>
+      <div class="logo">SN DESIGN STUDIO</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="capcut.html">Templates</a></li>
+        <li><a href="seo.html">SEO</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="grid">
-    <!-- YouTube -->
-    <a href="youtube.html" class="card">
-      <img src="assets/images/youtube-package-1999.png" alt="YouTube Packages">
-    </a>
+  <!-- CONTENT -->
+  <section>
+    <div class="section-title">
+      <h1>Our Packages</h1>
+      <p>Choose the platform. Clear scope. Fixed price.</p>
+    </div>
 
-    <!-- CapCut -->
-    <a href="capcut.html" class="card">
-      <img src="assets/images/capcut-package-1999.png" alt="CapCut Packages">
-    </a>
+    <div class="package-grid">
 
-    <!-- Facebook -->
-    <a href="facebook.html" class="card">
-      <img src="assets/images/facebook-package-1999.png" alt="Facebook Packages">
-    </a>
+      <!-- CapCut -->
+      <div class="package-card">
+        <h2>CapCut Packages</h2>
+        <p>
+          Template-based viral system for creators.<br>
+          Fast production · Real usage · Monetization-ready
+        </p>
+        <a href="capcut.html">VIEW CAPCUT</a>
+      </div>
+
+      <!-- YouTube -->
+      <div class="package-card">
+        <h2>YouTube Packages</h2>
+        <p>
+          Shorts-focused growth system.<br>
+          Proof-driven · Algorithm-friendly · Scalable
+        </p>
+        <a href="youtube.html">VIEW YOUTUBE</a>
+      </div>
+
+      <!-- Facebook -->
+      <div class="package-card">
+        <h2>Facebook Packages</h2>
+        <p>
+          Fanpage & Ads-ready content system.<br>
+          Built for reach, trust and conversion
+        </p>
+        <a href="facebook.html">VIEW FACEBOOK</a>
+      </div>
+
+    </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    © 2026 SN Design Studio
+    © 2026 SN Design Studio · All Packages · One System
   </footer>
 
 </body>
