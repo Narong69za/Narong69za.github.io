@@ -1,198 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SN Design Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SN Design Studio</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * { box-sizing: border-box; }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #000;
+      color: #fff;
+    }
 
-a {
-  text-decoration: none;
-}
+    a { text-decoration: none; }
 
-/* ================= HERO ================= */
-.hero {
-  min-height: 100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url("assets/images/hero-blue-dark-sn.png") center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
-}
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.85)),
+        url("assets/images/hero-blue-dark-sn.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-.hero h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
 
-.hero p {
-  color: #aaa;
-  font-size: 14px;
-  margin-bottom: 30px;
-}
+    .hero p {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
 
-.btn {
-  display: block;
-  width: 260px;
-  margin: 12px auto;
-  padding: 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-align: center;
-}
+    .btn {
+      display: block;
+      max-width: 320px;
+      margin: 12px auto;
+      padding: 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+    }
 
-.btn-red {
-  background: #e50914;
-  color: #fff;
-}
+    .btn-red {
+      background: #e50914;
+      color: #fff;
+    }
 
-.btn-green {
-  background: #00c853;
-  color: #000;
-}
+    .btn-green {
+      background: #00c853;
+      color: #000;
+    }
 
-/* ================= SECTION ================= */
-.section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
+    /* ===== SECTION ===== */
+    .section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-.section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
+    .section h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
 
-/* ================= FEATURED PERFORMANCE ================= */
-.featured {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
+    .section p.sub {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
 
-.feature-card {
-  background: #0d0d0d;
-  border: 1px solid #1f1f1f;
-  border-radius: 10px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-}
+    /* ===== SERVICES ===== */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 20px;
+    }
 
-.feature-card img {
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  border-radius: 8px;
-}
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 25px;
+    }
 
-.badge {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 999px;
-  background: #00c853;
-  color: #000;
-  font-weight: bold;
-}
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
 
-.feature-card h3 {
-  margin: 14px 0 8px;
-  font-size: 16px;
-}
+    .card p {
+      color: #bbb;
+      font-size: 14px;
+    }
 
-.feature-card p {
-  font-size: 13px;
-  color: #aaa;
-  flex-grow: 1;
-}
+    /* ===== FEATURED ===== */
+    .featured {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 25px;
+      align-items: stretch;
+    }
 
-.feature-card .btn {
-  margin-top: 14px;
-  width: 100%;
-}
+    .feature-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 20px;
+      min-height: 620px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-/* ================= WHY ================= */
-.why {
-  background: #080808;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-}
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
 
-.why ul {
-  list-style: none;
-  padding: 0;
-  max-width: 700px;
-  margin: auto;
-}
+    .badge-green {
+      background: #00c853;
+      color: #000;
+    }
 
-.why li {
-  margin-bottom: 12px;
-  font-size: 14px;
-  color: #ccc;
-}
+    .feature-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
 
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 12px;
-  color: #666;
-}
-</style>
+    .feature-card p {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* ===== WHY ===== */
+    .why {
+      background: #080808;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .why ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .why li {
+      margin-bottom: 12px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
 </head>
 
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>SN DESIGN STUDIO</h1>
-  <p>CapCut Template Creator · AI Short Video<br>Dark · Raw · Viral</p>
+  <div>
+    <h1>SN DESIGN STUDIO</h1>
+    <p>
+      CapCut Template Creator · AI Short Video<br>
+      Dark · Raw · Viral
+    </p>
+    <a href="services.html" class="btn btn-red">🔥 Our Services</a>
+    <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
+  </div>
+</section>
 
-  <a href="services.html" class="btn btn-red">🔥 Our Services</a>
-  <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
+<!-- SERVICES -->
+<section class="section">
+  <h2>What We Do</h2>
+  <p class="sub">Short-form systems built for real performance</p>
+
+  <div class="services">
+    <div class="card">
+      <h3>CapCut Templates</h3>
+      <p>High-impact templates designed for real creators and real usage.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Short Video</h3>
+      <p>Cinematic short videos optimized for Shorts, Reels, and fast attention.</p>
+    </div>
+
+    <div class="card">
+      <h3>Visual Identity</h3>
+      <p>Dark branding systems that build authority and recognition.</p>
+    </div>
+  </div>
 </section>
 
 <!-- FEATURED PERFORMANCE -->
 <section class="section">
   <h2>Featured Performance</h2>
+  <p class="sub">Authority from YouTube · Real usage from CapCut</p>
 
   <div class="featured">
 
-    <!-- YouTube -->
+    <!-- YOUTUBE -->
     <div class="feature-card">
-      <span class="badge">YouTube · Top View</span>
-      <img src="assets/images/youtube-top.jpg" alt="YouTube Top Short">
-      <h3>Most Viewed YouTube Short</h3>
-      <p>Real performance from SN Design Studio YouTube channel.</p>
-      <a href="https://youtube.com/shorts/NI7WALIXStU" target="_blank" class="btn btn-red">
+      <div>
+        <span class="badge badge-green">YouTube · Top View</span>
+        <img src="assets/images/youtube-preview.jpg" alt="YouTube Short">
+        <p>
+          Most viewed short from SN Design Studio.<br>
+          Proof of audience reach and engagement.
+        </p>
+      </div>
+      <a href="https://youtube.com/shorts/NI7WALIXStU" class="btn btn-red">
         ▶ Watch on YouTube
       </a>
     </div>
 
-    <!-- CapCut -->
+    <!-- CAPCUT -->
     <div class="feature-card">
-      <span class="badge">Official CapCut Creator</span>
-      <img src="assets/images/capcut-template-1.jpg" alt="CapCut Template">
-      <h3>Top Used CapCut Template</h3>
-      <p>High-usage template used by real creators worldwide.</p>
-      <a href="https://www.capcut.com/tv2/ZSasJmvvF/" target="_blank" class="btn btn-red">
+      <div>
+        <span class="badge badge-green">Official CapCut Creator</span>
+        <img src="assets/images/capcut-template-preview.jpg" alt="CapCut Template">
+        <p>
+          High-usage CapCut template used by real creators worldwide.<br>
+          Proof from real platform usage.
+        </p>
+      </div>
+      <a href="https://www.capcut.com/tv2/ZSasJmvvF/" class="btn btn-red">
         ▶ View on CapCut
       </a>
     </div>
@@ -204,7 +263,7 @@ footer {
 <section class="section why">
   <h2>Why SN Design Studio</h2>
   <ul>
-    <li>✔ Real creator · Real platforms</li>
+    <li>✔ Real creator on real platforms</li>
     <li>✔ YouTube views + CapCut usage proof</li>
     <li>✔ Dark branding built for short-form</li>
     <li>✔ Performance-focused, not hype</li>
@@ -212,9 +271,9 @@ footer {
 </section>
 
 <!-- CTA -->
-<section class="hero">
+<section class="section" style="text-align:center">
   <h2>Ready to Work?</h2>
-  <p>Let’s build something dark, sharp, and effective.</p>
+  <p class="sub">Let’s build something dark, sharp, and effective.</p>
   <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
 </section>
 
