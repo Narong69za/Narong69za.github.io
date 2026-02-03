@@ -1,223 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SN Design Studio | Dark • Raw • Viral</title>
-
-  <!-- SEO -->
-  <meta name="description" content="SN Design Studio – AI Short Video & CapCut Creator. Dark. Raw. Viral Marketing." />
-  <meta name="keywords" content="SN Design Studio, CapCut Creator, AI Short Video, Viral Marketing" />
-  <meta name="author" content="SN Design Studio" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      background: url("assets/images/hero/hero-master.png") center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      font-weight: 600;
-      border-radius: 6px;
-      transition: 0.3s ease;
-    }
-
-    .btn-red {
-      background: #e50914;
-    }
-
-    .btn-green {
-      background: #00c853;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    /* ================= SECTION ================= */
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 50px;
-    }
-
-    /* ================= FEATURED ================= */
-    .featured {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: #0d0d0d;
-      border-radius: 10px;
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    /* ================= WHY ================= */
-    .why ul {
-      list-style: none;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .why li {
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>SN Design Studio | Dark · Raw · Viral</title>
+  <meta name="description" content="SN Design Studio – AI Short Video & CapCut Creator. Dark. Raw. Viral.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1>SN DESIGN STUDIO</h1>
-      <p>AI Short Video & CapCut Creator<br>Dark • Raw • Viral</p>
-      <div class="hero-buttons">
-        <a href="#packages" class="btn btn-red">Our Services</a>
-        <a href="#contact" class="btn btn-green">Contact</a>
-      </div>
-    </div>
+<header>
+  <h1>SN DESIGN STUDIO</h1>
+  <p>AI Short Video & CapCut Creator<br>Dark · Raw · Viral</p>
+
+  <nav>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Featured Performance</h2>
+
+  <div>
+    <a href="youtube.html">YouTube Package</a><br>
+    <a href="capcut.html">CapCut Package</a><br>
+    <a href="facebook.html">Facebook Package</a>
   </div>
+</section>
 
-  <!-- FEATURED PERFORMANCE -->
-  <section>
-    <h2 class="section-title">Featured Performance</h2>
-    <div class="featured">
-      <div class="card">
-        <img src="assets/images/packages/youtube/youtube-package-visual.png" alt="YouTube Package">
-        <h3>YouTube Marketing</h3>
-        <p>High-impact short-form video strategy for growth and monetization.</p>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/packages/capcut/capcut-package-visual.png" alt="CapCut Package">
-        <h3>CapCut Templates</h3>
-        <p>Ready-made viral templates used by real creators worldwide.</p>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/packages/facebook/facebook-package-visual.png" alt="Facebook Package">
-        <h3>Facebook Fanpage</h3>
-        <p>Content + visuals designed for reach, engagement, and ads.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY -->
-  <section class="why">
-    <h2 class="section-title">Why SN Design Studio</h2>
-    <ul>
-      <li>✔ Real creator on real platforms</li>
-      <li>✔ YouTube views & CapCut usage proof</li>
-      <li>✔ Dark branding built for short-form</li>
-      <li>✔ Performance-focused, not hype</li>
-    </ul>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 SN Design Studio<br>
-    AI Short Video Creator • CapCut Template Creator
-  </footer>
+<footer>
+  <p>© 2026 SN Design Studio</p>
+</footer>
 
 </body>
 </html>
