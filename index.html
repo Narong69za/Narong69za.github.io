@@ -28,20 +28,17 @@ a{text-decoration:none}
   text-align:center;
   padding:60px 20px;
 }
-
 .hero h1{
   font-size:32px;
   margin-bottom:10px;
   letter-spacing:1px;
 }
-
 .hero p{
   font-size:14px;
   color:#aaa;
   margin-bottom:35px;
   line-height:1.6;
 }
-
 .btn{
   display:block;
   width:100%;
@@ -56,53 +53,25 @@ a{text-decoration:none}
 .btn-red{background:#e50914;color:#fff}
 .btn-green{background:#00c853;color:#000}
 
-/* ===== INTRO SLIDER ===== */
-.intro-slider{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:0 auto;
-}
-.slider-frame{
-  position:relative;
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(0,0,0,.8);
-}
-.slide{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.05);
-  transition:opacity 1.2s ease, transform 1.2s ease;
-}
-.slide.active{
-  opacity:1;
-  transform:scale(1);
-}
-
 /* ===== SECTION ===== */
 .section{
-  padding:80px 20px;
-  max-width:1100px;
+  padding:90px 20px;
+  max-width:1200px;
   margin:auto;
 }
 .section h2{
   text-align:center;
-  margin-bottom:15px;
-  font-size:24px;
+  margin-bottom:12px;
+  font-size:26px;
 }
 .section .sub{
   text-align:center;
   color:#aaa;
   font-size:14px;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
-/* ===== FEATURED ===== */
+/* ===== FEATURED DUO ===== */
 .featured{
   background:#070707;
   border-top:1px solid #222;
@@ -110,8 +79,14 @@ a{text-decoration:none}
 }
 .featured-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:36px;
+  align-items:stretch;
+}
+.featured-box{
+  display:flex;
+  flex-direction:column;
+  height:100%;
 }
 .badge{
   display:inline-block;
@@ -122,15 +97,17 @@ a{text-decoration:none}
   padding:6px 10px;
   border-radius:20px;
   margin-bottom:10px;
+  width:fit-content;
 }
 
 /* YouTube */
 .yt-wrap{
   position:relative;
   padding-top:177%;
-  border-radius:10px;
+  border-radius:12px;
   overflow:hidden;
   border:1px solid #222;
+  background:#000;
 }
 .yt-wrap iframe{
   position:absolute;
@@ -140,23 +117,35 @@ a{text-decoration:none}
   border:0;
 }
 
-/* CapCut Card */
+/* CapCut */
 .capcut-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
   background:#111;
   border:1px solid #222;
-  border-radius:10px;
+  border-radius:12px;
   overflow:hidden;
 }
 .capcut-thumb{
   width:100%;
-  display:block;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  background:#000;
 }
 .capcut-body{
-  padding:20px;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
 .capcut-body p{
-  font-size:13px;
+  font-size:14px;
   color:#bbb;
+  margin-bottom:20px;
+}
+.capcut-body .btn{
+  margin-top:auto;
 }
 
 /* Cards */
@@ -183,7 +172,7 @@ a{text-decoration:none}
 .why ul{
   list-style:none;
   padding:0;
-  max-width:700px;
+  max-width:720px;
   margin:auto;
 }
 .why li{
@@ -195,7 +184,7 @@ a{text-decoration:none}
 /* CTA */
 .cta{
   text-align:center;
-  padding:100px 20px;
+  padding:110px 20px;
   background:
     linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
     url("assets/images/hero-blue.png") center / cover no-repeat;
@@ -224,23 +213,15 @@ footer{
   <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
 </section>
 
-<!-- INTRO SLIDER -->
-<section class="intro-slider">
-  <div class="slider-frame">
-    <div class="slide active" style="background-image:url('assets/images/hero-green.png')"></div>
-    <div class="slide" style="background-image:url('assets/images/hero-blue.png')"></div>
-    <div class="slide" style="background-image:url('assets/images/hero-red.png')"></div>
-  </div>
-</section>
-
-<!-- FEATURED PERFORMANCE -->
+<!-- FEATURED DUO -->
 <section class="section featured">
   <h2>Featured Performance</h2>
   <p class="sub">Authority from YouTube · Real usage from CapCut</p>
 
   <div class="featured-grid">
+
     <!-- YouTube -->
-    <div>
+    <div class="featured-box">
       <span class="badge">YouTube · Top View</span>
       <h3>Most Viewed Short</h3>
       <div class="yt-wrap">
@@ -252,19 +233,24 @@ footer{
     </div>
 
     <!-- CapCut -->
-    <div>
+    <div class="featured-box">
       <span class="badge">Official CapCut Creator</span>
       <h3>Top Used CapCut Template</h3>
+
       <div class="capcut-card">
         <img src="assets/images/hero-blue.png" alt="CapCut Preview" class="capcut-thumb">
         <div class="capcut-body">
-          <p>High-usage template used by real creators worldwide.</p>
+          <p>
+            High-usage CapCut template used by real creators worldwide.
+            Proof from real platform usage.
+          </p>
           <a href="https://www.capcut.com/tv2/ZSasJmvvF/" target="_blank" class="btn btn-red">
             ▶ View on CapCut
           </a>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -306,16 +292,6 @@ footer{
 </section>
 
 <footer>© 2026 SN Design Studio</footer>
-
-<script>
-const slides=document.querySelectorAll('.slide');
-let i=0;
-setInterval(()=>{
-  slides[i].classList.remove('active');
-  i=(i+1)%slides.length;
-  slides[i].classList.add('active');
-},4800);
-</script>
 
 </body>
 </html>
