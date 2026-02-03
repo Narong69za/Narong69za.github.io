@@ -3,35 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <title>SN Design Studio | Dark • Raw • Viral</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="SN Design Studio – AI Short Video, CapCut Templates, YouTube & Facebook Marketing.">
 
 <style>
-html,body{
-  margin:0;
-  padding:0;
-  background:#000;
-  color:#fff;
-  font-family:Segoe UI,Arial,sans-serif;
-  overflow-x:hidden;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:60px 20px;
-  background:
-    linear-gradient(
-      rgba(0,0,0,.65),
-      rgba(0,0,0,.85)
-    ),
-    url("assets/images/hero-master.png") center/cover no-repeat;
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero h1{
-  font-size:42px;
-  font
+/* Background image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+    url("./assets/images/hero-master.png") center / cover no-repeat;
+  z-index: 1;
+}
+
+/* Fallback image (สำคัญมาก) */
+.hero img {
+  display: none;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  opacity: .85;
+  margin: 16px 0 36px;
+}
+
+.cta a {
+  display: inline-block;
+  margin: 8px;
+  padding: 14px 28px;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.red { background:#ff2e2e; color:#fff; }
+.green { background:#00c853; color:#000; }
+
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 13px;
+  opacity: .6;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <!-- fallback image -->
+  <img src="./assets/images/hero-master.png" alt="SN Design Studio Hero">
+
+  <div class="hero-content">
+    <h1>SN DESIGN STUDIO</h1>
+    <p>
+      AI Short Video & CapCut Creator<br>
+      Dark • Raw • Viral
+    </p>
+
+    <div class="cta">
+      <a href="packages.html" class="red">VIEW PACKAGES</a>
+      <a href="contact.html" class="green">CONTACT</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+© 2026 SN Design Studio
+</footer>
+
+</body>
+</html>
