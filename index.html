@@ -2,199 +2,177 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SN Design Studio</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#000;
+  color:#fff;
+}
+a{text-decoration:none}
+
+/* ===== HERO SLIDER ===== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:60px 20px;
+  overflow:hidden;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-  color: #fff;
-}
-
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
   background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
-    url("assets/images/hero-blue.png") center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85));
+  z-index:2;
 }
 
-.hero h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+/* slides */
+.hero-slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.05);
+  transition:opacity 1.5s ease, transform 1.5s ease;
 }
 
-.hero p {
-  color: #aaa;
-  font-size: 14px;
-  margin-bottom: 35px;
+.hero-slide.active{
+  opacity:1;
+  transform:scale(1);
 }
 
-.btn {
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  margin: 12px auto;
-  padding: 15px;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
+/* hero content */
+.hero-content{
+  position:relative;
+  z-index:3;
+  max-width:600px;
 }
 
-.btn-red {
-  background: #e50914;
-  color: #fff;
+.hero h1{
+  font-size:32px;
+  margin-bottom:10px;
+  letter-spacing:1px;
 }
 
-.btn-green {
-  background: #00c853;
-  color: #000;
+.hero p{
+  font-size:14px;
+  color:#aaa;
+  margin-bottom:35px;
+  line-height:1.6;
 }
 
-/* ===== INTRO SLIDER ===== */
-.intro-slider {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 20px;
+.btn{
+  display:block;
+  width:100%;
+  max-width:320px;
+  margin:12px auto;
+  padding:15px;
+  border-radius:6px;
+  font-size:16px;
+  font-weight:bold;
+  text-align:center;
 }
 
-.slider-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #000;
-  box-shadow: 0 0 40px rgba(0,0,0,.8);
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.slide.active {
-  opacity: 1;
-  transform: scale(1);
-}
+.btn-red{background:#e50914;color:#fff}
+.btn-green{background:#00c853;color:#000}
 
 /* ===== SECTION ===== */
-.section {
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: auto;
+.section{
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
 }
 
-.section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 24px;
+.section h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:24px;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
 }
 
-.card {
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 10px;
-  padding: 25px;
+.card{
+  background:#111;
+  border:1px solid #222;
+  border-radius:10px;
+  padding:25px;
 }
 
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14px;
-  color: #bbb;
-}
+.card h3{margin:0 0 10px}
+.card p{font-size:14px;color:#bbb}
 
 /* ===== WHY ===== */
-.why {
-  background: #080808;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
+.why{
+  background:#080808;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
 }
 
-.why ul {
-  list-style: none;
-  padding: 0;
-  max-width: 700px;
-  margin: auto;
+.why ul{
+  list-style:none;
+  padding:0;
+  max-width:700px;
+  margin:auto;
 }
 
-.why li {
-  margin-bottom: 14px;
-  font-size: 14px;
-  color: #ccc;
+.why li{
+  margin-bottom:14px;
+  font-size:14px;
+  color:#ccc;
 }
 
 /* ===== CTA ===== */
-.cta {
-  text-align: center;
-  padding: 100px 20px;
+.cta{
+  text-align:center;
+  padding:100px 20px;
   background:
     linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
     url("assets/images/hero-blue.png") center / cover no-repeat;
 }
 
 /* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 12px;
-  color: #666;
+footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:12px;
+  color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- HERO SLIDER -->
 <section class="hero">
-  <h1>SN DESIGN STUDIO</h1>
-  <p>
-    CapCut Template Creator · AI Short Video<br />
-    Dark · Raw · Viral
-  </p>
+  <div class="hero-slide active" style="background-image:url('assets/images/hero-blue.png')"></div>
+  <div class="hero-slide" style="background-image:url('assets/images/hero-green.png')"></div>
+  <div class="hero-slide" style="background-image:url('assets/images/hero-red.png')"></div>
 
-  <a href="services.html" class="btn btn-red">🔥 Our Services</a>
-  <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
-</section>
+  <div class="hero-content">
+    <h1>SN DESIGN STUDIO</h1>
+    <p>
+      CapCut Template Creator · AI Short Video<br>
+      Dark · Raw · Viral
+    </p>
 
-<!-- INTRO SLIDER (แก้พื้นที่โล่ง) -->
-<section class="intro-slider">
-  <div class="slider-frame">
-    <div class="slide active" style="background-image:url('assets/images/hero-green.png')"></div>
-    <div class="slide" style="background-image:url('assets/images/hero-blue.png')"></div>
-    <div class="slide" style="background-image:url('assets/images/hero-red.png')"></div>
+    <a href="services.html" class="btn btn-red">🔥 Our Services</a>
+    <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
   </div>
 </section>
 
@@ -240,14 +218,14 @@ footer {
 </footer>
 
 <script>
-const slides = document.querySelectorAll('.slide');
-let index = 0;
+const slides = document.querySelectorAll('.hero-slide');
+let current = 0;
 
 setInterval(() => {
-  slides[index].classList.remove('active');
-  index = (index + 1) % slides.length;
-  slides[index].classList.add('active');
-}, 4500);
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4800);
 </script>
 
 </body>
