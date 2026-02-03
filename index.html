@@ -1,181 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SN Design Studio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SN Design Studio</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+:root{
+  --red:#e50914;
+  --green:#00c853;
+  --dark:#000;
+  --card:#0f0f0f;
+  --border:#1e1e1e;
+  --text:#ffffff;
+  --muted:#aaaaaa;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
+*{
+  box-sizing:border-box;
+}
 
-    a {
-      text-decoration: none;
-    }
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--dark);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.65),
-          rgba(0,0,0,0.9)
-        ),
-        url("assets/images/hero-blue-dark-sn.png") center / cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.9)),
+    url("assets/images/hero-blue-dark-sn.png") center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 20px;
+  text-align:center;
+}
 
-    .hero h1 {
-      font-size: 34px;
-      letter-spacing: 1.5px;
-      margin-bottom: 10px;
-    }
+.hero-box{
+  max-width:420px;
+  width:100%;
+}
 
-    .hero p {
-      font-size: 14px;
-      color: #bbb;
-      margin-bottom: 40px;
-    }
+.hero h1{
+  font-size:26px;
+  letter-spacing:1px;
+  margin-bottom:12px;
+}
 
-    /* ===== BUTTONS ===== */
-    .btn {
-      width: 100%;
-      max-width: 320px;
-      padding: 15px;
-      margin: 12px auto;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      display: block;
-    }
+.hero p{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:30px;
+}
 
-    .btn-red {
-      background: #e50914;
-      color: #fff;
-    }
+.btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  border-radius:6px;
+  font-size:15px;
+  font-weight:bold;
+  text-align:center;
+}
 
-    .btn-green {
-      background: #00c853;
-      color: #000;
-    }
+.btn-red{
+  background:var(--red);
+  color:#fff;
+}
 
-    /* ===== SECTION ===== */
-    .section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.btn-green{
+  background:var(--green);
+  color:#000;
+}
 
-    .section h2 {
-      text-align: center;
-      margin-bottom: 50px;
-      font-size: 26px;
-      letter-spacing: 1px;
-    }
+/* ================= SECTION ================= */
+.section{
+  padding:70px 20px;
+  max-width:1000px;
+  margin:auto;
+}
 
-    /* ===== SERVICES ===== */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    }
+.section h2{
+  text-align:center;
+  font-size:22px;
+  margin-bottom:40px;
+}
 
-    .card {
-      background: #0d0d0d;
-      border: 1px solid #1f1f1f;
-      padding: 30px;
-      border-radius: 10px;
-    }
+/* ================= SERVICES ================= */
+.services{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 18px;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:22px;
+}
 
-    .card p {
-      font-size: 14px;
-      color: #aaa;
-    }
+.card h3{
+  margin:0 0 8px;
+  font-size:17px;
+}
 
-    /* ===== WHY ===== */
-    .why {
-      background: #070707;
-      border-top: 1px solid #1f1f1f;
-      border-bottom: 1px solid #1f1f1f;
-    }
+.card p{
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+}
 
-    .why ul {
-      list-style: none;
-      padding: 0;
-      max-width: 700px;
-      margin: auto;
-    }
+/* ================= WHY ================= */
+.why{
+  background:#070707;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
 
-    .why li {
-      margin-bottom: 18px;
-      font-size: 14px;
-      color: #ccc;
-    }
+.why ul{
+  list-style:none;
+  padding:0;
+  margin:0 auto;
+  max-width:700px;
+}
 
-    /* ===== CTA ===== */
-    .cta {
-      min-height: 70vh;
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.7),
-          rgba(0,0,0,0.95)
-        ),
-        url("assets/images/hero-blue-dark-system.png") center / cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-    }
+.why li{
+  font-size:14px;
+  margin-bottom:14px;
+  color:#ccc;
+}
 
-    .cta h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
+/* ================= CTA ================= */
+.cta{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.95)),
+    url("assets/images/hero-blue-dark-system.png") center/cover no-repeat;
+  padding:80px 20px;
+  text-align:center;
+}
 
-    .cta p {
-      font-size: 14px;
-      color: #bbb;
-      margin-bottom: 35px;
-    }
+.cta h2{
+  font-size:22px;
+  margin-bottom:10px;
+}
 
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 12px;
-      color: #666;
-      background: #000;
-    }
-  </style>
+.cta p{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+.cta .btn{
+  max-width:320px;
+  margin:0 auto;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align:center;
+  font-size:12px;
+  color:#666;
+  padding:40px 20px;
+}
+
+/* ================= DESKTOP ================= */
+@media(min-width:768px){
+  .hero h1{font-size:32px;}
+  .services{grid-template-columns:repeat(3,1fr);}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-box">
     <h1>SN DESIGN STUDIO</h1>
     <p>
       CapCut Template Creator · AI Short Video<br>
@@ -183,61 +190,62 @@
     </p>
 
     <a href="services.html" class="btn btn-red">🔥 Our Services</a>
-    <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
-  </section>
+    <a href="contact.html" class="btn btn-green">💬 LINE Contact</a>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section class="section">
-    <h2>What We Do</h2>
+<!-- SERVICES -->
+<section class="section">
+  <h2>What We Do</h2>
 
-    <div class="services">
-      <div class="card">
-        <h3>CapCut Templates</h3>
-        <p>
-          High-impact templates for real creators.
-          Built to perform. Dark tone. Viral ready.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>AI Short Video</h3>
-        <p>
-          Cinematic AI-driven shorts designed for
-          Reels, Shorts, and fast attention.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Visual Identity</h3>
-        <p>
-          Dark branding systems for creators
-          who want authority and recognition.
-        </p>
-      </div>
+  <div class="services">
+    <div class="card">
+      <h3>CapCut Templates</h3>
+      <p>
+        High-impact templates built for real creators.
+        Designed for reach, retention, and real usage.
+      </p>
     </div>
-  </section>
 
-  <!-- WHY -->
-  <section class="section why">
-    <h2>Why SN Design Studio</h2>
-    <ul>
-      <li>✔ Real creator. Real usage. No fake growth.</li>
-      <li>✔ Focused on CapCut & short-form ecosystems.</li>
-      <li>✔ Dark branding that stands out.</li>
-      <li>✔ Built for speed, clarity, and conversion.</li>
-    </ul>
-  </section>
+    <div class="card">
+      <h3>AI Short Video</h3>
+      <p>
+        Cinematic AI-powered shorts optimized for
+        Reels, Shorts, and fast scroll environments.
+      </p>
+    </div>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Ready to Work?</h2>
-    <p>Let’s build something dark, sharp, and effective.</p>
-    <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
-  </section>
+    <div class="card">
+      <h3>Visual Identity</h3>
+      <p>
+        Dark branding systems that build authority,
+        recognition, and long-term creator value.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 SN Design Studio
-  </footer>
+<!-- WHY -->
+<section class="section why">
+  <h2>Why SN Design Studio</h2>
+  <ul>
+    <li>✔ Real creator experience, not theory.</li>
+    <li>✔ Focused on CapCut & short-form growth.</li>
+    <li>✔ Dark, premium identity — not generic.</li>
+    <li>✔ Built to convert, not just look good.</li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to Work?</h2>
+  <p>Let’s build something sharp, dark, and effective.</p>
+  <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
+</section>
+
+<footer>
+  © 2026 SN Design Studio
+</footer>
 
 </body>
 </html>
