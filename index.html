@@ -1,212 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SN Design Studio | AI Short Video & CapCut Creator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SN Design Studio – AI Short Video & CapCut Creator. Dark, Raw, Viral visual systems built for creators, marketers, and brands." />
+<meta charset="UTF-8">
+<title>SN Design Studio | AI Short Video & CapCut Creator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#000;color:#fff}
 
-    body {
-      background: #000;
-      color: #fff;
-    }
+/* NAV */
+header{
+  position:fixed;top:0;width:100%;
+  background:rgba(0,0,0,.8);
+  z-index:999
+}
+nav{
+  max-width:1200px;margin:auto;
+  padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center
+}
+nav ul{list-style:none;display:flex;gap:18px}
+nav a{color:#ccc;text-decoration:none;font-size:13px}
+nav a:hover{color:#fff}
 
-    /* ===== NAV ===== */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(6px);
-    }
+/* HERO (ONLY ONE) */
+.hero{
+  position:relative;
+  min-height:100vh;
+  margin-top:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;
+  max-width:700px;
+  padding:20px;
+}
+.hero h1{font-size:26px;margin-bottom:10px}
+.hero p{color:#ccc;margin-bottom:22px;font-size:14px}
+.hero-buttons{display:flex;gap:12px;justify-content:center}
+.btn{padding:12px 22px;border-radius:6px;font-weight:bold;text-decoration:none}
+.red{background:#e53935;color:#fff}
+.green{background:#2ecc71;color:#000}
 
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* NORMAL SECTION (NO BG IMAGE) */
+section{
+  padding:80px 20px;
+  text-align:center;
+}
+section h2{margin-bottom:10px}
+section p{color:#aaa;font-size:14px}
 
-    nav .logo {
-      font-weight: bold;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-    }
-
-    nav ul li a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 13px;
-    }
-
-    nav ul li a:hover {
-      color: #fff;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      margin-top: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .hero picture,
-    .hero img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 2;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-      padding: 20px;
-      max-width: 720px;
-    }
-
-    .hero-content h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-
-    .hero-content p {
-      font-size: 14px;
-      color: #ccc;
-      margin-bottom: 22px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      display: inline-block;
-    }
-
-    .btn-red {
-      background: #e53935;
-      color: #fff;
-    }
-
-    .btn-green {
-      background: #2ecc71;
-      color: #000;
-    }
-
-    /* ===== SECTION ===== */
-    section {
-      padding: 70px 20px;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    section p {
-      font-size: 14px;
-      color: #aaa;
-      max-width: 720px;
-      margin: auto;
-    }
-
-    footer {
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 12px;
-      color: #666;
-    }
-  </style>
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:#666;font-size:12px
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <div class="logo">SN DESIGN STUDIO</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="packages.html">Packages</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="capcut.html">Templates</a></li>
-      <li><a href="seo.html">SEO</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div>SN DESIGN STUDIO</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="capcut.html">Templates</a></li>
+    <li><a href="seo.html">SEO</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 </header>
 
-<!-- ===== HERO (SINGLE / CLEAN) ===== -->
+<!-- HERO : ONLY ONE -->
 <section class="hero">
   <picture>
-    <source media="(max-width: 768px)" srcset="assets/images/hero-mobile.png">
+    <source media="(max-width:768px)" srcset="assets/images/hero-mobile.png">
     <img src="assets/images/hero.png" alt="SN Design Studio Hero">
   </picture>
 
   <div class="hero-content">
     <h1>AI Short Video & CapCut Creator</h1>
     <p>Dark • Raw • Viral — Built for creators, marketers, and brands</p>
-
     <div class="hero-buttons">
-      <a href="packages.html" class="btn btn-red">View Packages</a>
-      <a href="contact.html" class="btn btn-green">Contact</a>
+      <a href="packages.html" class="btn red">View Packages</a>
+      <a href="contact.html" class="btn green">Contact</a>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTENT ===== -->
+<!-- CONTENT -->
 <section>
   <h2>Ads-Grade Visual System</h2>
-  <p>
-    Designed from real performance data — not decoration.
-    Every visual supports conversion, CTR, and brand recall.
-  </p>
+  <p>Designed from real performance data — not decoration.</p>
 </section>
 
 <footer>
-  © 2026 SN Design Studio
+© 2026 SN Design Studio
 </footer>
 
 </body>
