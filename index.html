@@ -2,198 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SN DESIGN STUDIO – AI Short Video & CapCut Creator</title>
+  <title>SN Design Studio | AI Short Video & CapCut Creator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  <!-- SEO -->
+  <meta name="description" content="SN Design Studio – AI Short Video & CapCut Creator. Dark • Raw • Viral." />
+  <meta name="keywords" content="SN Design Studio, CapCut Creator, AI Short Video, Viral Marketing" />
+  <meta name="author" content="SN Design Studio" />
 
-    body {
-      background: #000;
-      color: #fff;
-    }
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+    body { background:#000; color:#fff; overflow-x:hidden; }
 
     /* ===== NAV ===== */
     header {
       position: fixed;
-      top: 0;
+      top: 0; left: 0;
       width: 100%;
+      height: 64px;
       background: rgba(0,0,0,0.8);
       backdrop-filter: blur(6px);
       z-index: 1000;
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      margin-top: 60px;
-      overflow: hidden;
-    }
-
-    .hero picture,
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.75)
-      );
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 20px;
+    }
+    .nav-wrap {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-weight:700; letter-spacing:1px; font-size:14px; }
+    nav a {
+      color:#fff; text-decoration:none;
+      margin-left:18px; font-size:13px; opacity:.9;
+    }
+    nav a:hover { opacity:1; }
+
+    /* ===== HERO CLEAN ===== */
+    .hero-clean {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      margin-top: 64px; /* กัน navbar */
+      overflow: hidden;
+      background: #000;
+    }
+    .hero-clean picture,
+    .hero-clean img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hero-clean img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .hero-content {
-      max-width: 720px;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.65)
+      );
     }
-
     .hero-content h1 {
-      font-size: 34px;
-      margin-bottom: 14px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 12px;
+      font-weight: 700;
     }
-
     .hero-content p {
-      font-size: 16px;
-      opacity: 0.9;
-      margin-bottom: 26px;
+      max-width: 680px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      opacity: .9;
+      margin-bottom: 24px;
     }
-
-    .hero-buttons a {
-      display: inline-block;
-      padding: 14px 22px;
-      margin: 0 6px;
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      padding: 14px 26px;
       border-radius: 6px;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
+      color: #fff;
       font-size: 14px;
     }
-
-    .btn-red {
-      background: #e53935;
-      color: #fff;
-    }
-
-    .btn-green {
-      background: #2ecc71;
-      color: #000;
-    }
+    .btn-primary { background:#e53935; }
+    .btn-secondary { background:#2ecc71; color:#000; }
 
     /* ===== SECTION ===== */
-    section {
+    section.content {
       max-width: 1200px;
       margin: auto;
       padding: 80px 20px;
       text-align: center;
     }
-
-    section h2 {
+    section.content h2 {
       font-size: 26px;
       margin-bottom: 12px;
     }
-
-    section p {
+    section.content p {
       font-size: 14px;
-      opacity: 0.85;
+      opacity: .85;
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 24px;
-      }
-
-      .hero-content p {
-        font-size: 14px;
-      }
-
-      .hero-buttons a {
-        display: block;
-        margin: 10px 0;
-      }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      opacity: .6;
+      padding: 40px 0;
     }
   </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <header>
-  <nav>
-    <strong>SN DESIGN STUDIO</strong>
-    <div>
+  <div class="nav-wrap">
+    <div class="logo">SN DESIGN STUDIO</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="packages.html">Packages</a>
       <a href="services.html">Services</a>
       <a href="capcut.html">Templates</a>
       <a href="seo.html">SEO</a>
       <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
+<!-- HERO CLEAN -->
+<section class="hero-clean">
   <picture>
     <!-- Mobile -->
     <source media="(max-width: 768px)" srcset="assets/images/hero-mobile.png">
     <!-- Desktop -->
-    <img src="assets/images/hero.png" alt="SN Design Studio Hero">
+    <img src="assets/images/hero.png" alt="SN Design Studio – AI Short Video & CapCut Creator" loading="eager">
   </picture>
 
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>AI Short Video & CapCut Creator</h1>
-      <p>Dark · Raw · Viral – Built for creators, marketers, and brands</p>
-      <div class="hero-buttons">
-        <a href="packages.html" class="btn-red">View Packages</a>
-        <a href="contact.html" class="btn-green">Contact</a>
-      </div>
+  <div class="hero-content">
+    <h1>AI Short Video & CapCut Creator</h1>
+    <p>Dark • Raw • Viral — Built for creators, marketers, and brands</p>
+    <div class="hero-actions">
+      <a href="packages.html" class="btn btn-primary">View Packages</a>
+      <a href="contact.html" class="btn btn-secondary">Contact</a>
     </div>
   </div>
 </section>
 
-<!-- ===== NEXT SECTION ===== -->
-<section>
+<!-- NEXT -->
+<section class="content">
   <h2>Ads-Grade Visual System</h2>
-  <p>Designed from real performance data – not decoration.</p>
+  <p>Designed from real performance data — not decoration.</p>
 </section>
+
+<footer>
+  © 2026 SN Design Studio
+</footer>
 
 </body>
 </html>
