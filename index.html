@@ -15,49 +15,18 @@ body{
 }
 a{text-decoration:none}
 
-/* ===== HERO SLIDER ===== */
+/* ===== HERO (STATIC) ===== */
 .hero{
-  position:relative;
   min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+    url("assets/images/hero-blue-dark-sn.png") center / cover no-repeat;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
   padding:60px 20px;
-  overflow:hidden;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85));
-  z-index:2;
-}
-
-/* slides */
-.hero-slide{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.05);
-  transition:opacity 1.5s ease, transform 1.5s ease;
-}
-
-.hero-slide.active{
-  opacity:1;
-  transform:scale(1);
-}
-
-/* hero content */
-.hero-content{
-  position:relative;
-  z-index:3;
-  max-width:600px;
 }
 
 .hero h1{
@@ -84,60 +53,146 @@ a{text-decoration:none}
   font-weight:bold;
   text-align:center;
 }
-
 .btn-red{background:#e50914;color:#fff}
 .btn-green{background:#00c853;color:#000}
+
+/* ===== INTRO SLIDER ===== */
+.intro-slider{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:0 auto;
+}
+.slider-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(0,0,0,.8);
+}
+.slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.05);
+  transition:opacity 1.2s ease, transform 1.2s ease;
+}
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
 
 /* ===== SECTION ===== */
 .section{
   padding:80px 20px;
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
 }
-
 .section h2{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:15px;
   font-size:24px;
 }
+.section .sub{
+  text-align:center;
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:40px;
+}
 
+/* ===== FEATURED ===== */
+.featured{
+  background:#070707;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.badge{
+  display:inline-block;
+  background:#00c853;
+  color:#000;
+  font-size:12px;
+  font-weight:bold;
+  padding:6px 10px;
+  border-radius:20px;
+  margin-bottom:10px;
+}
+
+/* YouTube */
+.yt-wrap{
+  position:relative;
+  padding-top:177%;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid #222;
+}
+.yt-wrap iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* CapCut Card */
+.capcut-card{
+  background:#111;
+  border:1px solid #222;
+  border-radius:10px;
+  overflow:hidden;
+}
+.capcut-thumb{
+  width:100%;
+  display:block;
+}
+.capcut-body{
+  padding:20px;
+}
+.capcut-body p{
+  font-size:13px;
+  color:#bbb;
+}
+
+/* Cards */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:20px;
 }
-
 .card{
   background:#111;
   border:1px solid #222;
   border-radius:10px;
   padding:25px;
 }
-
 .card h3{margin:0 0 10px}
 .card p{font-size:14px;color:#bbb}
 
-/* ===== WHY ===== */
+/* WHY */
 .why{
   background:#080808;
   border-top:1px solid #222;
   border-bottom:1px solid #222;
 }
-
 .why ul{
   list-style:none;
   padding:0;
   max-width:700px;
   margin:auto;
 }
-
 .why li{
   margin-bottom:14px;
   font-size:14px;
   color:#ccc;
 }
 
-/* ===== CTA ===== */
+/* CTA */
 .cta{
   text-align:center;
   padding:100px 20px;
@@ -146,7 +201,7 @@ a{text-decoration:none}
     url("assets/images/hero-blue.png") center / cover no-repeat;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px 20px;
@@ -158,21 +213,58 @@ footer{
 
 <body>
 
-<!-- HERO SLIDER -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-slide active" style="background-image:url('assets/images/hero-blue.png')"></div>
-  <div class="hero-slide" style="background-image:url('assets/images/hero-green.png')"></div>
-  <div class="hero-slide" style="background-image:url('assets/images/hero-red.png')"></div>
+  <h1>SN DESIGN STUDIO</h1>
+  <p>
+    CapCut Template Creator · AI Short Video<br>
+    Dark · Raw · Viral
+  </p>
+  <a href="services.html" class="btn btn-red">🔥 Our Services</a>
+  <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
+</section>
 
-  <div class="hero-content">
-    <h1>SN DESIGN STUDIO</h1>
-    <p>
-      CapCut Template Creator · AI Short Video<br>
-      Dark · Raw · Viral
-    </p>
+<!-- INTRO SLIDER -->
+<section class="intro-slider">
+  <div class="slider-frame">
+    <div class="slide active" style="background-image:url('assets/images/hero-green.png')"></div>
+    <div class="slide" style="background-image:url('assets/images/hero-blue.png')"></div>
+    <div class="slide" style="background-image:url('assets/images/hero-red.png')"></div>
+  </div>
+</section>
 
-    <a href="services.html" class="btn btn-red">🔥 Our Services</a>
-    <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
+<!-- FEATURED PERFORMANCE -->
+<section class="section featured">
+  <h2>Featured Performance</h2>
+  <p class="sub">Authority from YouTube · Real usage from CapCut</p>
+
+  <div class="featured-grid">
+    <!-- YouTube -->
+    <div>
+      <span class="badge">YouTube · Top View</span>
+      <h3>Most Viewed Short</h3>
+      <div class="yt-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/NI7WALIXStU"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- CapCut -->
+    <div>
+      <span class="badge">Official CapCut Creator</span>
+      <h3>Top Used CapCut Template</h3>
+      <div class="capcut-card">
+        <img src="assets/images/hero-blue.png" alt="CapCut Preview" class="capcut-thumb">
+        <div class="capcut-body">
+          <p>High-usage template used by real creators worldwide.</p>
+          <a href="https://www.capcut.com/tv2/ZSasJmvvF/" target="_blank" class="btn btn-red">
+            ▶ View on CapCut
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -182,15 +274,15 @@ footer{
   <div class="cards">
     <div class="card">
       <h3>CapCut Templates</h3>
-      <p>High-impact templates built for real creators. Dark tone. Viral-ready.</p>
+      <p>High-impact templates built for real creators.</p>
     </div>
     <div class="card">
       <h3>AI Short Video</h3>
-      <p>Cinematic short videos optimized for Shorts & Reels.</p>
+      <p>Cinematic short-form content optimized for Shorts & Reels.</p>
     </div>
     <div class="card">
       <h3>Visual Identity</h3>
-      <p>Dark branding systems for creators & digital brands.</p>
+      <p>Dark branding systems designed for authority & recall.</p>
     </div>
   </div>
 </section>
@@ -199,10 +291,10 @@ footer{
 <section class="section why">
   <h2>Why SN Design Studio</h2>
   <ul>
-    <li>✔ Real creator. Real platforms.</li>
-    <li>✔ YouTube views + CapCut usage proof.</li>
-    <li>✔ Dark branding built for short-form.</li>
-    <li>✔ Focused on performance, not hype.</li>
+    <li>✔ Real creator on real platforms</li>
+    <li>✔ YouTube views + CapCut usage proof</li>
+    <li>✔ Dark branding built for short-form</li>
+    <li>✔ Performance-focused, not vanity metrics</li>
   </ul>
 </section>
 
@@ -213,19 +305,16 @@ footer{
   <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
 </section>
 
-<footer>
-  © 2026 SN Design Studio
-</footer>
+<footer>© 2026 SN Design Studio</footer>
 
 <script>
-const slides = document.querySelectorAll('.hero-slide');
-let current = 0;
-
-setInterval(() => {
-  slides[current].classList.remove('active');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
-}, 4800);
+const slides=document.querySelectorAll('.slide');
+let i=0;
+setInterval(()=>{
+  slides[i].classList.remove('active');
+  i=(i+1)%slides.length;
+  slides[i].classList.add('active');
+},4800);
 </script>
 
 </body>
