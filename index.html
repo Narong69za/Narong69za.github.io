@@ -6,11 +6,16 @@
   <title>SN Design Studio</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #000;
       color: #fff;
+      line-height: 1.6;
     }
 
     a {
@@ -18,43 +23,45 @@
     }
 
     /* ===== HERO ===== */
-   .hero {
-  min-height: 100vh;
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.65),
-      rgba(0,0,0,0.85)
-    ),
-    url("assets/images/hero-blue-dark-sn.png") center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
-}
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.65),
+          rgba(0,0,0,0.9)
+        ),
+        url("assets/images/hero-blue-dark-sn.png") center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
     .hero h1 {
-      font-size: 32px;
+      font-size: 34px;
+      letter-spacing: 1.5px;
       margin-bottom: 10px;
-      letter-spacing: 1px;
     }
 
     .hero p {
-      color: #aaa;
-      margin-bottom: 40px;
       font-size: 14px;
+      color: #bbb;
+      margin-bottom: 40px;
     }
 
+    /* ===== BUTTONS ===== */
     .btn {
-      display: block;
+      width: 100%;
       max-width: 320px;
-      margin: 15px auto;
       padding: 15px;
+      margin: 12px auto;
       border-radius: 6px;
       font-size: 16px;
       font-weight: bold;
       text-align: center;
+      display: block;
     }
 
     .btn-red {
@@ -67,48 +74,50 @@
       color: #000;
     }
 
-    /* ===== SERVICES ===== */
+    /* ===== SECTION ===== */
     .section {
       padding: 80px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .section h2 {
       text-align: center;
-      margin-bottom: 40px;
-      font-size: 24px;
+      margin-bottom: 50px;
+      font-size: 26px;
+      letter-spacing: 1px;
     }
 
+    /* ===== SERVICES ===== */
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: #111;
-      border: 1px solid #222;
-      padding: 25px;
-      border-radius: 8px;
+      background: #0d0d0d;
+      border: 1px solid #1f1f1f;
+      padding: 30px;
+      border-radius: 10px;
     }
 
     .card h3 {
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 18px;
     }
 
     .card p {
       font-size: 14px;
-      color: #bbb;
+      color: #aaa;
     }
 
     /* ===== WHY ===== */
     .why {
-      background: #080808;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
+      background: #070707;
+      border-top: 1px solid #1f1f1f;
+      border-bottom: 1px solid #1f1f1f;
     }
 
     .why ul {
@@ -119,9 +128,37 @@
     }
 
     .why li {
-      margin-bottom: 15px;
-      color: #ccc;
+      margin-bottom: 18px;
       font-size: 14px;
+      color: #ccc;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      min-height: 70vh;
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.7),
+          rgba(0,0,0,0.95)
+        ),
+        url("assets/images/hero-blue-dark-system.png") center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 35px;
     }
 
     /* ===== FOOTER ===== */
@@ -130,6 +167,7 @@
       padding: 40px 20px;
       font-size: 12px;
       color: #666;
+      background: #000;
     }
   </style>
 </head>
@@ -148,7 +186,7 @@
     <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
   </section>
 
-  <!-- SERVICES PREVIEW -->
+  <!-- SERVICES -->
   <section class="section">
     <h2>What We Do</h2>
 
@@ -156,23 +194,23 @@
       <div class="card">
         <h3>CapCut Templates</h3>
         <p>
-          High-impact templates built for real creators.
-          Dark tone. Viral-ready. Real usage.
+          High-impact templates for real creators.
+          Built to perform. Dark tone. Viral ready.
         </p>
       </div>
 
       <div class="card">
         <h3>AI Short Video</h3>
         <p>
-          Cinematic short videos powered by AI.
-          Optimized for Reels, Shorts, and fast attention.
+          Cinematic AI-driven shorts designed for
+          Reels, Shorts, and fast attention.
         </p>
       </div>
 
       <div class="card">
         <h3>Visual Identity</h3>
         <p>
-          Dark branding systems for creators and digital brands
+          Dark branding systems for creators
           who want authority and recognition.
         </p>
       </div>
@@ -183,18 +221,17 @@
   <section class="section why">
     <h2>Why SN Design Studio</h2>
     <ul>
-      <li>✔ Real creator. Real usage. No fake numbers.</li>
-      <li>✔ Focused on CapCut ecosystem & short-form growth.</li>
-      <li>✔ Dark branding that stands out, not generic.</li>
+      <li>✔ Real creator. Real usage. No fake growth.</li>
+      <li>✔ Focused on CapCut & short-form ecosystems.</li>
+      <li>✔ Dark branding that stands out.</li>
       <li>✔ Built for speed, clarity, and conversion.</li>
     </ul>
   </section>
 
   <!-- CTA -->
-  <section class="hero">
+  <section class="cta">
     <h2>Ready to Work?</h2>
     <p>Let’s build something dark, sharp, and effective.</p>
-
     <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
   </section>
 
