@@ -2,143 +2,175 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SN Design Studio</title>
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#000;
-  color:#fff;
-}
-a{text-decoration:none}
-
-.section{
-  padding:70px 20px;
-  max-width:1100px;
-  margin:auto;
+* {
+  box-sizing: border-box;
 }
 
-h1,h2,h3{margin:0 0 15px}
-p{color:#aaa;font-size:14px;line-height:1.6}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+}
 
-/* HERO */
-.hero{
-  min-height:100vh;
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
   background:
-    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
-    url("assets/images/hero-blue-dark-sn.png") center/cover no-repeat;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:60px 20px;
-}
-.hero h1{font-size:32px;letter-spacing:1px}
-.hero p{margin-bottom:40px}
-
-.btn{
-  display:block;
-  max-width:320px;
-  margin:12px auto;
-  padding:14px;
-  border-radius:6px;
-  font-weight:bold;
-  text-align:center;
-}
-.btn-red{background:#e50914;color:#fff}
-.btn-green{background:#00c853;color:#000}
-
-/* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.card{
-  background:#111;
-  border:1px solid #222;
-  padding:25px;
-  border-radius:8px;
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+    url("assets/images/hero-blue.png") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-/* FEATURED */
-.featured{
-  background:#070707;
-  border-top:1px solid #222;
-  border-bottom:1px solid #222;
-}
-.featured-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-  align-items:start;
-}
-.badge{
-  display:inline-block;
-  background:#00c853;
-  color:#000;
-  font-size:12px;
-  font-weight:bold;
-  padding:6px 10px;
-  border-radius:20px;
-  margin-bottom:10px;
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-/* YOUTUBE */
-.yt-wrap{
-  position:relative;
-  padding-top:177%;
-  border-radius:10px;
-  overflow:hidden;
-}
-.yt-wrap iframe{
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  border:0;
+.hero p {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 35px;
 }
 
-/* CAPCUT CARD */
-.capcut-card{
-  background:#111;
-  border:1px solid #222;
-  border-radius:10px;
-  overflow:hidden;
-}
-.capcut-thumb{
-  width:100%;
-  display:block;
-}
-.capcut-body{
-  padding:20px;
-}
-.capcut-body h3{margin-bottom:10px}
-.capcut-body p{font-size:13px}
-
-/* WHY */
-.why{
-  background:#050505;
-}
-.why ul{
-  list-style:none;
-  padding:0;
-}
-.why li{
-  margin-bottom:12px;
-  color:#ccc;
-  font-size:14px;
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 12px auto;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px 20px;
-  font-size:12px;
-  color:#666;
+.btn-red {
+  background: #e50914;
+  color: #fff;
+}
+
+.btn-green {
+  background: #00c853;
+  color: #000;
+}
+
+/* ===== INTRO SLIDER ===== */
+.intro-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.slider-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 0 40px rgba(0,0,0,.8);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ===== SECTION ===== */
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* ===== WHY ===== */
+.why {
+  background: #080808;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.why ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: auto;
+}
+
+.why li {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* ===== CTA ===== */
+.cta {
+  text-align: center;
+  padding: 100px 20px;
+  background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+    url("assets/images/hero-blue.png") center / cover no-repeat;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 12px;
+  color: #666;
 }
 </style>
 </head>
@@ -148,79 +180,40 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <h1>SN DESIGN STUDIO</h1>
-  <p>CapCut Template Creator · AI Short Video<br>Dark · Raw · Viral</p>
+  <p>
+    CapCut Template Creator · AI Short Video<br />
+    Dark · Raw · Viral
+  </p>
 
   <a href="services.html" class="btn btn-red">🔥 Our Services</a>
   <a href="contact.html" class="btn btn-green">💬 Line Contact</a>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
-  <h2>What We Do</h2>
-  <div class="services">
-    <div class="card">
-      <h3>CapCut Templates</h3>
-      <p>High-impact templates built for real creators. Usage-driven, not hype.</p>
-    </div>
-    <div class="card">
-      <h3>AI Short Video</h3>
-      <p>Cinematic short-form content optimized for Shorts & Reels.</p>
-    </div>
-    <div class="card">
-      <h3>Visual Identity</h3>
-      <p>Dark branding systems designed for authority & recall.</p>
-    </div>
+<!-- INTRO SLIDER (แก้พื้นที่โล่ง) -->
+<section class="intro-slider">
+  <div class="slider-frame">
+    <div class="slide active" style="background-image:url('assets/images/hero-green.png')"></div>
+    <div class="slide" style="background-image:url('assets/images/hero-blue.png')"></div>
+    <div class="slide" style="background-image:url('assets/images/hero-red.png')"></div>
   </div>
 </section>
 
-<!-- FEATURED CLIPS -->
-<section class="section featured">
-  <h2>Featured Performance</h2>
-
-  <div class="featured-grid">
-
-    <!-- YOUTUBE -->
-    <div>
-      <span class="badge">YouTube · Top View</span>
-      <h3>Most Viewed Short</h3>
-
-      <div class="yt-wrap">
-        <iframe 
-          src="https://www.youtube.com/embed/NI7WALIXStU"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <p>Real public views from YouTube Shorts. Proof of reach.</p>
+<!-- WHAT WE DO -->
+<section class="section">
+  <h2>What We Do</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>CapCut Templates</h3>
+      <p>High-impact templates built for real creators. Dark tone. Viral-ready.</p>
     </div>
-
-    <!-- CAPCUT -->
-    <div>
-      <span class="badge">Official CapCut Creator</span>
-      <h3>Top Used CapCut Template</h3>
-
-      <div class="capcut-card">
-        <img 
-          src="assets/images/hero-blue-dark-services.png" 
-          alt="CapCut Template Preview"
-          class="capcut-thumb">
-
-        <div class="capcut-body">
-          <p>
-            High-usage CapCut template used by real creators worldwide.
-            No fake stats — real platform performance.
-          </p>
-
-          <a 
-            href="https://www.capcut.com/tv2/ZSasJmvvF/"
-            target="_blank"
-            class="btn btn-red">
-            ▶ View on CapCut
-          </a>
-        </div>
-      </div>
+    <div class="card">
+      <h3>AI Short Video</h3>
+      <p>Cinematic short videos optimized for Shorts & Reels.</p>
     </div>
-
+    <div class="card">
+      <h3>Visual Identity</h3>
+      <p>Dark branding systems for creators & digital brands.</p>
+    </div>
   </div>
 </section>
 
@@ -228,23 +221,34 @@ footer{
 <section class="section why">
   <h2>Why SN Design Studio</h2>
   <ul>
-    <li>✔ Real creator on real platforms</li>
-    <li>✔ YouTube views + CapCut usage proof</li>
-    <li>✔ Dark branding built for short-form</li>
-    <li>✔ Performance-focused, not vanity metrics</li>
+    <li>✔ Real creator. Real platforms.</li>
+    <li>✔ YouTube views + CapCut usage proof.</li>
+    <li>✔ Dark branding built for short-form.</li>
+    <li>✔ Focused on performance, not hype.</li>
   </ul>
 </section>
 
 <!-- CTA -->
-<section class="hero">
+<section class="cta">
   <h2>Ready to Work?</h2>
-  <p>Templates, branding, or short-form strategy.</p>
+  <p>Let’s build something dark, sharp, and effective.</p>
   <a href="contact.html" class="btn btn-green">Add LINE for Work</a>
 </section>
 
 <footer>
-© 2026 SN Design Studio
+  © 2026 SN Design Studio
 </footer>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 4500);
+</script>
 
 </body>
 </html>
