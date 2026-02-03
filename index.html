@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>SN Design Studio | AI Short Video & CapCut Creator</title>
-  <meta name="description" content="SN Design Studio – AI Short Video, CapCut Templates, Viral Marketing, SEO Content. Dark • Raw • Viral." />
+
+  <!-- SEO -->
+  <meta name="description" content="SN Design Studio – AI Short Video & CapCut Creator. Dark, Raw, Viral visual system for creators, marketers, and brands." />
+  <meta name="keywords" content="SN Design Studio, CapCut Creator, AI Short Video, Viral Marketing, Dark Visual" />
+  <meta name="author" content="SN Design Studio" />
 
   <style>
     * {
@@ -18,160 +21,129 @@
     body {
       background: #000;
       color: #fff;
+      overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ================= NAVBAR ================= */
+    /* ===== NAVBAR ===== */
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      z-index: 1000;
-      background: rgba(0,0,0,0.75);
+      height: 64px;
+      background: rgba(0,0,0,0.85);
       backdrop-filter: blur(6px);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 20px;
+      z-index: 1000;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
     }
 
-    .nav-logo {
+    header .logo {
       font-weight: 700;
       letter-spacing: 1px;
-    }
-
-    .nav-menu a {
-      margin-left: 18px;
       font-size: 14px;
-      opacity: 0.9;
     }
 
-    .nav-menu a:hover {
-      opacity: 1;
-      color: #ff3b3b;
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 13px;
+      transition: 0.2s;
     }
 
-    /* ================= HERO ================= */
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* ===== HERO (IMAGE ONLY) ===== */
     .hero {
-      margin-top: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 16px;
-    }
-
-    .hero-box {
+      width: 100%;
+      min-height: 100vh;
+      background: url("assets/images/hero.png") center center / cover no-repeat;
       position: relative;
-      max-width: 1100px;
-      width: 100%;
     }
 
-    .hero-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
+    /* Spacer to push content below hero */
+    .after-hero {
+      padding: 80px 20px;
+      text-align: center;
     }
 
-    .hero-content {
-      position: absolute;
-      inset: 0;
+    .after-hero h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .after-hero p {
+      font-size: 14px;
+      color: #aaa;
+      max-width: 720px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    .cta-group {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      padding: 8%;
-      background: linear-gradient(
-        to right,
-        rgba(0,0,0,0.75),
-        rgba(0,0,0,0.25),
-        rgba(0,0,0,0)
-      );
-    }
-
-    .hero-content h1 {
-      font-size: clamp(26px, 4vw, 48px);
-      margin-bottom: 10px;
-    }
-
-    .hero-content p {
-      font-size: clamp(14px, 2vw, 18px);
-      opacity: 0.9;
-      max-width: 520px;
-    }
-
-    .hero-buttons {
-      margin-top: 22px;
-      display: flex;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 22px;
+      padding: 14px 26px;
+      font-size: 13px;
       border-radius: 6px;
+      text-decoration: none;
       font-weight: 600;
-      font-size: 14px;
-      display: inline-block;
+      letter-spacing: 0.5px;
+      transition: 0.2s;
     }
 
     .btn-red {
-      background: #ff2e2e;
+      background: #e53935;
+      color: #fff;
+    }
+
+    .btn-red:hover {
+      background: #ff4d4d;
     }
 
     .btn-green {
-      background: #1db954;
+      background: #00c853;
+      color: #000;
     }
 
-    /* ================= SECTION ================= */
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+    .btn-green:hover {
+      background: #00e676;
     }
 
-    section h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    section p {
-      opacity: 0.85;
-      max-width: 720px;
-    }
-
-    .image-block img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      margin-top: 80px;
-      padding: 30px 20px;
+    /* ===== VISUAL SECTION ===== */
+    .visual-section {
+      padding: 60px 0;
       text-align: center;
-      font-size: 13px;
-      opacity: 0.6;
     }
 
-    /* ================= MOBILE ================= */
+    .visual-section img {
+      width: 100%;
+      max-width: 1200px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 12px;
+      color: #666;
+    }
+
     @media (max-width: 768px) {
-      .hero-content {
-        padding: 12%;
-        background: linear-gradient(
-          to bottom,
-          rgba(0,0,0,0.8),
-          rgba(0,0,0,0.4)
-        );
+      nav a {
+        margin-left: 12px;
+        font-size: 12px;
       }
     }
   </style>
@@ -179,52 +151,43 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <header>
-    <div class="nav">
-      <div class="nav-logo">SN DESIGN STUDIO</div>
-      <div class="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="packages.html">Packages</a>
-        <a href="services.html">Services</a>
-        <a href="capcut.html">Templates</a>
-        <a href="seo.html">SEO</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
+    <div class="logo">SN DESIGN STUDIO</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="services.html">Services</a>
+      <a href="capcut.html">Templates</a>
+      <a href="seo.html">SEO</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-box">
-      <img src="assets/images/hero.png" alt="SN Design Studio Hero">
-      <div class="hero-content">
-        <h1>AI Short Video & CapCut Creator</h1>
-        <p>Dark • Raw • Viral  
-        <br>Built for creators, marketers, and brands that want real traction.</p>
+  <!-- HERO IMAGE ONLY -->
+  <section class="hero"></section>
 
-        <div class="hero-buttons">
-          <a href="packages.html" class="btn btn-red">View Packages</a>
-          <a href="contact.html" class="btn btn-green">Contact</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ADS GRADE SECTION -->
-  <section>
+  <!-- AFTER HERO CTA -->
+  <section class="after-hero">
     <h2>Ads-Grade Visual System</h2>
-    <p>Designed from real performance data — not decoration.  
-       Every visual supports conversion, CTR, and brand recall.</p>
+    <p>
+      Designed from real performance data — not decoration.  
+      Every visual supports conversion, CTR, and brand recall.
+    </p>
 
-    <div class="image-block">
-      <img src="assets/images/landing.png" alt="Ads Grade Visual">
+    <div class="cta-group">
+      <a href="packages.html" class="btn btn-red">View Packages</a>
+      <a href="contact.html" class="btn btn-green">Contact</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- VISUAL SHOWCASE -->
+  <section class="visual-section">
+    <img src="assets/images/landing.png" alt="SN Design Studio Landing Visual">
+  </section>
+
   <footer>
-    © 2026 SN Design Studio — AI Short Video & CapCut Template Creator
+    © 2026 SN Design Studio · Dark · Raw · Viral
   </footer>
 
 </body>
