@@ -5,42 +5,53 @@
 <title>Packages | SN Design Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body{margin:0;background:#000;color:#fff;font-family:Segoe UI,Arial}
-h1{text-align:center;padding:60px 20px}
-.section{max-width:1200px;margin:auto;padding:40px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.card{background:#111;border-radius:16px;overflow:hidden}
-.card img{width:100%;display:block}
-.card div{padding:20px}
-footer{text-align:center;opacity:.5;padding:40px}
+body {
+  background:#000;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  padding:24px;
+}
+h1 { text-align:center; margin-bottom:32px; }
+.pack {
+  max-width:900px;
+  margin:0 auto 32px;
+}
+.pack img {
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+.cta {
+  text-align:center;
+  margin-top:32px;
+}
+.cta a {
+  background:#2e7d32;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+}
 </style>
 </head>
-
 <body>
 
 <h1>Marketing Packages</h1>
 
-<section class="section">
-  <div class="grid">
+<div class="pack">
+  <img src="assets/images/capcut-package-1999.png" alt="Package 1999">
+</div>
+<div class="pack">
+  <img src="assets/images/capcut-package-2999.png" alt="Package 2999">
+</div>
+<div class="pack">
+  <img src="assets/images/capcut-package-5999.png" alt="Package 5999">
+</div>
 
-    <div class="card">
-      <img src="assets/images/packages/youtube-package-1999.png">
-      <div><strong>YouTube START – 1,999</strong></div>
-    </div>
+<div class="cta">
+  <a href="contact.html">CONTACT VIA LINE</a>
+</div>
 
-    <div class="card">
-      <img src="assets/images/packages/youtube-package-2999.png">
-      <div><strong>YouTube PRO – 2,999</strong></div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/packages/youtube-package-5999.png">
-      <div><strong>YouTube ELITE – 5,999</strong></div>
-    </div>
-
-  </div>
-</section>
-
-<footer>© 2026 SN Design Studio</footer>
 </body>
 </html>
