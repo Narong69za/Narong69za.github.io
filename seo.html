@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>SEO Services | SN Design Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="บริการ SEO สายดาร์ก คอนเทนต์ไวรัล วิดีโอ CapCut และ AI Short Video โดย SN Design Studio" />
+  <meta name="description" content="บริการ SEO สายดาร์ก คอนเทนต์ไวรัล สำหรับ Creator, YouTube, CapCut และแบรนด์ยุคใหม่ โดย SN Design Studio" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
@@ -20,6 +20,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: #000;
       border-bottom: 1px solid #111;
     }
 
@@ -28,83 +29,128 @@
       margin-left: 16px;
       text-decoration: none;
       font-size: 14px;
+      opacity: 0.85;
     }
 
-    .seo-hero {
-      padding: 80px 20px 60px;
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* ===== HERO SECTION (IDENTITY LOCK) ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 90vh;
+      background: url("assets/images/seo.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      max-width: 900px;
-      margin: auto;
     }
 
-    .seo-hero h1 {
-      font-size: 34px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      letter-spacing: 1px;
       margin-bottom: 16px;
     }
 
-    .seo-hero p {
+    .hero p {
       font-size: 16px;
-      color: #aaa;
-      line-height: 1.6;
+      opacity: 0.9;
+      line-height: 1.7;
     }
 
-    .seo-section {
+    /* ===== CONTENT ===== */
+    .section {
       max-width: 1200px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
 
-    .seo-grid {
+    .section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
     }
 
-    .seo-card {
+    .feature-card {
       background: #0d0d0d;
       border: 1px solid #1a1a1a;
       border-radius: 12px;
       padding: 24px;
+      transition: transform 0.3s;
     }
 
-    .seo-card h3 {
+    .feature-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature-card h3 {
       margin-top: 0;
       margin-bottom: 12px;
       font-size: 18px;
     }
 
-    .seo-card p {
+    .feature-card p {
       font-size: 14px;
-      color: #bbb;
+      opacity: 0.85;
       line-height: 1.6;
     }
 
-    .seo-cta {
+    /* ===== CTA ===== */
+    .cta {
       text-align: center;
       padding: 80px 20px;
+      background: #050505;
+      border-top: 1px solid #111;
     }
 
-    .seo-cta a {
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
       display: inline-block;
-      padding: 14px 32px;
-      background: #00cc66;
+      padding: 14px 28px;
+      background: #00ff99;
       color: #000;
-      border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
+      border-radius: 8px;
     }
 
     footer {
-      border-top: 1px solid #111;
       padding: 24px;
       text-align: center;
-      font-size: 13px;
-      color: #666;
+      font-size: 12px;
+      opacity: 0.6;
+      border-top: 1px solid #111;
     }
   </style>
 </head>
 
-<body class="page-seo">
+<body>
 
 <header>
   <strong>SN DESIGN STUDIO</strong>
@@ -118,55 +164,48 @@
   </nav>
 </header>
 
-<section class="seo-hero">
-  <h1>SEO สายดาร์ก & วิดีโอไวรัล</h1>
-  <p>
-    เราไม่ได้ทำ SEO แบบตำรา  
-    แต่ทำ SEO ด้วยคอนเทนต์จริง วิดีโอจริง และทราฟฟิกจริง  
-    เพื่อดันแบรนด์ให้โตบน Google, YouTube และ Social
-  </p>
-</section>
-
-<section class="seo-section">
-  <div class="seo-grid">
-
-    <div class="seo-card">
-      <h3>SEO + Video Content</h3>
-      <p>
-        ผสานวิดีโอ Short, Reels, YouTube Shorts  
-        เพื่อสร้างทราฟฟิกที่ Google มองว่า “มีตัวตนจริง”
-      </p>
-    </div>
-
-    <div class="seo-card">
-      <h3>CapCut Template Strategy</h3>
-      <p>
-        ใช้ CapCut Template เป็นเครื่องมือสร้าง User Generated Content  
-        เพิ่มการค้นหาแบบ Organic
-      </p>
-    </div>
-
-    <div class="seo-card">
-      <h3>Dark / Viral Style</h3>
-      <p>
-        คอนเทนต์สายดาร์ก ดิบ เท่  
-        เหมาะกับแบรนด์ที่ต้องการเติบโตเร็ว
-      </p>
-    </div>
-
-    <div class="seo-card">
-      <h3>เหมาะกับ Creator & ธุรกิจ</h3>
-      <p>
-        ทั้ง Creator, SME, ร้านค้า  
-        หรือแบรนด์ที่ต้องการผลลัพธ์มากกว่าคำสวย ๆ
-      </p>
-    </div>
-
+<!-- HERO (IDENTITY LOCK) -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>SEO สำหรับ Creator & Viral Content</h1>
+    <p>
+      วางโครงสร้าง SEO สำหรับ YouTube, CapCut, Short Video และเว็บไซต์สายดาร์ก  
+      เน้นการเติบโตจริง ไม่ปั่น ไม่มั่ว สร้าง Authority ระยะยาว
+    </p>
   </div>
 </section>
 
-<section class="seo-cta">
-  <a href="contact.html">ปรึกษา SEO กับเรา</a>
+<!-- CONTENT -->
+<section class="section">
+  <h2>สิ่งที่เราโฟกัส</h2>
+
+  <div class="features">
+    <div class="feature-card">
+      <h3>SEO สำหรับวิดีโอ</h3>
+      <p>โครงสร้าง SEO สำหรับ YouTube / Shorts / Reels ให้คลิปติดระยะยาว</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Content Authority</h3>
+      <p>สร้างตัวตน Creator ให้ Google และ Platform มองว่า “คุณคือของจริง”</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Viral + Search</h3>
+      <p>ผสาน Viral Content กับ SEO ไม่ใช่เลือกอย่างใดอย่างหนึ่ง</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Dark / Raw Branding</h3>
+      <p>ไม่ใช้ SEO สายขาวที่ฆ่าเอกลักษณ์แบรนด์ของคุณ</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>พร้อมยกระดับตัวตนของคุณหรือยัง</h2>
+  <a href="contact.html">ติดต่อ SN Design Studio</a>
 </section>
 
 <footer>
