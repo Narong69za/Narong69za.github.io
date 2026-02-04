@@ -1,1 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Templates | SN Design Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Try creating content with SN Design Studio templates. Limited trial for creators." />
+  <meta name="robots" content="index, follow" />
 
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #050505;
+      color: #ffffff;
+    }
+
+    a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(5,5,5,0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid #111;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+        url("assets/images/hero-master.png") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: #bbbbbb;
+      max-width: 520px;
+      margin: auto;
+    }
+
+    /* ===== TRIAL ===== */
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 40px;
+    }
+
+    .trial-box {
+      background: #0c0c0c;
+      border: 1px solid #1a1a1a;
+      border-radius: 14px;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .trial-box input,
+    .trial-box select {
+      width: 100%;
+      max-width: 420px;
+      margin: 12px auto;
+      padding: 14px;
+      background: #111;
+      border: 1px solid #222;
+      color: #fff;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 32px;
+      border-radius: 10px;
+      background: #e50914;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: #080808;
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h3 {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 36px;
+      border-radius: 12px;
+      background: #06c755;
+      color: #000;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 12px;
+      color: #666;
+      border-top: 1px solid #111;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-inner">
+      <strong>SN DESIGN STUDIO</strong>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="templates.html">Templates</a>
+        <a href="services.html">Services</a>
+        <a href="creator.html">Creator</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Try Creating Content</h1>
+      <p>
+        Experience how SN Design Studio templates work.  
+        Limited trial for real creators.
+      </p>
+    </div>
+  </section>
+
+  <!-- TRIAL SECTION -->
+  <section class="section">
+    <h2>Start Your Trial</h2>
+
+    <div class="trial-box">
+      <input type="file" disabled value="Upload image (trial mode)" />
+      <select disabled>
+        <option>Select template (limited)</option>
+      </select>
+
+      <a class="btn" href="services.html">Create (Limited Trial)</a>
+
+      <div class="note">
+        Trial access is limited.  
+        Upgrade to unlock full creation and commercial use.
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h3>Want Full Access?</h3>
+    <p>Upgrade your workflow with SN Design Studio services.</p>
+    <a href="contact.html">Contact via LINE</a>
+  </section>
+
+  <footer>
+    © 2026 SN Design Studio · All rights reserved.
+  </footer>
+
+</body>
+</html>
