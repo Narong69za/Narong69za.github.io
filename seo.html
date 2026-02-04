@@ -1,233 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>SEO | SN Design Studio</title>
+  <title>SEO Services | SN Design Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SEO and discoverability systems by SN Design Studio. Built for creators, templates, and monetized content." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="บริการ SEO สายดาร์ก คอนเทนต์ไวรัล วิดีโอ CapCut และ AI Short Video โดย SN Design Studio" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #050505;
-      color: #ffffff;
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    /* ===== NAV ===== */
-    .nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(5,5,5,0.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid #111;
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: auto;
+    header {
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 20px;
+      border-bottom: 1px solid #111;
     }
 
-    .nav-links a {
-      margin-left: 20px;
+    nav a {
+      color: #fff;
+      margin-left: 16px;
+      text-decoration: none;
       font-size: 14px;
-      opacity: 0.85;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 70vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
-        url("assets/images/hero-master.png") center / cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .seo-hero {
+      padding: 80px 20px 60px;
       text-align: center;
-      padding: 120px 20px 60px;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 14px;
-      letter-spacing: 1px;
-    }
-
-    .hero p {
-      font-size: 15px;
-      color: #bbbbbb;
-      max-width: 580px;
+      max-width: 900px;
       margin: auto;
     }
 
-    /* ===== SECTIONS ===== */
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 20px;
+    .seo-hero h1 {
+      font-size: 34px;
+      margin-bottom: 16px;
     }
 
-    .section h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 60px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: #0c0c0c;
-      border: 1px solid #1a1a1a;
-      border-radius: 16px;
-      padding: 36px 28px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #aaaaaa;
+    .seo-hero p {
+      font-size: 16px;
+      color: #aaa;
       line-height: 1.6;
     }
 
-    /* ===== CTA ===== */
-    .cta {
-      background: #080808;
-      border-top: 1px solid #1a1a1a;
-      text-align: center;
-      padding: 90px 20px;
+    .seo-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
     }
 
-    .cta h3 {
-      font-size: 26px;
-      margin-bottom: 14px;
+    .seo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
     }
 
-    .cta p {
-      font-size: 14px;
-      color: #aaaaaa;
-      margin-bottom: 30px;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 14px 38px;
+    .seo-card {
+      background: #0d0d0d;
+      border: 1px solid #1a1a1a;
       border-radius: 12px;
-      background: #06c755;
+      padding: 24px;
+    }
+
+    .seo-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .seo-card p {
+      font-size: 14px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .seo-cta {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .seo-cta a {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #00cc66;
       color: #000;
-      font-weight: 700;
-      font-size: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 12px;
-      color: #666;
       border-top: 1px solid #111;
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #666;
     }
   </style>
 </head>
 
-<body>
+<body class="page-seo">
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="nav-inner">
-      <strong>SN DESIGN STUDIO</strong>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="templates.html">Templates</a>
-        <a href="services.html">Services</a>
-        <a href="creator.html">Creator</a>
-        <a href="seo.html">SEO</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-  </div>
+<header>
+  <strong>SN DESIGN STUDIO</strong>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="services.html">Services</a>
+    <a href="templates.html">Templates</a>
+    <a href="seo.html">SEO</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h1>SEO Built for Creators</h1>
+<section class="seo-hero">
+  <h1>SEO สายดาร์ก & วิดีโอไวรัล</h1>
+  <p>
+    เราไม่ได้ทำ SEO แบบตำรา  
+    แต่ทำ SEO ด้วยคอนเทนต์จริง วิดีโอจริง และทราฟฟิกจริง  
+    เพื่อดันแบรนด์ให้โตบน Google, YouTube และ Social
+  </p>
+</section>
+
+<section class="seo-section">
+  <div class="seo-grid">
+
+    <div class="seo-card">
+      <h3>SEO + Video Content</h3>
       <p>
-        Discoverability systems designed for content, templates,  
-        and long-term organic growth.
+        ผสานวิดีโอ Short, Reels, YouTube Shorts  
+        เพื่อสร้างทราฟฟิกที่ Google มองว่า “มีตัวตนจริง”
       </p>
     </div>
-  </section>
 
-  <!-- CONTENT -->
-  <section class="section">
-    <h2>How We Approach SEO</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Creator-First Structure</h3>
-        <p>
-          SEO is built around how creators publish, reuse, and scale content —
-          not generic keyword stuffing.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Template-Based Indexing</h3>
-        <p>
-          Each template and content flow is structured to be searchable,
-          reusable, and index-friendly across platforms.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Platform Alignment</h3>
-        <p>
-          Content is aligned with how platforms like YouTube and web search
-          discover and recommend media.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Long-Term Growth Focus</h3>
-        <p>
-          We build systems meant to grow over time,
-          not short-lived traffic spikes.
-        </p>
-      </div>
+    <div class="seo-card">
+      <h3>CapCut Template Strategy</h3>
+      <p>
+        ใช้ CapCut Template เป็นเครื่องมือสร้าง User Generated Content  
+        เพิ่มการค้นหาแบบ Organic
+      </p>
     </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <h3>Build Discoverability That Lasts</h3>
-    <p>
-      Integrate SEO into your creator system with SN Design Studio.
-    </p>
-    <a href="contact.html">Contact via LINE</a>
-  </section>
+    <div class="seo-card">
+      <h3>Dark / Viral Style</h3>
+      <p>
+        คอนเทนต์สายดาร์ก ดิบ เท่  
+        เหมาะกับแบรนด์ที่ต้องการเติบโตเร็ว
+      </p>
+    </div>
 
-  <footer>
-    © 2026 SN Design Studio · All rights reserved.
-  </footer>
+    <div class="seo-card">
+      <h3>เหมาะกับ Creator & ธุรกิจ</h3>
+      <p>
+        ทั้ง Creator, SME, ร้านค้า  
+        หรือแบรนด์ที่ต้องการผลลัพธ์มากกว่าคำสวย ๆ
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="seo-cta">
+  <a href="contact.html">ปรึกษา SEO กับเรา</a>
+</section>
+
+<footer>
+  © SN Design Studio, 2026 · All rights reserved.
+</footer>
 
 </body>
-        </html>
+</html>
