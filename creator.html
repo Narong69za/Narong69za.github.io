@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator | SN Design Studio</title>
 
+<style>
+/* ===============================
+   RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   BASE
+================================ */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+/* ===============================
+   CREATOR HERO (VISUAL ONLY)
+================================ */
+.creator-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* HERO IMAGE */
+.creator-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.creator-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* SAFE CONTENT ZONE (EMPTY BY DESIGN) */
+.creator-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===============================
+   NEXT SECTION (RESERVED)
+================================ */
+.creator-next {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .creator-hero {
+    height: 100svh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===============================
+     CREATOR HERO
+================================ -->
+<section class="creator-hero">
+  <!-- 🔒 ใช้ไฟล์ภาพ Creator Hero ที่คุณล็อค -->
+  <img src="assets/images/creator-hero.png" alt="SN Design Studio Creator">
+  <div class="creator-hero-content"></div>
+</section>
+
+<!-- ===============================
+     NEXT BLOCK (ยังไม่ใช้งาน)
+================================ -->
+<section class="creator-next">
+  <!-- reserved -->
+</section>
+
+</body>
+</html>
