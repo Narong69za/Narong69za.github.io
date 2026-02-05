@@ -1,47 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>SN Design Studio | AI Short Video & CapCut Creator</title>
-<meta name="description" content="AI Short Video & CapCut Creator – Dark, Raw, Viral Marketing">
-<style>
-body{
-  margin:0;
-  background:#000;
-  font-family:Arial, Helvetica, sans-serif;
-}
-.hero img{
-  width:100%;
-  display:block;
-}
-.cta{
-  text-align:center;
-  padding:30px 0;
-}
-.btn{
-  display:inline-block;
-  margin:10px;
-  padding:14px 22px;
-  border-radius:6px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-}
-.red{background:#e53935;}
-.green{background:#2ecc71;}
-</style>
+
+<meta name="description"
+content="SN Design Studio — AI Short Video, CapCut Template Creator, Viral Marketing Visual System.">
+
+<link rel="stylesheet" href="assets/css/master.css">
+
 </head>
+
 <body>
 
-<section class="hero">
-  <img src="assets/images/hero.png" alt="SN Design Studio Hero">
+<!-- ULTRA NAV GLOBAL -->
+<div id="nav"></div>
+
+<!-- HERO MASTER -->
+<section class="hero-master">
+
+<img src="assets/images/hero.png" alt="SN Design Studio Hero">
+
+<div class="hero-content-bottom fade-up">
+
+<h1>AI Short Video & CapCut Creator</h1>
+
+<p>
+Dark • Raw • Viral — Built for creators, marketers and brands
+</p>
+
+<div class="hero-buttons">
+
+<a href="packages.html" class="btn-primary">View Packages</a>
+
+<a href="contact.html" class="btn-secondary">Contact</a>
+
+</div>
+
+</div>
+
 </section>
 
-<div class="cta">
-  <a href="packages.html" class="btn red">VIEW PACKAGES</a>
-  <a href="contact.html" class="btn green">CONTACT</a>
+
+<!-- CONTENT SECTION -->
+
+<section class="section">
+
+<div class="container fade-up">
+
+<h2 class="section-title">Ads-Grade Visual System</h2>
+
+<p class="section-text">
+Designed from real performance data — not decoration.
+Built for mobile-first creator workflow.
+</p>
+
 </div>
+
+</section>
+
+
+<footer>
+
+© SN Design Studio, 2026 · All rights reserved.
+
+</footer>
+
+
+<!-- NAV AUTO LOAD -->
+<script src="assets/js/nav.js"></script>
+
+<!-- PREMIUM SCROLL ANIMATION -->
+<script>
+
+const elements = document.querySelectorAll(".fade-up");
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+elements.forEach(el => observer.observe(el));
+
+</script>
 
 </body>
 </html>
