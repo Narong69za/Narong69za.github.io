@@ -3,54 +3,128 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Templates | SN Design Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
 <style>
 
 body{
+margin:0;
 background:#000;
 color:#fff;
 font-family:Arial,Helvetica,sans-serif;
-margin:0;
 }
+
+/* NAV */
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.85);
+z-index:999;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+padding:14px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:18px;
+}
+
+nav a{
+color:#ccc;
+text-decoration:none;
+font-size:13px;
+}
+
+/* HERO MASTER */
+
+.hero-master{
+position:relative;
+width:100%;
+height:100svh;
+overflow:hidden;
+display:flex;
+align-items:flex-end;
+justify-content:center;
+}
+
+.hero-master img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-master::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
+
+.hero-content-bottom{
+position:relative;
+z-index:2;
+width:100%;
+text-align:center;
+padding:20px;
+margin-bottom:40px;
+}
+
+/* TEMPLATE GRID */
 
 .section{
 max-width:1200px;
 margin:auto;
-padding:60px 20px;
+padding:80px 20px;
+}
+
+.templates-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:24px;
 }
 
 .template-card{
-display:flex;
-align-items:center;
-gap:14px;
 background:#0d0d0d;
-border-radius:14px;
-margin-bottom:18px;
+border-radius:12px;
 overflow:hidden;
+border:1px solid #1a1a1a;
+transition:.3s;
+}
+
+.template-card:hover{
+transform:translateY(-6px);
 }
 
 .template-card img{
-width:90px;
-height:90px;
-object-fit:cover;
+width:100%;
+display:block;
 }
 
-.generate-btn{
-margin-top:30px;
-background:#2ecc71;
-color:#000;
-padding:18px;
-border-radius:30px;
+.template-info{
+padding:16px;
 text-align:center;
-font-weight:bold;
+}
+
+.template-info h3{
+margin-bottom:10px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -58,6 +132,7 @@ font-weight:bold;
 <header>
 <nav>
 <div>SN DESIGN STUDIO</div>
+
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="packages.html">Packages</a></li>
@@ -66,19 +141,20 @@ font-weight:bold;
 <li><a href="seo.html">SEO</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
+
 </nav>
 </header>
 
-<!-- HERO MASTER (LOCK) -->
+<!-- HERO LANDING (LOCK MASTER) -->
 
 <section class="hero-master">
 
-<img src="assets/images/landing.png">
+<img src="assets/images/landing.png" alt="SN Design Studio Templates">
 
 <div class="hero-content-bottom">
 
-<h1>CapCut AI Templates</h1>
-<p>Create Viral Videos Faster</p>
+<h1>Template Collection</h1>
+<p>Dark • Raw • Viral CapCut Creator System</p>
 
 </div>
 
@@ -88,31 +164,35 @@ font-weight:bold;
 
 <section class="section">
 
-<h2>Template Collection</h2>
+<div class="templates-grid">
 
 <div class="template-card">
-<img src="assets/images/template-dark-viral.png.jpg">
-<div>Dark Viral</div>
+<img src="assets/images/template-dark-viral.jpg">
+<div class="template-info">
+<h3>Dark Viral Style</h3>
+</div>
 </div>
 
 <div class="template-card">
-<img src="assets/images/template-ai-lipsync.png.jpg">
-<div>AI Lipsync</div>
+<img src="assets/images/template-ai-lipsync.jpg">
+<div class="template-info">
+<h3>AI LipSync Creator</h3>
+</div>
 </div>
 
 <div class="template-card">
-<img src="assets/images/template-dance-motion.png.jpg">
-<div>Dance Motion</div>
+<img src="assets/images/template-dance-motion.jpg">
+<div class="template-info">
+<h3>Dance Motion Template</h3>
+</div>
 </div>
 
 <div class="template-card">
-<img src="assets/images/template-face-swap.png.jpg">
-<div>Face Swap</div>
+<img src="assets/images/template-face-swap.jpg">
+<div class="template-info">
+<h3>Face Swap AI</h3>
 </div>
-
-<div class="generate-btn">
-
-Generate AI Template
+</div>
 
 </div>
 
