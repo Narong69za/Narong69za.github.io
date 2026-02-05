@@ -1,70 +1,69 @@
-/* =====================================================
-   SN DESIGN STUDIO — MASTER CSS
-   ULTRA PRO SYSTEM
-   Mobile First / No Overflow / Hero Safe
-===================================================== */
+/* ======================================
+   SN DESIGN STUDIO — ULTRA MASTER CSS
+   MOBILE FIRST FINAL
+====================================== */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-html,body{
-width:100%;
-overflow-x:hidden;   /* กันล้นข้างทั้งหมด */
-background:#000;
-color:#fff;
 font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
 
-/* =====================================================
-   NAV MASTER (AUTO INJECT READY)
-===================================================== */
+/* ===============================
+   NAV MASTER
+================================ */
 
-.nav-header{
+header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(0,0,0,.85);
-backdrop-filter:blur(6px);
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(8px);
 z-index:999;
 transition:transform .35s ease;
+}
+
+nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 18px;
+}
+
+nav ul{
+display:flex;
+gap:16px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#bbb;
+font-size:13px;
+}
+
+nav a:hover{
+color:#fff;
 }
 
 .header-hide{
 transform:translateY(-100%);
 }
 
-.nav-master{
-max-width:1200px;
-margin:auto;
-padding:14px 20px;
-}
 
-.nav-menu{
-list-style:none;
-display:flex;
-gap:18px;
-align-items:center;
-}
-
-.nav-menu a{
-color:#ccc;
-text-decoration:none;
-font-size:13px;
-}
-
-.nav-menu a:hover{
-color:#fff;
-}
-
-
-/* =====================================================
-   HERO MASTER SAFE (NO OVERFLOW MOBILE)
-===================================================== */
+/* ===============================
+   HERO MASTER SYSTEM (FINAL SAFE)
+================================ */
 
 .hero-master{
 position:relative;
@@ -76,16 +75,16 @@ align-items:flex-end;
 justify-content:center;
 }
 
-/* IMPORTANT SAFE FIX */
+/* HERO IMAGE SAFE WIDTH */
 .hero-master img{
 position:absolute;
 top:0;
 left:50%;
 transform:translateX(-50%);
+width:100%;
 height:100%;
-width:auto;        /* กันล้นข้าง */
-max-width:none;
 object-fit:cover;
+object-position:center;
 }
 
 /* overlay */
@@ -96,73 +95,59 @@ inset:0;
 background:rgba(0,0,0,.35);
 }
 
-/* CONTENT BELOW IMAGE */
+/* HERO CONTENT BELOW */
 .hero-content-bottom{
 position:relative;
 z-index:2;
-width:100%;
 text-align:center;
+width:100%;
 padding:20px;
 margin-bottom:40px;
 }
 
 
-/* =====================================================
-   SECTION MASTER
-===================================================== */
+/* ===============================
+   GLOBAL SECTIONS
+================================ */
 
-.section{
+section{
 padding:80px 20px;
-max-width:1200px;
+max-width:1100px;
 margin:auto;
-}
-
-.section h2{
-margin-bottom:20px;
-}
-
-.section p{
-color:#aaa;
-font-size:14px;
-}
-
-
-/* =====================================================
-   CARD SYSTEM
-===================================================== */
-
-.card{
-background:#0d0d0d;
-border-radius:14px;
-overflow:hidden;
-border:1px solid #1a1a1a;
-}
-
-.card img{
-width:100%;
-display:block;
-}
-
-.card-content{
-padding:20px;
 text-align:center;
 }
 
+h1{
+font-size:28px;
+margin-bottom:12px;
+}
 
-/* =====================================================
-   BUTTON MASTER
-===================================================== */
+h2{
+font-size:24px;
+margin-bottom:20px;
+}
+
+p{
+color:#aaa;
+font-size:14px;
+line-height:1.6;
+}
+
+
+/* ===============================
+   BUTTONS
+================================ */
 
 .btn{
 display:inline-block;
-padding:12px 22px;
-border-radius:8px;
+padding:12px 20px;
+border-radius:6px;
 font-weight:bold;
 text-decoration:none;
 }
 
 .btn-green{
-background:#2ecc71;
+background:#06c755;
 color:#000;
 }
 
@@ -172,55 +157,36 @@ color:#fff;
 }
 
 
-/* =====================================================
-   TEMPLATE COLLECTION
-===================================================== */
+/* ===============================
+   CARD GRID
+================================ */
 
-.template-grid{
+.grid{
 display:grid;
-grid-template-columns:1fr;
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
 }
 
-.template-card{
+.card{
 background:#0d0d0d;
-border-radius:18px;
+border-radius:12px;
+border:1px solid #1a1a1a;
 overflow:hidden;
-text-align:center;
 }
 
-.template-card img{
+.card img{
 width:100%;
 display:block;
 }
 
-
-/* =====================================================
-   CONTACT GRID
-===================================================== */
-
-.contact-grid{
-display:grid;
-grid-template-columns:1fr;
-gap:20px;
-}
-
-.contact-card{
-background:#0d0d0d;
-border-radius:16px;
+.card-content{
 padding:20px;
-text-align:center;
-}
-
-.contact-card img{
-width:100%;
-border-radius:10px;
 }
 
 
-/* =====================================================
+/* ===============================
    SCROLL ANIMATION
-===================================================== */
+================================ */
 
 .fade-up{
 opacity:0;
@@ -234,32 +200,30 @@ transform:none;
 }
 
 
-/* =====================================================
+/* ===============================
    FOOTER
-===================================================== */
+================================ */
 
 footer{
-padding:30px 0;
+padding:40px 20px;
 text-align:center;
-font-size:12px;
 color:#666;
-border-top:1px solid #111;
-}
-
-
-/* =====================================================
-   MOBILE SAFE (REAL DEVICE)
-===================================================== */
-
-@media(max-width:600px){
-
-.nav-menu{
-gap:12px;
 font-size:12px;
 }
 
-.hero-content-bottom{
-margin-bottom:30px;
+
+/* ===============================
+   MOBILE SAFE FIX
+================================ */
+
+@media(max-width:768px){
+
+.hero-master{
+height:100svh;
 }
 
-   }
+h1{
+font-size:24px;
+}
+
+}
