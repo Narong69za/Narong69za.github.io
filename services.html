@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
+
+<meta charset="UTF-8">
 <title>Services | SN Design Studio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Professional short-form video services by SN Design Studio."/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional short-form video services by SN Design Studio. Built for creators and brands.">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
 <style>
+
+/* ===== BASIC ===== */
+
 body{
 margin:0;
 background:#050505;
@@ -26,7 +31,16 @@ section{
 padding:90px 0;
 }
 
-h1,h2{text-align:center}
+h1,h2{
+text-align:center;
+}
+
+p{
+color:#aaa;
+line-height:1.7;
+}
+
+/* ===== SERVICE GRID ===== */
 
 .service-grid{
 display:grid;
@@ -41,13 +55,32 @@ border-radius:20px;
 padding:40px 30px;
 }
 
+/* ===== WHY ===== */
+
 .why{
 background:#0b0b0b;
 border-top:1px solid #1a1a1a;
 border-bottom:1px solid #1a1a1a;
 }
 
-.cta{text-align:center;margin-top:60px}
+.why-list{
+max-width:720px;
+margin:auto;
+padding:0;
+}
+
+.why-list li{
+list-style:none;
+margin-bottom:14px;
+color:#bbb;
+}
+
+/* ===== CTA ===== */
+
+.cta{
+text-align:center;
+margin-top:60px;
+}
 
 .cta a{
 display:inline-block;
@@ -55,10 +88,18 @@ margin:12px;
 padding:16px 32px;
 border-radius:14px;
 font-weight:600;
+text-decoration:none;
 }
 
-.cta-primary{background:#06c755;color:#000}
-.cta-secondary{background:#1c1c1c}
+.cta-primary{
+background:#06c755;
+color:#000;
+}
+
+.cta-secondary{
+background:#1c1c1c;
+color:#fff;
+}
 
 footer{
 padding:40px 20px;
@@ -67,34 +108,43 @@ font-size:12px;
 color:#777;
 border-top:1px solid #1a1a1a;
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- MASTER NAV -->
-<header>
-<nav>
-<div>SN DESIGN STUDIO</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="packages.html">Packages</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="templates.html">Templates</a></li>
-<li><a href="seo.html">SEO</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
 
-<!-- HERO MASTER -->
+<!-- ===============================
+HERO MASTER (NO OVERFLOW)
+================================ -->
+
 <section class="hero-master">
 
-<img src="assets/images/hero.png" alt="Hero">
+<img src="assets/images/hero.png" alt="SN Design Studio Services">
+
+<div class="hero-content-bottom">
+
+<h1>Professional Short-Form Video Services</h1>
+
+<p>
+Built by creators.<br>
+Designed for growth.
+</p>
+
+</div>
+
 </section>
 
-<!-- SERVICES -->
+
+<!-- ===============================
+SERVICES
+================================ -->
+
 <section>
+
 <div class="container">
 
 <h2>What We Do</h2>
@@ -103,46 +153,74 @@ border-top:1px solid #1a1a1a;
 
 <div class="service-card">
 <h3>Image to Video Creation</h3>
-<p>Transform still images into cinematic short videos.</p>
+<p>
+Transform still images into cinematic short videos.
+Optimized for vertical platforms and fast attention.
+</p>
 </div>
 
 <div class="service-card">
 <h3>CapCut-Ready Motion</h3>
-<p>Videos designed to fit CapCut templates perfectly.</p>
+<p>
+Videos designed to fit CapCut templates perfectly.
+Easy reuse for creators and brands.
+</p>
 </div>
 
 <div class="service-card">
 <h3>Creator-Focused Workflow</h3>
-<p>Built for real creators who publish daily.</p>
+<p>
+Built for real creators who publish content daily.
+</p>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
+
+<!-- ===============================
+WHY
+================================ -->
+
 <section class="why">
+
 <div class="container">
 
 <h2>Why SN Design Studio</h2>
 
-<ul>
+<ul class="why-list">
+
 <li>✔ Built by active CapCut & YouTube creators</li>
-<li>✔ No generic templates</li>
+<li>✔ No generic templates or stock systems</li>
 <li>✔ Optimized for short-form platforms</li>
-<li>✔ Clear upgrade path</li>
+<li>✔ Clear upgrade path from free preview</li>
+
 </ul>
 
 <div class="cta">
-<a href="templates.html" class="cta-secondary">Try Free Preview</a>
-<a href="contact.html" class="cta-primary">Get Full Access</a>
+
+<a href="templates.html" class="cta-secondary">
+Try Free Preview
+</a>
+
+<a href="contact.html" class="cta-primary">
+Get Full Access
+</a>
+
 </div>
 
 </div>
+
 </section>
+
 
 <footer>
 © 2026 SN Design Studio · Services
 </footer>
 
+
 </body>
-  </html>
+</html>
