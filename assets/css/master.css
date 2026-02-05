@@ -166,3 +166,65 @@ padding:60px 16px;
 }
 
 }
+/* ===============================
+   HERO MASTER SYSTEM (MOBILE FIRST)
+================================ */
+
+/* HERO container */
+.hero-master{
+  position:relative;
+  width:100%;
+  height:100svh;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+/* HERO image FULL WIDTH */
+.hero-master img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* overlay */
+.hero-master::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+/* content BELOW IMAGE (ไม่บังหน้า) */
+.hero-content-bottom{
+  position:relative;
+  z-index:2;
+  width:100%;
+  text-align:center;
+  padding:20px;
+  margin-bottom:40px;
+}
+
+/* NAV AUTO HIDE MOBILE */
+header{
+  transition:transform .35s ease;
+}
+
+.header-hide{
+  transform:translateY(-100%);
+}
+
+/* SCROLL ANIMATION */
+.fade-up{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.6s ease;
+}
+
+.fade-up.show{
+  opacity:1;
+  transform:none;
+}
