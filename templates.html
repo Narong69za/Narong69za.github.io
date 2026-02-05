@@ -4,27 +4,15 @@
 
 <meta charset="UTF-8">
 <title>Templates | SN Design Studio</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO CORE -->
-<meta name="description" content="AI CapCut Templates สำหรับ Creator — Dark Raw Viral Style สร้างวิดีโอไวรัลด้วยระบบ SN Design Studio">
-<meta name="keywords" content="CapCut Template, AI Video Creator, Viral Video Template, Short Video Creator, SN Design Studio">
-<meta name="robots" content="index,follow">
+<meta name="description" content="AI CapCut Templates สำหรับ Creator — Dark Raw Viral Style">
+<meta name="keywords" content="CapCut Template, AI Video Creator, Viral Template">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif
-}
-
-body{
-background:#000;
-color:#fff
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#000;color:#fff}
 
 /* NAV */
 
@@ -33,6 +21,7 @@ position:fixed;
 top:0;
 width:100%;
 background:rgba(0,0,0,.85);
+transition:.3s;
 z-index:999
 }
 
@@ -42,73 +31,42 @@ margin:auto;
 padding:14px 20px;
 display:flex;
 justify-content:space-between;
-align-items:center
 }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:18px
-}
-
-nav a{
-color:#ccc;
-text-decoration:none;
-font-size:13px
-}
-
-nav a:hover{
-color:#fff
-}
+nav ul{display:flex;gap:16px;list-style:none}
+nav a{color:#ccc;text-decoration:none;font-size:13px}
 
 
 /* HERO MASTER */
 
 .hero{
-
-position:relative;
 height:100svh;
 margin-top:56px;
+position:relative;
 overflow:hidden;
 display:flex;
 align-items:center;
-justify-content:center;
-
+justify-content:center
 }
 
 .hero img{
-
 position:absolute;
-inset:0;
 width:100%;
 height:100%;
-object-fit:cover;
-
+object-fit:cover
 }
 
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.5);
+background:rgba(0,0,0,.5)
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-text-align:center;
-padding:20px;
-max-width:700px
-}
-
-.hero h1{
-font-size:26px;
-margin-bottom:10px
-}
-
-.hero p{
-color:#ccc;
-font-size:14px;
+text-align:center
 }
 
 
@@ -118,63 +76,65 @@ font-size:14px;
 padding:80px 20px;
 max-width:1200px;
 margin:auto;
-text-align:center
 }
 
 
-/* LANDING IMAGE (MASTER) */
+/* LANDING */
 
-.template-landing img{
+.landing img{
 width:100%;
-display:block;
 border-radius:12px
 }
 
 
-/* TEMPLATE GRID */
+/* SLIDER */
 
-.templates{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-margin-top:40px
+.slider{
+display:flex;
+overflow-x:auto;
+gap:16px;
+scroll-snap-type:x mandatory;
 }
 
 .card{
+min-width:280px;
 background:#0d0d0d;
-border:1px solid #1a1a1a;
 border-radius:12px;
-overflow:hidden
+scroll-snap-align:start;
 }
 
-.card img{
-width:100%;
-display:block
+.card img{width:100%}
+
+.card-content{padding:14px}
+
+
+/* SCROLL ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:.6s
 }
 
-.card-content{
-padding:16px
+.fade.show{
+opacity:1;
+transform:none
 }
 
-.btn{
-display:inline-block;
-margin-top:10px;
-padding:10px 18px;
+
+/* STICKY CTA */
+
+.sticky{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
 background:#2ecc71;
+padding:14px 22px;
+border-radius:40px;
 color:#000;
-text-decoration:none;
-border-radius:6px;
-font-weight:bold
-}
-
-
-/* FOOTER */
-
-footer{
-padding:30px 0;
-text-align:center;
-color:#666;
-font-size:12px
+font-weight:bold;
+z-index:999
 }
 
 </style>
@@ -182,121 +142,102 @@ font-size:12px
 
 <body>
 
-<header>
-
+<header id="nav">
 <nav>
-
 <div>SN DESIGN STUDIO</div>
-
 <ul>
-
 <li><a href="index.html">Home</a></li>
 <li><a href="packages.html">Packages</a></li>
 <li><a href="services.html">Services</a></li>
 <li><a href="templates.html">Templates</a></li>
 <li><a href="seo.html">SEO</a></li>
 <li><a href="contact.html">Contact</a></li>
-
 </ul>
-
 </nav>
-
 </header>
 
-
-<!-- HERO MASTER -->
-
 <section class="hero">
-
-<img src="assets/images/templates-hero.png" alt="SN Templates">
-
+<img src="assets/images/templates-hero.png">
 <div class="hero-content">
-
 <h1>CapCut AI Templates</h1>
-
-<p>Create Viral Short Videos Faster with SN Design Studio System</p>
-
+<p>Create Viral Videos Faster</p>
 </div>
-
 </section>
 
-
-<!-- CREATOR FLOW (landing.png) -->
-
-<section class="section">
-
-<h2>Creator System</h2>
-
-<div class="template-landing">
-
-<img src="assets/images/landing.png" alt="Creator Workflow">
-
+<section class="section fade">
+<h2>Creator Workflow</h2>
+<div class="landing">
+<img src="assets/images/landing.png">
 </div>
-
 </section>
 
-
-
-<!-- TEMPLATE LIST -->
-
-<section class="section">
+<section class="section fade">
 
 <h2>Template Collection</h2>
 
-<div class="templates">
+<div class="slider">
 
 <div class="card">
-
 <img src="assets/images/template1.png">
-
-<div class="card-content">
-
-<h3>Dark Viral Template</h3>
-
-<a class="btn">Use Template</a>
-
-</div>
-
+<div class="card-content">Dark Viral</div>
 </div>
 
 <div class="card">
-
 <img src="assets/images/template2.png">
-
-<div class="card-content">
-
-<h3>Lip Sync AI</h3>
-
-<a class="btn">Use Template</a>
-
-</div>
-
+<div class="card-content">AI Lip Sync</div>
 </div>
 
 <div class="card">
-
 <img src="assets/images/template3.png">
-
-<div class="card-content">
-
-<h3>Motion Clone</h3>
-
-<a class="btn">Use Template</a>
-
-</div>
-
+<div class="card-content">Motion Clone</div>
 </div>
 
 </div>
 
 </section>
 
+<div class="sticky">Generate AI Template</div>
 
-<footer>
+<script>
 
-© SN Design Studio, 2026 · All rights reserved.
+/* NAV AUTO HIDE */
 
-</footer>
+let lastScroll=0
+const nav=document.getElementById('nav')
+
+window.addEventListener('scroll',()=>{
+
+const current=window.pageYOffset
+
+if(current>lastScroll){
+nav.style.top="-80px"
+}else{
+nav.style.top="0"
+}
+
+lastScroll=current
+
+})
+
+
+/* SCROLL ANIMATION */
+
+const fades=document.querySelectorAll('.fade')
+
+window.addEventListener('scroll',()=>{
+
+fades.forEach(el=>{
+const top=el.getBoundingClientRect().top
+
+if(top<window.innerHeight-80){
+el.classList.add('show')
+}
+
+})
+
+})
+
+</script>
 
 </body>
 </html>
