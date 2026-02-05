@@ -158,3 +158,44 @@ font-size:13px;
   font-size:14px;
   white-space:nowrap;
   }
+/* ==================================
+ULTRA TEMPLATE SAFE (NO OVERFLOW)
+================================== */
+
+.template-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:24px;
+}
+
+.template-card{
+width:100%;
+overflow:hidden;
+border-radius:18px;
+background:#0e0e0e;
+}
+
+.template-card img{
+width:100%;
+height:auto;
+display:block;
+object-fit:cover;
+}
+
+/* ป้องกันภาพล้น mobile */
+img{
+max-width:100%;
+height:auto;
+}
+
+/* HERO ไม่ล้น */
+.hero-master{
+width:100%;
+overflow:hidden;
+}
+
+.hero-master img{
+max-width:100%;
+height:auto;
+object-fit:cover;
+}
