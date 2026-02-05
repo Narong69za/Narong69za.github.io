@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Templates | SN Design Studio</title>
 
@@ -10,46 +11,43 @@
 
 <style>
 
-body{background:#000;color:#fff;margin:0;font-family:Arial}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
+body{
+background:#000;
+color:#fff;
+font-family:Arial,Helvetica,sans-serif;
+margin:0;
 }
 
-.template-grid{
-display:grid;
-grid-template-columns:1fr;
-gap:20px;
+.section{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
 }
 
 .template-card{
+display:flex;
+align-items:center;
+gap:14px;
 background:#0d0d0d;
 border-radius:14px;
+margin-bottom:18px;
 overflow:hidden;
 }
 
 .template-card img{
-width:100%;
-display:block;
+width:90px;
+height:90px;
+object-fit:cover;
 }
 
-.template-title{
-padding:14px;
-}
-
-.btn-main{
-display:block;
-margin:40px auto;
-padding:16px 30px;
+.generate-btn{
+margin-top:30px;
 background:#2ecc71;
 color:#000;
+padding:18px;
 border-radius:30px;
 text-align:center;
 font-weight:bold;
-width:80%;
-max-width:320px;
 }
 
 </style>
@@ -71,35 +69,52 @@ max-width:320px;
 </nav>
 </header>
 
-<section class="container">
+<!-- HERO MASTER (LOCK) -->
 
-<h1>Template Collection</h1>
+<section class="hero-master">
 
-<div class="template-grid">
+<img src="assets/images/landing.png">
+
+<div class="hero-content-bottom">
+
+<h1>CapCut AI Templates</h1>
+<p>Create Viral Videos Faster</p>
+
+</div>
+
+</section>
+
+<!-- TEMPLATE COLLECTION -->
+
+<section class="section">
+
+<h2>Template Collection</h2>
 
 <div class="template-card">
-<img src="assets/images/template-dark-viral.png">
-<div class="template-title">Dark Viral</div>
+<img src="assets/images/template-dark-viral.png.jpg">
+<div>Dark Viral</div>
 </div>
 
 <div class="template-card">
-<img src="assets/images/template-ai-lipsync.png">
-<div class="template-title">AI Lipsync</div>
+<img src="assets/images/template-ai-lipsync.png.jpg">
+<div>AI Lipsync</div>
 </div>
 
 <div class="template-card">
-<img src="assets/images/template-dance-motion.png">
-<div class="template-title">Dance Motion</div>
+<img src="assets/images/template-dance-motion.png.jpg">
+<div>Dance Motion</div>
 </div>
 
 <div class="template-card">
-<img src="assets/images/template-face-swap.png">
-<div class="template-title">Face Swap</div>
+<img src="assets/images/template-face-swap.png.jpg">
+<div>Face Swap</div>
 </div>
 
-</div>
+<div class="generate-btn">
 
-<a class="btn-main">Generate AI Template</a>
+Generate AI Template
+
+</div>
 
 </section>
 
