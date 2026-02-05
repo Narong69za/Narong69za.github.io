@@ -3,25 +3,16 @@
 <head>
 
 <meta charset="UTF-8">
-
-<title>SN Design Studio | AI Short Video & CapCut Creator</title>
+<title>SN Design Studio | AI Creator Platform</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO MASTER -->
-<meta name="description" content="SN Design Studio — AI Short Video, CapCut Templates, Viral Marketing, Creator Branding & SEO Services">
-<meta name="keywords" content="SN Design Studio, CapCut Creator, AI Video, Viral Marketing, Short Video Creator, SEO Marketing">
-<meta name="robots" content="index, follow">
-
-<meta property="og:title" content="SN Design Studio">
-<meta property="og:description" content="AI Short Video & CapCut Creator — Dark Raw Viral Style">
+<meta name="description" content="AI Short Video & CapCut Creator Platform. Dark Raw Viral style.">
+<meta name="keywords" content="AI video, CapCut template, viral video creator, AI marketing">
 
 <style>
 
-/* RESET */
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#000;color:#fff}
 
 /* NAV */
@@ -31,12 +22,8 @@ position:fixed;
 top:0;
 width:100%;
 background:rgba(0,0,0,.85);
-z-index:999;
-transition:transform .35s ease;
-}
-
-.header-hide{
-transform:translateY(-100%);
+transition:.3s;
+z-index:999
 }
 
 nav{
@@ -44,225 +31,161 @@ max-width:1200px;
 margin:auto;
 padding:14px 20px;
 display:flex;
-justify-content:center;
-align-items:center;
+justify-content:space-between;
 }
 
-nav ul{
-list-style:none;
-display:flex;
-gap:18px;
-}
+nav ul{display:flex;gap:18px;list-style:none}
+nav a{color:#ccc;text-decoration:none;font-size:13px}
 
-nav a{
-color:#ccc;
-text-decoration:none;
-font-size:13px;
-}
-
-nav a:hover{color:#fff}
 
 /* HERO MASTER */
 
 .hero{
-position:relative;
 height:100svh;
 margin-top:56px;
-display:flex;
-align-items:flex-end;
-justify-content:center;
+position:relative;
 overflow:hidden;
 }
 
 .hero img{
 position:absolute;
-inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.45);
-}
 
-.hero-content{
-position:relative;
-z-index:2;
-text-align:center;
-padding:30px;
-margin-bottom:60px;
-}
+/* CONTENT */
 
-.hero h1{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.hero p{
-color:#ccc;
-font-size:14px;
-margin-bottom:18px;
-}
-
-.hero-buttons{
-display:flex;
-gap:12px;
-justify-content:center;
-}
-
-.btn{
-padding:12px 22px;
-border-radius:6px;
-font-weight:bold;
-text-decoration:none;
-}
-
-.red{background:#e53935;color:#fff}
-.green{background:#2ecc71;color:#000}
-
-/* SECTION */
-
-section{
+.section{
+max-width:1200px;
+margin:auto;
 padding:80px 20px;
 text-align:center;
 }
 
-.fade-up{
+
+/* SCROLL ANIM */
+
+.fade{
 opacity:0;
 transform:translateY(40px);
-transition:all .8s ease;
+transition:.6s
 }
 
-.fade-up.show{
+.fade.show{
 opacity:1;
-transform:translateY(0);
+transform:none
 }
 
-footer{
-padding:30px;
-text-align:center;
-color:#666;
-font-size:12px;
+
+/* FLOAT BUTTON */
+
+.float{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#2ecc71;
+color:#000;
+padding:14px 24px;
+border-radius:40px;
+font-weight:bold;
+z-index:999
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
-
-<header>
+<header id="nav">
 
 <nav>
 
-<ul>
+<div>SN DESIGN STUDIO</div>
 
+<ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="packages.html">Packages</a></li>
 <li><a href="services.html">Services</a></li>
 <li><a href="templates.html">Templates</a></li>
 <li><a href="seo.html">SEO</a></li>
 <li><a href="contact.html">Contact</a></li>
-
 </ul>
 
 </nav>
 
 </header>
 
-
-<!-- HERO FULL WIDTH -->
+<!-- HERO IMAGE ONLY (NO TEXT OVERLAY) -->
 
 <section class="hero">
 
-<img src="assets/images/hero.png" alt="SN Design Studio Hero">
+<img src="assets/images/hero.png">
 
-<div class="hero-content">
+</section>
+
+
+<!-- TEXT MOVED BELOW HERO -->
+
+<main>
+
+<section class="section fade">
 
 <h1>AI Short Video & CapCut Creator</h1>
 
-<p>Dark • Raw • Viral — Built for creators, marketers, and brands</p>
-
-<div class="hero-buttons">
-
-<a href="packages.html" class="btn red">View Packages</a>
-
-<a href="contact.html" class="btn green">Contact</a>
-
-</div>
-
-</div>
+<p>
+Dark • Raw • Viral — Built for creators, marketers, and brands
+</p>
 
 </section>
 
+</main>
 
-<section class="fade-up">
-
-<h2>Ads-Grade Visual System</h2>
-
-<p>Designed from real performance data — not decoration.</p>
-
-</section>
-
-
-<footer>
-
-© SN Design Studio, 2026 · All rights reserved.
-
-</footer>
-
-
-<!-- NAV AUTO HIDE -->
+<div class="float">Generate AI</div>
 
 <script>
 
-let lastScroll = 0;
-const header = document.querySelector("header");
+/* NAV AUTO HIDE */
 
-window.addEventListener("scroll", () => {
+let last=0
+const nav=document.getElementById('nav')
 
-let current = window.pageYOffset;
+window.addEventListener('scroll',()=>{
 
-if(current > lastScroll){
-header.classList.add("header-hide");
+const y=window.pageYOffset
+
+if(y>last){
+nav.style.top="-80px"
 }else{
-header.classList.remove("header-hide");
+nav.style.top="0"
 }
 
-lastScroll = current;
+last=y
 
-});
-
-</script>
+})
 
 
-<!-- PREMIUM SCROLL -->
+/* SCROLL ANIMATION */
 
-<script>
+const fades=document.querySelectorAll('.fade')
 
-const observer = new IntersectionObserver(entries => {
+window.addEventListener('scroll',()=>{
 
-entries.forEach(entry => {
+fades.forEach(el=>{
+const top=el.getBoundingClientRect().top
 
-if(entry.isIntersecting){
-entry.target.classList.add("show");
+if(top<window.innerHeight-80){
+el.classList.add('show')
 }
 
-});
+})
 
-});
-
-document.querySelectorAll(".fade-up").forEach(el=>{
-observer.observe(el);
-});
+})
 
 </script>
-
 
 </body>
 </html>
