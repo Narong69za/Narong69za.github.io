@@ -1,9 +1,71 @@
-/* ===============================
-   ULTRA HERO MASTER SYSTEM
-   Mobile-first • Identity-safe
-================================ */
+/* =====================================================
+   SN DESIGN STUDIO — MASTER CSS
+   ULTRA PRO SYSTEM
+   Mobile First / No Overflow / Hero Safe
+===================================================== */
 
-/* HERO container */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+overflow-x:hidden;   /* กันล้นข้างทั้งหมด */
+background:#000;
+color:#fff;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+
+/* =====================================================
+   NAV MASTER (AUTO INJECT READY)
+===================================================== */
+
+.nav-header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(6px);
+z-index:999;
+transition:transform .35s ease;
+}
+
+.header-hide{
+transform:translateY(-100%);
+}
+
+.nav-master{
+max-width:1200px;
+margin:auto;
+padding:14px 20px;
+}
+
+.nav-menu{
+list-style:none;
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+.nav-menu a{
+color:#ccc;
+text-decoration:none;
+font-size:13px;
+}
+
+.nav-menu a:hover{
+color:#fff;
+}
+
+
+/* =====================================================
+   HERO MASTER SAFE (NO OVERFLOW MOBILE)
+===================================================== */
+
 .hero-master{
 position:relative;
 width:100%;
@@ -14,17 +76,16 @@ align-items:flex-end;
 justify-content:center;
 }
 
-/* IMAGE FIX (กันล้น 100%) */
+/* IMPORTANT SAFE FIX */
 .hero-master img{
 position:absolute;
 top:0;
 left:50%;
 transform:translateX(-50%);
 height:100%;
-width:auto;
-min-width:100%;
+width:auto;        /* กันล้นข้าง */
+max-width:none;
 object-fit:cover;
-object-position:center;
 }
 
 /* overlay */
@@ -35,7 +96,7 @@ inset:0;
 background:rgba(0,0,0,.35);
 }
 
-/* content BELOW (ไม่บังหน้า) */
+/* CONTENT BELOW IMAGE */
 .hero-content-bottom{
 position:relative;
 z-index:2;
@@ -45,16 +106,160 @@ padding:20px;
 margin-bottom:40px;
 }
 
-/* MOBILE SAFE */
-@media(max-width:768px){
 
-.hero-master{
-height:100vh;
+/* =====================================================
+   SECTION MASTER
+===================================================== */
+
+.section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-.hero-master img{
-height:100%;
-width:auto;
+.section h2{
+margin-bottom:20px;
 }
 
+.section p{
+color:#aaa;
+font-size:14px;
 }
+
+
+/* =====================================================
+   CARD SYSTEM
+===================================================== */
+
+.card{
+background:#0d0d0d;
+border-radius:14px;
+overflow:hidden;
+border:1px solid #1a1a1a;
+}
+
+.card img{
+width:100%;
+display:block;
+}
+
+.card-content{
+padding:20px;
+text-align:center;
+}
+
+
+/* =====================================================
+   BUTTON MASTER
+===================================================== */
+
+.btn{
+display:inline-block;
+padding:12px 22px;
+border-radius:8px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.btn-green{
+background:#2ecc71;
+color:#000;
+}
+
+.btn-red{
+background:#e53935;
+color:#fff;
+}
+
+
+/* =====================================================
+   TEMPLATE COLLECTION
+===================================================== */
+
+.template-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.template-card{
+background:#0d0d0d;
+border-radius:18px;
+overflow:hidden;
+text-align:center;
+}
+
+.template-card img{
+width:100%;
+display:block;
+}
+
+
+/* =====================================================
+   CONTACT GRID
+===================================================== */
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.contact-card{
+background:#0d0d0d;
+border-radius:16px;
+padding:20px;
+text-align:center;
+}
+
+.contact-card img{
+width:100%;
+border-radius:10px;
+}
+
+
+/* =====================================================
+   SCROLL ANIMATION
+===================================================== */
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:.6s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:none;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+padding:30px 0;
+text-align:center;
+font-size:12px;
+color:#666;
+border-top:1px solid #111;
+}
+
+
+/* =====================================================
+   MOBILE SAFE (REAL DEVICE)
+===================================================== */
+
+@media(max-width:600px){
+
+.nav-menu{
+gap:12px;
+font-size:12px;
+}
+
+.hero-content-bottom{
+margin-bottom:30px;
+}
+
+   }
