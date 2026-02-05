@@ -199,3 +199,39 @@ max-width:100%;
 height:auto;
 object-fit:cover;
 }
+
+/* ==============================
+ULTRA TEMPLATE FINAL SAFE
+============================== */
+
+.template-card{
+  width:100%;
+  aspect-ratio:9/16;
+  border-radius:18px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* แต่ละ template */
+.template-card.dark-viral{
+  background-image:url("../images/template-dark-viral.jpg");
+}
+
+.template-card.ai-lipsync{
+  background-image:url("../images/template-ai-lipsync.jpg");
+}
+
+.template-card.dance-motion{
+  background-image:url("../images/template-dance-motion.jpg");
+}
+
+.template-card.face-swap{
+  background-image:url("../images/template-face-swap.jpg");
+}
+
+/* ห้าม img ล้น */
+.template-card img{
+  display:none;
+}
