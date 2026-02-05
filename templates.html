@@ -5,20 +5,16 @@
 <title>Templates | SN Design Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/css/master.css">
-
 <style>
 
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{
-margin:0;
 background:#000;
 color:#fff;
-font-family:Arial,Helvetica,sans-serif;
+overflow-x:hidden;
 }
 
-/* ===============================
-NAV MASTER (LOCKED)
-=============================== */
+/* NAV */
 
 header{
 position:fixed;
@@ -53,37 +49,35 @@ nav a:hover{
 color:#fff;
 }
 
-
-/* ===============================
-HERO MASTER FIX (FULL WIDTH)
-=============================== */
+/* HERO MASTER (FIXED) */
 
 .hero-master{
 position:relative;
 width:100%;
 height:100vh;
+margin-top:56px;
 overflow:hidden;
 display:flex;
 align-items:flex-end;
 justify-content:center;
-margin-top:56px;
 }
 
 .hero-master img{
 position:absolute;
 top:0;
 left:0;
-width:100vw;
+width:100%;
 height:100%;
+max-width:100%;
 object-fit:cover;
-object-position:center;
+object-position:center center;
 }
 
 .hero-master::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.45);
+background:rgba(0,0,0,.35);
 }
 
 .hero-content-bottom{
@@ -94,44 +88,49 @@ padding:20px;
 margin-bottom:40px;
 }
 
-
-/* ===============================
-TEMPLATE COLLECTION
-=============================== */
+/* SECTION */
 
 .section{
-padding:80px 20px;
+padding:70px 20px;
 max-width:1200px;
 margin:auto;
 text-align:center;
 }
 
-.templates-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
+.section h2{
+margin-bottom:30px;
 }
 
-.template-card{
+/* TEMPLATE GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.card{
 background:#0d0d0d;
 border-radius:12px;
 overflow:hidden;
-border:1px solid #1a1a1a;
-transition:.3s;
+border:1px solid #111;
 }
 
-.template-card:hover{
-transform:translateY(-6px);
-}
-
-.template-card img{
+.card img{
 width:100%;
 display:block;
 }
 
-.template-card h3{
-padding:16px;
+.card h3{
+padding:14px;
 font-size:16px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+color:#666;
+font-size:12px;
 }
 
 </style>
@@ -153,48 +152,54 @@ font-size:16px;
 </nav>
 </header>
 
+<!-- HERO -->
 
-<!-- HERO MASTER (LANDING IMAGE LOCKED) -->
 <section class="hero-master">
 
-<img src="assets/images/landing.png" alt="Template Landing">
+<img src="assets/images/landing.png" alt="Template Hero">
 
 <div class="hero-content-bottom">
 <h1>Template Collection</h1>
-<p>Dark • Raw • Viral Creator System</p>
+<p>AI Short Video • CapCut Creator • Viral Systems</p>
 </div>
 
 </section>
-
 
 <!-- TEMPLATE COLLECTION -->
+
 <section class="section">
 
-<div class="templates-grid">
+<h2>Template Collection</h2>
 
-<div class="template-card">
+<div class="grid">
+
+<div class="card">
 <img src="assets/images/template-dark-viral.jpg">
-<h3>Dark Viral</h3>
+<h3>Dark Viral System</h3>
 </div>
 
-<div class="template-card">
+<div class="card">
 <img src="assets/images/template-ai-lipsync.jpg">
-<h3>AI Lipsync</h3>
+<h3>AI Lipsync Template</h3>
 </div>
 
-<div class="template-card">
+<div class="card">
 <img src="assets/images/template-dance-motion.jpg">
-<h3>Dance Motion</h3>
+<h3>Dance Motion Template</h3>
 </div>
 
-<div class="template-card">
+<div class="card">
 <img src="assets/images/template-face-swap.jpg">
-<h3>Face Swap</h3>
+<h3>Face Swap System</h3>
 </div>
 
 </div>
 
 </section>
 
+<footer>
+© 2026 SN Design Studio
+</footer>
+
 </body>
-</html>
+  </html>
