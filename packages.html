@@ -1,200 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Packages | SN Design Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    header {
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-      border-bottom: 1px solid #111;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 16px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .section {
-      padding: 48px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .section h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 32px;
-      letter-spacing: 1px;
-    }
-    .section h2 {
-      text-align: center;
-      margin: 60px 0 24px;
-      font-size: 26px;
-      letter-spacing: 1px;
-    }
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: #0d0d0d;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #1a1a1a;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-    }
-    .card img {
-      width: 100%;
-      display: block;
-    }
-    .card-content {
-      padding: 20px;
-      text-align: center;
-    }
-    .price {
-      font-size: 22px;
-      margin: 12px 0;
-      color: #00ff99;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 20px;
-      background: #00aa55;
-      color: #000;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Packages | SN Design Studio</title>
+<meta name="description" content="Service Packages">
+<link rel="stylesheet" href="assets/css/master.css">
 </head>
-
 <body>
 
-<header>
-  <strong>SN DESIGN STUDIO</strong>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="packages.html">Packages</a>
-    <a href="services.html">Services</a>
-    <a href="templates.html">Templates</a>
-    <a href="seo.html">SEO</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<div id="nav"></div>
 
-<section class="section">
-  <h1>Marketing Packages</h1>
-
-  <!-- ================= CAPCUT ================= -->
-  <h2>CapCut Packages</h2>
-  <div class="packages">
-    <div class="card">
-      <img src="assets/images/capcut-package-1999.png">
-      <div class="card-content">
-        <h3>CapCut Start</h3>
-        <div class="price">฿1,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/capcut-package-2999.png">
-      <div class="card-content">
-        <h3>CapCut Pro</h3>
-        <div class="price">฿2,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/capcut-package-5999.png">
-      <div class="card-content">
-        <h3>CapCut Elite</h3>
-        <div class="price">฿5,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
+<section class="hero-master">
+  <img src="assets/images/landing.png" alt="SN Design Studio Hero">
+  <div class="hero-content-bottom fade-up">
+    <h1>Packages</h1>
+    <p>Choose your plan</p>
   </div>
-
-  <!-- ================= YOUTUBE ================= -->
-  <h2>YouTube Packages</h2>
-  <div class="packages">
-    <div class="card">
-      <img src="assets/images/youtube-package-1999.png">
-      <div class="card-content">
-        <h3>YouTube Start</h3>
-        <div class="price">฿1,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/youtube-package-2999.png">
-      <div class="card-content">
-        <h3>YouTube Pro</h3>
-        <div class="price">฿2,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/youtube-package-5999.png">
-      <div class="card-content">
-        <h3>YouTube Elite</h3>
-        <div class="price">฿5,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= FACEBOOK ================= -->
-  <h2>Facebook Packages</h2>
-  <div class="packages">
-    <div class="card">
-      <img src="assets/images/facebook-package-1999.png">
-      <div class="card-content">
-        <h3>Facebook Start</h3>
-        <div class="price">฿1,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/facebook-package-2999.png">
-      <div class="card-content">
-        <h3>Facebook Pro</h3>
-        <div class="price">฿2,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="assets/images/facebook-package-5999.png">
-      <div class="card-content">
-        <h3>Facebook Elite</h3>
-        <div class="price">฿5,999</div>
-        <a href="contact.html" class="btn">Get Started</a>
-      </div>
-    </div>
-  </div>
-
 </section>
 
+<main>
+<section class='section'><div class='container'><h2>Packages</h2></div></section>
+</main>
+
+<footer>
+© SN Design Studio, 2026 · All rights reserved.
+</footer>
+
+<script src="assets/js/nav.js"></script>
 </body>
 </html>

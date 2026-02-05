@@ -2,173 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Contact | SN Design Studio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#000;color:#fff}
-
-/* NAV */
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:rgba(0,0,0,.85);
-  z-index:999;
-}
-nav{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-nav ul{list-style:none;display:flex;gap:18px}
-nav a{color:#ccc;text-decoration:none;font-size:13px}
-nav a:hover{color:#fff}
-
-/* HERO */
-.hero{
-  position:relative;
-  height:100svh;
-  margin-top:56px;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.hero img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.45);
-}
-.hero h1{
-  position:relative;
-  z-index:2;
-  font-size:32px;
-  letter-spacing:1px;
-}
-
-/* CONTENT */
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:80px 20px;
-}
-.section h2{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-/* CONTACT GRID */
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-}
-.contact-card{
-  background:#0d0d0d;
-  border:1px solid #1a1a1a;
-  border-radius:12px;
-  padding:24px;
-  text-align:center;
-}
-.contact-card img{
-  width:100%;
-  max-width:220px;
-  margin:0 auto 16px;
-  display:block;
-}
-.contact-card h3{margin-bottom:8px}
-.contact-card p{color:#aaa;font-size:14px;margin-bottom:14px}
-.contact-card a{
-  display:inline-block;
-  padding:10px 18px;
-  border-radius:6px;
-  font-weight:bold;
-  text-decoration:none;
-}
-.blue{background:#1877f2;color:#fff}
-.green{background:#2ecc71;color:#000}
-.red{background:#e53935;color:#fff}
-
-/* FOOTER */
-footer{
-  padding:30px 0;
-  text-align:center;
-  color:#666;
-  font-size:12px;
-}
-</style>
+<meta name="description" content="Contact SN Design Studio">
+<link rel="stylesheet" href="assets/css/master.css">
 </head>
-
 <body>
 
-<header>
-<nav>
-  <div>SN DESIGN STUDIO</div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="packages.html">Packages</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="templates.html">Templates</a></li>
-    <li><a href="seo.html">SEO</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-</header>
+<div id="nav"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="assets/images/contact-blue-dark.png" alt="Contact SN Design Studio">
+<section class="hero-master">
+  <img src="assets/images/landing.png" alt="SN Design Studio Hero">
+  <div class="hero-content-bottom fade-up">
+    <h1>Get in Touch</h1>
+    <p>Let’s work together</p>
+  </div>
 </section>
 
-<!-- CONTACT INFO -->
-<section class="section">
-  <h2>Get in Touch</h2>
-<div class="contact-grid">
-
-  <!-- LINE -->
-  <div class="contact-card">
-    <img src="assets/images/line-qr-official.jpg" alt="LINE Official">
-    <h3>LINE Official</h3>
-    <p>Add LINE for work</p>
-    <a href="https://line.me/ti/p/FTNCUtSbaA" target="_blank" class="green">
-      Add LINE
-    </a>
-  </div>
-
-  <!-- YOUTUBE -->
-  <div class="contact-card">
-    <img src="assets/images/contact-youtube-blue-dark.jpg" alt="YouTube Channel">
-    <h3>YouTube Channel</h3>
-    <p>Dark • Raw • Viral</p>
-    <a href="https://youtube.com/@sndesignstudio-design?si=hT3yLLWeOXVrtEM3"
-       target="_blank"
-       class="red">
-       Subscribe
-    </a>
-  </div>
-
-</div>
-</section>
+<main>
+<section class='section'><div class='container'><h2>Contact</h2></div></section>
+</main>
 
 <footer>
-© 2026 SN Design Studio · All rights reserved.
+© SN Design Studio, 2026 · All rights reserved.
 </footer>
 
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
-
-
-

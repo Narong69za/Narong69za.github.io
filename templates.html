@@ -2,237 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Templates | SN Design Studio</title>
-
+<meta name="description" content="CapCut AI Template Collection">
 <link rel="stylesheet" href="assets/css/master.css">
-
-<style>
-
-body{
-margin:0;
-background:#000;
-color:#fff;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-/* NAV */
-header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,.85);
-z-index:999;
-}
-
-nav{
-max-width:1200px;
-margin:auto;
-padding:14px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-nav ul{
-list-style:none;
-display:flex;
-gap:18px;
-margin:0;
-padding:0;
-}
-
-nav a{
-color:#ccc;
-text-decoration:none;
-font-size:13px;
-}
-
-/* HERO MASTER */
-.hero-master{
-position:relative;
-width:100%;
-height:100svh;
-overflow:hidden;
-display:flex;
-align-items:flex-end;
-justify-content:center;
-}
-
-.hero-master img{
-position:absolute;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.hero-master::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.35);
-}
-
-.hero-content-bottom{
-position:relative;
-z-index:2;
-text-align:center;
-margin-bottom:40px;
-}
-
-/* TEMPLATE GRID */
-
-.section{
-max-width:1200px;
-margin:auto;
-padding:60px 20px;
-}
-
-.template-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.template-card img{
-width:100%;
-display:block;
-border-radius:10px;
-}
-
-/* LOCK OVERLAY */
-
-#lock-overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.92);
-z-index:9999;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.lock-box{
-background:#111;
-padding:30px;
-border-radius:12px;
-text-align:center;
-}
-
-.lock-box button{
-margin-top:20px;
-padding:12px 22px;
-border:none;
-background:#06c755;
-font-weight:bold;
-border-radius:8px;
-}
-
-</style>
 </head>
-
 <body>
 
-<header>
-<nav>
-<div>SN DESIGN STUDIO</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="packages.html">Packages</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="templates.html">Templates</a></li>
-<li><a href="seo.html">SEO</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</header>
+<div id="nav"></div>
 
-<!-- HERO -->
 <section class="hero-master">
-
-<img src="assets/images/landing.png">
-
-<div class="hero-content-bottom">
-
-<h1>Template Collection</h1>
-
-</div>
-
+  <img src="assets/images/landing.png" alt="SN Design Studio Hero">
+  <div class="hero-content-bottom fade-up">
+    <h1>Template Collection</h1>
+    <p>Dark · Raw · Viral</p>
+  </div>
 </section>
 
+<main>
+<section class='section'><div class='container'><h2>Templates</h2></div></section>
+</main>
 
-<!-- TEMPLATE COLLECTION -->
+<footer>
+© SN Design Studio, 2026 · All rights reserved.
+</footer>
 
-<section class="section">
-
-<div class="template-grid">
-
-<div class="template-card">
-<img src="assets/images/template-dark-viral.jpg">
-</div>
-
-<div class="template-card">
-<img src="assets/images/template-ai-lipsync.jpg">
-</div>
-
-<div class="template-card">
-<img src="assets/images/template-dance-motion.jpg">
-</div>
-
-<div class="template-card">
-<img src="assets/images/template-face-swap.jpg">
-</div>
-
-</div>
-
-</section>
-
-
-<!-- LOCK SYSTEM -->
-
-<div id="lock-overlay">
-
-<div class="lock-box">
-
-<h2>Login Required</h2>
-
-<p>Unlock AI Templates & Creator Tools</p>
-
-<button onclick="fakeLogin()">Login with Google</button>
-
-</div>
-
-</div>
-
-
-<script>
-
-function checkLogin(){
-
-const user = localStorage.getItem("sn_user");
-
-if(user){
-
-document.getElementById("lock-overlay").style.display="none";
-
-}
-
-}
-
-function fakeLogin(){
-
-localStorage.setItem("sn_user","true");
-
-location.reload();
-
-}
-
-checkLogin();
-
-</script>
-
-
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
