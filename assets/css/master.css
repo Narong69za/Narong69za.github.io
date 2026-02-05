@@ -1,229 +1,126 @@
-/* ======================================
-   SN DESIGN STUDIO — ULTRA MASTER CSS
-   MOBILE FIRST FINAL
-====================================== */
+/* RESET */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
 body{
 background:#000;
 color:#fff;
+font-family:system-ui,-apple-system;
 overflow-x:hidden;
 }
 
-/* ===============================
-   NAV MASTER
-================================ */
 
-header{
+/* NAV */
+
+.main-header{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(8px);
+background:#000;
 z-index:999;
-transition:transform .35s ease;
 }
 
-nav{
-max-width:1200px;
-margin:auto;
+.nav-container{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:14px 18px;
+padding:14px 20px;
 }
 
-nav ul{
+.nav-menu{
 display:flex;
-gap:16px;
+gap:18px;
 list-style:none;
 }
 
-nav a{
-text-decoration:none;
-color:#bbb;
-font-size:13px;
-}
-
-nav a:hover{
+.nav-menu a{
 color:#fff;
+text-decoration:none;
+font-size:14px;
 }
 
-.header-hide{
-transform:translateY(-100%);
-}
 
-
-/* ===============================
-   HERO MASTER SYSTEM (FINAL SAFE)
-================================ */
+/* HERO ULTRA SAFE MOBILE */
 
 .hero-master{
 position:relative;
 width:100%;
 height:100vh;
 overflow:hidden;
-display:flex;
-align-items:flex-end;
-justify-content:center;
 }
 
-/* HERO IMAGE SAFE WIDTH */
 .hero-master img{
-position:absolute;
-top:0;
-left:50%;
-transform:translateX(-50%);
 width:100%;
 height:100%;
 object-fit:cover;
-object-position:center;
-}
-
-/* overlay */
-.hero-master::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.35);
-}
-
-/* HERO CONTENT BELOW */
-.hero-content-bottom{
-position:relative;
-z-index:2;
-text-align:center;
-width:100%;
-padding:20px;
-margin-bottom:40px;
-}
-
-
-/* ===============================
-   GLOBAL SECTIONS
-================================ */
-
-section{
-padding:80px 20px;
-max-width:1100px;
-margin:auto;
-text-align:center;
-}
-
-h1{
-font-size:28px;
-margin-bottom:12px;
-}
-
-h2{
-font-size:24px;
-margin-bottom:20px;
-}
-
-p{
-color:#aaa;
-font-size:14px;
-line-height:1.6;
-}
-
-
-/* ===============================
-   BUTTONS
-================================ */
-
-.btn{
-display:inline-block;
-padding:12px 20px;
-border-radius:6px;
-font-weight:bold;
-text-decoration:none;
-}
-
-.btn-green{
-background:#06c755;
-color:#000;
-}
-
-.btn-red{
-background:#e53935;
-color:#fff;
-}
-
-
-/* ===============================
-   CARD GRID
-================================ */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
-}
-
-.card{
-background:#0d0d0d;
-border-radius:12px;
-border:1px solid #1a1a1a;
-overflow:hidden;
-}
-
-.card img{
-width:100%;
 display:block;
 }
 
-.card-content{
-padding:20px;
+
+/* CONTENT STRUCTURE */
+
+.page-content{
+position:relative;
+background:#000;
+z-index:2;
+}
+
+.content-section{
+padding:80px 20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
 }
 
 
-/* ===============================
-   SCROLL ANIMATION
-================================ */
+/* CARD STYLE */
 
-.fade-up{
-opacity:0;
-transform:translateY(40px);
-transition:.6s ease;
-}
-
-.fade-up.show{
-opacity:1;
-transform:none;
+.card{
+background:#0e0e0e;
+border-radius:16px;
+padding:24px;
+margin-bottom:24px;
+border:1px solid #1a1a1a;
 }
 
 
-/* ===============================
-   FOOTER
-================================ */
+/* CTA BUTTON */
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:12px;
+background:#06c755;
+color:#000;
+font-weight:600;
+}
+
+
+/* FOOTER */
 
 footer{
 padding:40px 20px;
 text-align:center;
-color:#666;
 font-size:12px;
+color:#777;
+border-top:1px solid #1a1a1a;
 }
 
 
-/* ===============================
-   MOBILE SAFE FIX
-================================ */
+/* MOBILE */
 
 @media(max-width:768px){
 
-.hero-master{
-height:100svh;
-}
-
-h1{
-font-size:24px;
+.nav-menu{
+gap:12px;
+font-size:13px;
 }
 
 }
