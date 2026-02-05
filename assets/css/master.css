@@ -124,3 +124,37 @@ font-size:13px;
 }
 
 }
+
+/* ===============================
+   ULTRA NAV CORE
+================================ */
+
+.global-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#000;
+  z-index:9999;
+  transition:transform .35s ease;
+  border-bottom:1px solid #111;
+}
+
+.nav-wrap{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+}
+
+.nav-menu{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+}
+
+.nav-menu a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  white-space:nowrap;
+  }
