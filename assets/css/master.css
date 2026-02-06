@@ -1,6 +1,6 @@
 /* =================================================
-MASTER CSS PRO ARCHITECTURE
-SAFE + FINAL LOCK SYSTEM
+ULTRA CSS IMMUNITY SYSTEM
+SN DESIGN STUDIO MASTER CSS FINAL
 ================================================= */
 
 /* ================= RESET ================= */
@@ -18,7 +18,7 @@ font-family:system-ui,-apple-system;
 overflow-x:hidden;
 }
 
-/* ================= GLOBAL IMAGE SAFE ================= */
+/* ================= IMAGE SAFE ================= */
 
 img{
 max-width:100%;
@@ -90,7 +90,7 @@ text-align:center;
 margin-bottom:40px;
 }
 
-/* ================= COMPONENTS ================= */
+/* ================= COMPONENT ================= */
 
 .card{
 background:#0e0e0e;
@@ -121,8 +121,10 @@ color:#fff;
 }
 
 /* =================================================
-TEMPLATE PAGE (FINAL LOCK — DO NOT TOUCH)
+PAGE IMMUNITY SYSTEM
 ================================================= */
+
+/* ---------- TEMPLATE LOCK ---------- */
 
 .template-page .template-grid{
 display:grid;
@@ -147,9 +149,7 @@ grid-template-columns:1fr;
 }
 }
 
-/* =================================================
-CONTACT PAGE (FINAL LOCK — DO NOT TOUCH)
-================================================= */
+/* ---------- CONTACT LOCK ---------- */
 
 .contact-page{
 text-align:center;
@@ -182,9 +182,7 @@ border-radius:8px;
 text-decoration:none;
 }
 
-/* =================================================
-SEO PAGE (ISOLATED SAFE)
-================================================= */
+/* ---------- SEO SAFE ---------- */
 
 .seo-page .seo-grid{
 display:grid;
@@ -210,8 +208,8 @@ height:auto;
 
 .th{
 display:block;
-font-size:0.9rem;
-opacity:0.85;
+font-size:.9rem;
+opacity:.85;
 margin-top:4px;
 }
 
