@@ -1,9 +1,6 @@
-/* =================================================
-ULTRA CSS IMMUNITY SYSTEM
-SN DESIGN STUDIO MASTER CSS FINAL
-================================================= */
-
-/* ================= RESET ================= */
+/* =================================
+RESET
+================================= */
 
 *{
 margin:0;
@@ -18,7 +15,17 @@ font-family:system-ui,-apple-system;
 overflow-x:hidden;
 }
 
-/* ================= IMAGE SAFE ================= */
+/* =================================
+ROOT
+================================= */
+
+:root{
+--nav-height:60px;
+}
+
+/* =================================
+GLOBAL IMAGE SAFE
+================================= */
 
 img{
 max-width:100%;
@@ -26,7 +33,9 @@ height:auto;
 display:block;
 }
 
-/* ================= NAV GLOBAL ================= */
+/* =================================
+NAV GLOBAL (LOCK)
+================================= */
 
 .global-nav{
 position:fixed;
@@ -58,22 +67,9 @@ font-size:14px;
 white-space:nowrap;
 }
 
-/* ================= HERO GLOBAL ================= */
-
-.hero-master{
-position:relative;
-width:100%;
-min-height:100vh;
-overflow:hidden;
-}
-
-.hero-master img{
-width:100%;
-height:auto;
-object-fit:cover;
-}
-
-/* ================= STRUCTURE ================= */
+/* =================================
+LAYOUT STRUCTURE
+================================= */
 
 .section{
 padding:80px 20px;
@@ -90,7 +86,27 @@ text-align:center;
 margin-bottom:40px;
 }
 
-/* ================= COMPONENT ================= */
+/* =================================
+HERO MASTER (GLOBAL SAFE)
+================================= */
+
+.hero-master{
+position:relative;
+width:100%;
+min-height:100vh;
+padding-top:var(--nav-height);
+overflow:hidden;
+}
+
+.hero-master img{
+width:100%;
+height:auto;
+object-fit:cover;
+}
+
+/* =================================
+CARD SYSTEM
+================================= */
 
 .card{
 background:#0e0e0e;
@@ -101,63 +117,42 @@ max-width:680px;
 border:1px solid #1a1a1a;
 }
 
-.btn-primary,
-.btn-secondary{
+/* =================================
+BUTTON SYSTEM
+================================= */
+
+.btn-primary{
 display:inline-block;
 padding:14px 28px;
 border-radius:12px;
+background:#06c755;
+color:#000;
 text-decoration:none;
 font-weight:600;
 }
 
-.btn-primary{
-background:#06c755;
-color:#000;
-}
+/* =================================
+TEMPLATE GRID
+================================= */
 
-.btn-secondary{
-background:#222;
-color:#fff;
-}
-
-/* =================================================
-PAGE IMMUNITY SYSTEM
-================================================= */
-
-/* ---------- TEMPLATE LOCK ---------- */
-
-.template-page .template-grid{
+.template-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:16px;
 }
 
-.template-page .template-card{
-border-radius:18px;
-overflow:hidden;
-background:#0e0e0e;
-}
-
-.template-page .template-card img{
-width:100%;
-height:auto;
-}
-
 @media(max-width:600px){
-.template-page .template-grid{
+.template-grid{
 grid-template-columns:1fr;
 }
 }
 
-/* ---------- CONTACT LOCK ---------- */
+/* =================================
+CONTACT PAGE (ISOLATION)
+================================= */
 
 .contact-page{
 text-align:center;
-}
-
-.contact-page img{
-max-width:420px;
-margin:auto;
 }
 
 .contact-btn-center{
@@ -166,416 +161,53 @@ justify-content:center;
 margin-top:15px;
 }
 
-.btn-line{
-background:#00c300;
-color:#fff;
-padding:12px 24px;
-border-radius:8px;
-text-decoration:none;
+/* =================================
+SEO PAGE (ISOLATION)
+================================= */
+
+.seo-page .hero-master{
+display:flex;
+justify-content:center;
+align-items:flex-start;
 }
 
-.btn-youtube{
-background:#ff0000;
-color:#fff;
-padding:12px 24px;
-border-radius:8px;
-text-decoration:none;
-}
-
-/* ---------- SEO SAFE ---------- */
-
-.seo-page .seo-grid{
+.seo-grid{
 display:grid;
 grid-template-columns:1fr;
 gap:24px;
 }
 
-.seo-page .seo-card{
+.seo-card{
 background:#0e0e0e;
 border-radius:18px;
 padding:24px;
-overflow:hidden;
 max-width:680px;
 margin:auto;
 }
 
-.seo-page .seo-card img{
-width:100%;
-height:auto;
+.seo-page .btn-primary{
+display:block;
+margin:auto;
+width:fit-content;
 }
 
-/* ================= THAI TEXT ================= */
+/* =================================
+THAI TEXT
+================================= */
 
 .th{
 display:block;
 font-size:.9rem;
 opacity:.85;
-margin-top:4px;
+margin-top:6px;
+text-align:center;
 }
 
-/* ================= FOOTER ================= */
+/* =================================
+FOOTER
+================================= */
 
 footer{
 text-align:center;
-padding:40px 20px;
-font-size:12px;
-color:#777;
-border-top:1px solid #1a1a1a;
-}
-/* =================================
-ULTRA CENTER ALIGN FIX
-(TEMPLATE + SEO ONLY)
-SAFE ADD — FINAL
-================================ */
-
-/* CENTER TEXT SYSTEM */
-.section-title,
-.template-card h3,
-.seo-card h3,
-.seo-card p,
-.template-card p {
-
-text-align:center !important;
-margin-left:auto;
-margin-right:auto;
-
-}
-
-/* CENTER GRID ITEMS */
-.template-grid,
-.seo-grid {
-
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-
-}
-
-/* CARD CENTER LOCK */
-.template-card,
-.seo-card {
-
-width:100%;
-max-width:680px;
-margin-left:auto;
-margin-right:auto;
-
-}
-
-/* BUTTON / CTA CENTER */
-.cta-center,
-.template-cta,
-.seo-cta {
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-
-}
-
-/* ป้องกัน element ดันออกข้าง */
-.template-card *,
-.seo-card *{
-
-max-width:100%;
-
-}
-/* =================================
-ULTRA PAGE ISOLATION FIX
-SAFE ADD ONLY — DO NOT MODIFY OLD
-================================ */
-
-
-/* ===============================
-TEMPLATE PAGE ISOLATION
-=============================== */
-
-.template-page .container{
-text-align:center;
-}
-
-.template-page h1,
-.template-page h2,
-.template-page h3,
-.template-page p{
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-}
-
-.template-page .template-grid{
-margin-left:auto;
-margin-right:auto;
-justify-content:center;
-}
-
-
-
-/* ===============================
-SEO PAGE ISOLATION
-=============================== */
-
-/* fix hero alignment */
-.seo-page .hero-master{
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.seo-page .hero-master img{
-margin-left:auto;
-margin-right:auto;
-}
-
-
-/* fix content center */
-.seo-page h1,
-.seo-page h2,
-.seo-page h3,
-.seo-page p{
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-}
-
-
-/* fix seo card center */
-.seo-page .seo-card{
-margin-left:auto;
-margin-right:auto;
-max-width:680px;
-}
-
-
-/* fix grid */
-.seo-page .seo-grid{
-justify-content:center;
-align-items:center;
-}
-
-
-/* ===============================
-SERVICES PAGE ISOLATION
-=============================== */
-
-.services-page .container{
-text-align:center;
-}
-
-.services-page h1,
-.services-page h2,
-.services-page h3,
-.services-page p{
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-}
-
-
-
-/* ===============================
-GLOBAL HERO OVERFLOW HARD FIX
-(ไม่กระทบ contact)
-=============================== */
-
-.seo-page .hero-master,
-.template-page .hero-master{
-width:100%;
-max-width:100vw;
-overflow:hidden;
-}
-
-.seo-page .hero-master img,
-.template-page .hero-master img{
-width:100%;
-height:auto;
-object-fit:cover;
-display:block;
-}
-/* =================================
-ULTRA FINAL SEO CENTER FIX
-SAFE ADD ONLY
-================================ */
-
-.seo-page .hero-master{
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.seo-page .hero-master img{
-margin-left:auto;
-margin-right:auto;
-}
-
-/* center title block */
-.seo-page h1,
-.seo-page h2,
-.seo-page h3{
-text-align:center;
-margin-left:auto;
-margin-right:auto;
-}
-
-/* bilingual text container */
-.seo-page p{
-text-align:center;
-max-width:680px;
-margin-left:auto;
-margin-right:auto;
-}
-
-/* seo card center */
-.seo-page .seo-card{
-margin-left:auto;
-margin-right:auto;
-}
-
-/* CTA section */
-.seo-page .btn-primary,
-.seo-page .btn-secondary{
-display:block;
-margin-left:auto;
-margin-right:auto;
-}
-/* =========================
-SEO HERO TOP FINE TUNE
-SAFE ADD ONLY
-========================= */
-
-.seo-page .hero-master{
-margin-top:-40px;
-}
-
-@media(max-width:768px){
-.seo-page .hero-master{
-margin-top:-50px;
-}
-}
-
-/* =========================
-SEO CTA CENTER FIX
-SAFE ADD ONLY
-========================= */
-
-.seo-page .btn-primary{
-display:block;
-margin-left:auto;
-margin-right:auto;
-text-align:center;
-width:fit-content;
-}
-/* =================================
-ULTRA HERO ALIGN ENGINE
-MASTER SAFE SYSTEM
-ADD ONLY
-================================ */
-
-/* ความสูง navbar (แก้ตรงนี้ได้ทีเดียวทั้งเว็บ) */
-:root{
-  --nav-height:60px;
-}
-
-/* hero ทุกหน้า offset จาก nav fixed */
-.hero-master{
-  padding-top:var(--nav-height);
-  margin-top:0 !important;   /* kill margin hack เก่า */
-}
-
-/* hero image ไม่โดน push layout */
-.hero-master img{
-  display:block;
-  margin:auto;
-}
-
-/* =================================
-SEO HERO FINE ALIGN
-เฉพาะหน้า SEO
-================================ */
-
-.seo-page .hero-master{
-  padding-top:calc(var(--nav-height) - 20px);
-}
-
-/* mobile */
-@media(max-width:768px){
-  :root{
-    --nav-height:56px;
-  }
-
-  .seo-page .hero-master{
-    padding-top:calc(var(--nav-height) - 25px);
-  }
-}
-
-/* =================================
-SEO CTA CENTER HARD LOCK
-================================ */
-
-.seo-page .btn-primary{
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  width:fit-content;
-}
-/* =================================
-ULTRA NAV VISIBILITY HARD FIX
-แก้ menu bar หาย
-SAFE ADD ONLY
-================================ */
-
-.global-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:99999;   /* กันโดน hero ทับ */
-}
-
-/* =================================
-ULTRA HERO OFFSET ENGINE (REAL FIX)
-ไม่ใช้ margin hack
-================================ */
-
-/* reserve space ให้ navbar */
-body{
-  padding-top:var(--nav-height);
-}
-
-/* hero ไม่ต้อง push ตัวเอง */
-.hero-master{
-  padding-top:0 !important;
-}
-
-/* =================================
-SEO HERO ALIGN FINAL
-================================ */
-
-.seo-page .hero-master{
-  margin-top:-15px;
-}
-
-@media(max-width:768px){
-  .seo-page .hero-master{
-    margin-top:-25px;
-  }
-}
-
-/* =================================
-SEO HERO FINAL ALIGN (ISOLATED)
-SAFE — NO GLOBAL IMPACT
-================================ */
-
-.seo-page .seo-hero{
-padding-top:60px;
-position:relative;
-z-index:1;
-}
-
-.global-nav{
-z-index:9999;
+margin:40px 0;
 }
