@@ -235,3 +235,38 @@ ULTRA TEMPLATE FINAL SAFE
 .template-card img{
   display:none;
 }
+/* =================================
+ULTRA TEMPLATE SAFE LOCK (FINAL)
+================================= */
+
+/* ป้องกัน scroll ล้นด้านข้างทั้งเว็บ */
+html, body{
+  overflow-x:hidden;
+}
+
+/* container template */
+.template-wrapper{
+  width:100%;
+  max-width:100vw;
+  overflow:hidden;
+}
+
+/* template image safe */
+.template-wrapper img{
+  width:100%;
+  height:auto;
+  display:block;
+  max-width:100%;
+  object-fit:cover;
+}
+
+/* ป้องกัน mobile scale overflow */
+img{
+  max-width:100%;
+  height:auto;
+}
+
+/* fix mobile viewport bug */
+body{
+  position:relative;
+}
