@@ -222,3 +222,63 @@ font-size:12px;
 color:#777;
 border-top:1px solid #1a1a1a;
 }
+/* =================================
+ULTRA CENTER ALIGN FIX
+(TEMPLATE + SEO ONLY)
+SAFE ADD — FINAL
+================================ */
+
+/* CENTER TEXT SYSTEM */
+.section-title,
+.template-card h3,
+.seo-card h3,
+.seo-card p,
+.template-card p {
+
+text-align:center !important;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+/* CENTER GRID ITEMS */
+.template-grid,
+.seo-grid {
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+}
+
+/* CARD CENTER LOCK */
+.template-card,
+.seo-card {
+
+width:100%;
+max-width:680px;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+/* BUTTON / CTA CENTER */
+.cta-center,
+.template-cta,
+.seo-cta {
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+}
+
+/* ป้องกัน element ดันออกข้าง */
+.template-card *,
+.seo-card *{
+
+max-width:100%;
+
+}
