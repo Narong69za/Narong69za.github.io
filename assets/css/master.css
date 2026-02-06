@@ -270,3 +270,32 @@ img{
 body{
   position:relative;
 }
+/* ===============================
+ULTRA TEMPLATE IMAGE SAFE
+(เพิ่มอย่างเดียว ไม่ override ของเดิม)
+================================ */
+
+.template-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.template-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.template-card img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* mobile safe */
+@media(max-width:600px){
+  .template-grid{
+    grid-template-columns:1fr;
+  }
+}
