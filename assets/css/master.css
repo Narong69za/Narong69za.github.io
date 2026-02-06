@@ -229,3 +229,85 @@ CENTER THAI TEXT SAFE
 .th{
 display:inline;
 font
+/* =================================
+ULTRA GLOBAL CENTER + NO OVERFLOW LOCK
+SAFE ADD ONLY — GLOBAL STANDARD
+================================= */
+
+/* ป้องกันล้นแนวนอนทั้งเว็บ */
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* โครงสร้างหลักทุกหน้า */
+.page-content{
+  width:100%;
+  max-width:100vw;
+  margin:0 auto;
+}
+
+/* container ทุกหน้า center */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:16px;
+  padding-right:16px;
+  text-align:center;
+}
+
+/* หัวข้อ + ข้อความ */
+h1,h2,h3,p{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* card กลาง */
+.card{
+  width:100%;
+  max-width:680px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* รูปภาพทุกหน้า SAFE */
+img{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* HERO ไม่ล้น */
+.hero-master{
+  width:100%;
+  max-width:100vw;
+  overflow:hidden;
+}
+
+.hero-master img{
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+
+/* CONTACT / SEO / TEMPLATE ALIGN */
+.contact-section,
+.template-grid,
+.content-section{
+  text-align:center;
+}
+
+/* ปุ่มอยู่กลาง */
+.btn,
+.btn-line,
+.btn-youtube{
+  display:inline-block;
+  margin-left:auto;
+  margin-right:auto;
+}
+  
