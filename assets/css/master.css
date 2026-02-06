@@ -564,3 +564,18 @@ SEO HERO ALIGN FINAL
     margin-top:-25px;
   }
 }
+
+/* =================================
+SEO HERO FINAL ALIGN (ISOLATED)
+SAFE — NO GLOBAL IMPACT
+================================ */
+
+.seo-page .seo-hero{
+padding-top:60px;
+position:relative;
+z-index:1;
+}
+
+.global-nav{
+z-index:9999;
+}
