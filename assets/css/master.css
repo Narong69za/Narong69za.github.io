@@ -1,6 +1,9 @@
-/* ===============================
-RESET
-=============================== */
+/* =================================================
+MASTER CSS PRO ARCHITECTURE
+SAFE + FINAL LOCK SYSTEM
+================================================= */
+
+/* ================= RESET ================= */
 
 *{
 margin:0;
@@ -15,9 +18,7 @@ font-family:system-ui,-apple-system;
 overflow-x:hidden;
 }
 
-/* ===============================
-GLOBAL IMAGE SAFE
-=============================== */
+/* ================= GLOBAL IMAGE SAFE ================= */
 
 img{
 max-width:100%;
@@ -25,9 +26,7 @@ height:auto;
 display:block;
 }
 
-/* ===============================
-NAV GLOBAL
-=============================== */
+/* ================= NAV GLOBAL ================= */
 
 .global-nav{
 position:fixed;
@@ -59,9 +58,7 @@ font-size:14px;
 white-space:nowrap;
 }
 
-/* ===============================
-HERO SYSTEM
-=============================== */
+/* ================= HERO GLOBAL ================= */
 
 .hero-master{
 position:relative;
@@ -76,9 +73,7 @@ height:auto;
 object-fit:cover;
 }
 
-/* ===============================
-CONTENT STRUCTURE
-=============================== */
+/* ================= STRUCTURE ================= */
 
 .section{
 padding:80px 20px;
@@ -95,9 +90,7 @@ text-align:center;
 margin-bottom:40px;
 }
 
-/* ===============================
-CARD BASE
-=============================== */
+/* ================= COMPONENTS ================= */
 
 .card{
 background:#0e0e0e;
@@ -107,10 +100,6 @@ margin:0 auto 24px;
 max-width:680px;
 border:1px solid #1a1a1a;
 }
-
-/* ===============================
-BUTTON
-=============================== */
 
 .btn-primary,
 .btn-secondary{
@@ -131,37 +120,42 @@ background:#222;
 color:#fff;
 }
 
-/* ===============================
-TEMPLATE GRID
-=============================== */
+/* =================================================
+TEMPLATE PAGE (FINAL LOCK — DO NOT TOUCH)
+================================================= */
 
-.template-grid{
+.template-page .template-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:16px;
 }
 
-.template-card{
+.template-page .template-card{
 border-radius:18px;
 overflow:hidden;
 background:#0e0e0e;
 }
 
+.template-page .template-card img{
+width:100%;
+height:auto;
+}
+
 @media(max-width:600px){
-.template-grid{
+.template-page .template-grid{
 grid-template-columns:1fr;
 }
 }
 
-/* ===============================
-CONTACT PAGE
-=============================== */
+/* =================================================
+CONTACT PAGE (FINAL LOCK — DO NOT TOUCH)
+================================================= */
 
-.contact-section{
+.contact-page{
 text-align:center;
 }
 
-.contact-section img{
+.contact-page img{
 max-width:420px;
 margin:auto;
 }
@@ -188,39 +182,45 @@ border-radius:8px;
 text-decoration:none;
 }
 
-/* ===============================
-SEO PAGE
-=============================== */
+/* =================================================
+SEO PAGE (ISOLATED SAFE)
+================================================= */
 
-.seo-grid{
+.seo-page .seo-grid{
 display:grid;
+grid-template-columns:1fr;
 gap:24px;
 }
 
-.seo-card{
+.seo-page .seo-card{
 background:#0e0e0e;
 border-radius:18px;
 padding:24px;
+overflow:hidden;
 max-width:680px;
 margin:auto;
 }
 
-/* ===============================
-THAI TEXT
-=============================== */
+.seo-page .seo-card img{
+width:100%;
+height:auto;
+}
+
+/* ================= THAI TEXT ================= */
 
 .th{
 display:block;
 font-size:0.9rem;
 opacity:0.85;
-margin-top:6px;
-text-align:center;
+margin-top:4px;
 }
 
-/* ===============================
-FOOTER
-=============================== */
+/* ================= FOOTER ================= */
 
 footer{
 text-align:center;
+padding:40px 20px;
+font-size:12px;
+color:#777;
+border-top:1px solid #1a1a1a;
 }
