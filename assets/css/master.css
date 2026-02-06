@@ -211,3 +211,20 @@ footer{
 text-align:center;
 margin:40px 0;
 }
+/* =================================
+SEO HERO TOP ALIGN FINAL FIX
+SAFE ADD ONLY
+================================= */
+
+.seo-page .hero-master{
+
+  min-height:auto;     /* ยกเลิก 100vh เฉพาะ SEO */
+  padding-top:var(--nav-height);
+  display:block;
+
+}
+
+.seo-page .hero-master img{
+
+  margin-top:-20px;   /* fine tune ขึ้น */
+}
