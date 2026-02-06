@@ -334,6 +334,7 @@ ULTRA SEO HERO HARD FIX
   object-fit:cover;
 }
 
+  
 /* แก้ mobile scale bug */
 body{
   overflow-x:hidden;
@@ -343,4 +344,51 @@ body{
 section{
   max-width:100vw;
   overflow:hidden;
+}
+/* =================================
+ULTRA FINAL GLOBAL SAFE LAYER
+ADD ONLY — NO DELETE
+================================ */
+
+/* viewport lock */
+html, body{
+max-width:100vw;
+overflow-x:hidden;
+}
+
+/* hero universal safe */
+.hero-master{
+width:100%;
+max-width:100vw;
+height:auto !important;
+min-height:100vh;
+overflow:hidden;
+}
+
+.hero-master img{
+width:100%;
+max-width:100%;
+height:auto;
+display:block;
+object-fit:cover;
+}
+
+/* section lock */
+section{
+max-width:100vw;
+overflow:hidden;
+}
+
+/* card overflow prevent */
+.card,
+.template-card{
+max-width:100%;
+box-sizing:border-box;
+}
+
+/* image universal safe */
+img{
+max-width:100%;
+height:auto;
+display:block;
 }
