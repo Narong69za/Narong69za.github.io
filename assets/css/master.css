@@ -311,3 +311,36 @@ img{
   margin-right:auto;
 }
   
+/* =================================
+ULTRA SEO HERO HARD FIX
+แก้ overflow เฉพาะ SEO + Hero
+================================= */
+
+/* ป้องกัน viewport overflow */
+.hero-master{
+  width:100%;
+  max-width:100vw;
+  height:auto;          /* ห้าม fix 100vh */
+  min-height:100vh;     /* ให้เต็มจอแทน */
+  overflow:hidden;
+}
+
+/* บังคับภาพ hero ไม่ขยายเกิน */
+.hero-master img{
+  width:100%;
+  max-width:100vw;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+/* แก้ mobile scale bug */
+body{
+  overflow-x:hidden;
+}
+
+/* กัน element ไหนเผลอล้น */
+section{
+  max-width:100vw;
+  overflow:hidden;
+}
