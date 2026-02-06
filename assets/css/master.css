@@ -254,3 +254,50 @@ width:100%;
 max-width:680px;
 margin:auto;
 }
+/* =================================
+ULTRA GLOBAL CENTER FINAL LOCK
+SAFE ADD ONLY
+================================ */
+
+/* center hero image จริง */
+.hero-master{
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-master img{
+margin-left:auto;
+margin-right:auto;
+}
+
+/* center bilingual text */
+.th{
+display:block;
+text-align:center;
+margin-top:6px;
+opacity:.85;
+}
+
+/* center ทุก heading */
+h1,h2,h3{
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* center paragraph */
+p{
+text-align:center;
+max-width:680px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* footer center lock */
+footer{
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+}
