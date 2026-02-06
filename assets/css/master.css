@@ -8,12 +8,11 @@ padding:0;
 box-sizing:border-box;
 }
 
-html, body{
+html,body{
 background:#000;
 color:#fff;
 font-family:system-ui,-apple-system;
 overflow-x:hidden;
-position:relative;
 }
 
 /* =================================
@@ -24,6 +23,8 @@ img{
 max-width:100%;
 height:auto;
 display:block;
+margin-left:auto;
+margin-right:auto;
 }
 
 /* =================================
@@ -61,19 +62,19 @@ white-space:nowrap;
 }
 
 /* =================================
-ULTRA HERO SAFE
+ULTRA HERO SAFE (GLOBAL)
 ================================= */
 
 .hero-master{
 position:relative;
 width:100%;
-height:100vh;
+min-height:100vh;
 overflow:hidden;
 }
 
 .hero-master img{
 width:100%;
-height:100%;
+height:auto;
 object-fit:cover;
 }
 
@@ -83,15 +84,18 @@ CONTENT STRUCTURE
 
 .section{
 padding:80px 20px;
+max-width:100vw;
+overflow:hidden;
 }
 
 .container{
 max-width:1100px;
 margin:auto;
+padding:0 16px;
+text-align:center;
 }
 
 .section-title{
-text-align:center;
 margin-bottom:40px;
 }
 
@@ -103,7 +107,8 @@ CARD BASE
 background:#0e0e0e;
 border-radius:16px;
 padding:24px;
-margin-bottom:24px;
+margin:0 auto 24px;
+max-width:680px;
 border:1px solid #1a1a1a;
 }
 
@@ -131,7 +136,7 @@ color:#fff;
 }
 
 /* =================================
-TEMPLATE SYSTEM (SAFE LOCK)
+TEMPLATE SYSTEM
 ================================= */
 
 .template-grid{
@@ -151,8 +156,6 @@ width:100%;
 height:auto;
 }
 
-/* mobile template */
-
 @media(max-width:600px){
 .template-grid{
 grid-template-columns:1fr;
@@ -163,19 +166,13 @@ grid-template-columns:1fr;
 CONTACT PAGE LOCK
 ================================= */
 
-.contact-section,
-.contact-section h2,
-.contact-section h3,
-.contact-section p,
-.contact-section span{
+.contact-section{
 text-align:center;
-margin-left:auto;
-margin-right:auto;
 }
 
 .contact-section img{
-margin:auto;
 max-width:420px;
+margin:auto;
 }
 
 .contact-btn-center{
@@ -223,172 +220,12 @@ height:auto;
 }
 
 /* =================================
-CENTER THAI TEXT SAFE
+THAI TEXT SAFE
 ================================= */
 
 .th{
-display:inline;
-font
-/* =================================
-ULTRA GLOBAL CENTER + NO OVERFLOW LOCK
-SAFE ADD ONLY — GLOBAL STANDARD
-================================= */
-
-/* ป้องกันล้นแนวนอนทั้งเว็บ */
-html, body{
-  max-width:100%;
-  overflow-x:hidden;
-}
-
-/* โครงสร้างหลักทุกหน้า */
-.page-content{
-  width:100%;
-  max-width:100vw;
-  margin:0 auto;
-}
-
-/* container ทุกหน้า center */
-.container{
-  width:100%;
-  max-width:1100px;
-  margin-left:auto;
-  margin-right:auto;
-  padding-left:16px;
-  padding-right:16px;
-  text-align:center;
-}
-
-/* หัวข้อ + ข้อความ */
-h1,h2,h3,p{
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* card กลาง */
-.card{
-  width:100%;
-  max-width:680px;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* รูปภาพทุกหน้า SAFE */
-img{
-  display:block;
-  max-width:100%;
-  height:auto;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-/* HERO ไม่ล้น */
-.hero-master{
-  width:100%;
-  max-width:100vw;
-  overflow:hidden;
-}
-
-.hero-master img{
-  width:100%;
-  height:auto;
-  object-fit:cover;
-}
-
-/* CONTACT / SEO / TEMPLATE ALIGN */
-.contact-section,
-.template-grid,
-.content-section{
-  text-align:center;
-}
-
-/* ปุ่มอยู่กลาง */
-.btn,
-.btn-line,
-.btn-youtube{
-  display:inline-block;
-  margin-left:auto;
-  margin-right:auto;
-}
-  
-/* =================================
-ULTRA SEO HERO HARD FIX
-แก้ overflow เฉพาะ SEO + Hero
-================================= */
-
-/* ป้องกัน viewport overflow */
-.hero-master{
-  width:100%;
-  max-width:100vw;
-  height:auto;          /* ห้าม fix 100vh */
-  min-height:100vh;     /* ให้เต็มจอแทน */
-  overflow:hidden;
-}
-
-/* บังคับภาพ hero ไม่ขยายเกิน */
-.hero-master img{
-  width:100%;
-  max-width:100vw;
-  height:auto;
-  display:block;
-  object-fit:cover;
-}
-
-  
-/* แก้ mobile scale bug */
-body{
-  overflow-x:hidden;
-}
-
-/* กัน element ไหนเผลอล้น */
-section{
-  max-width:100vw;
-  overflow:hidden;
-}
-/* =================================
-ULTRA FINAL GLOBAL SAFE LAYER
-ADD ONLY — NO DELETE
-================================ */
-
-/* viewport lock */
-html, body{
-max-width:100vw;
-overflow-x:hidden;
-}
-
-/* hero universal safe */
-.hero-master{
-width:100%;
-max-width:100vw;
-height:auto !important;
-min-height:100vh;
-overflow:hidden;
-}
-
-.hero-master img{
-width:100%;
-max-width:100%;
-height:auto;
 display:block;
-object-fit:cover;
-}
-
-/* section lock */
-section{
-max-width:100vw;
-overflow:hidden;
-}
-
-/* card overflow prevent */
-.card,
-.template-card{
-max-width:100%;
-box-sizing:border-box;
-}
-
-/* image universal safe */
-img{
-max-width:100%;
-height:auto;
-display:block;
+font-size:0.9rem;
+opacity:0.85;
+margin-top:4px;
 }
