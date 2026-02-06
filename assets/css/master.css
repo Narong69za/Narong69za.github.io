@@ -330,3 +330,59 @@ color:#fff;
 background:#ff0000;
 color:#fff;
 }
+/* ===============================
+CONTACT CENTER LOCK SYSTEM
+(ไม่กระทบหน้าอื่น)
+================================ */
+
+/* จัด content กลาง */
+.contact-center {
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+/* หัวข้อ Official */
+.contact-title-center {
+    text-align:center;
+    margin:20px 0 10px;
+}
+
+/* รูป QR */
+.contact-qr {
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+}
+
+/* ปุ่ม OPEN */
+.contact-btn-center {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:15px;
+}
+
+/* ปุ่ม LINE */
+.btn-line {
+    background:#00c300;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ปุ่ม Youtube */
+.btn-youtube {
+    background:#ff0000;
+    color:#fff;
+    padding:12px 24px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
