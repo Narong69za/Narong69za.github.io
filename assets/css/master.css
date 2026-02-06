@@ -386,3 +386,36 @@ CONTACT CENTER LOCK SYSTEM
     text-decoration:none;
     font-weight:600;
 }
+/* ===============================
+CONTACT PAGE CENTER LOCK
+ADD ONLY — DO NOT MODIFY OLD CODE
+================================ */
+
+.contact-section,
+.contact-section h2,
+.contact-section h3,
+.contact-section p,
+.contact-section span {
+
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.contact-section img {
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+.contact-section .btn-primary,
+.contact-section .btn-secondary {
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+}
