@@ -522,3 +522,45 @@ SEO CTA CENTER HARD LOCK
   margin-right:auto;
   width:fit-content;
 }
+/* =================================
+ULTRA NAV VISIBILITY HARD FIX
+แก้ menu bar หาย
+SAFE ADD ONLY
+================================ */
+
+.global-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:99999;   /* กันโดน hero ทับ */
+}
+
+/* =================================
+ULTRA HERO OFFSET ENGINE (REAL FIX)
+ไม่ใช้ margin hack
+================================ */
+
+/* reserve space ให้ navbar */
+body{
+  padding-top:var(--nav-height);
+}
+
+/* hero ไม่ต้อง push ตัวเอง */
+.hero-master{
+  padding-top:0 !important;
+}
+
+/* =================================
+SEO HERO ALIGN FINAL
+================================ */
+
+.seo-page .hero-master{
+  margin-top:-15px;
+}
+
+@media(max-width:768px){
+  .seo-page .hero-master{
+    margin-top:-25px;
+  }
+}
