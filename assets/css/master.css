@@ -228,3 +228,30 @@ SAFE ADD ONLY
 
   margin-top:-20px;   /* fine tune ขึ้น */
 }
+
+/* ===============================
+SERVICES PAGE CENTER ALIGN FIX
+SAFE ISOLATION
+=============================== */
+
+.services-page .section{
+text-align:center;
+}
+
+.services-page h1,
+.services-page h2,
+.services-page p{
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* จำกัดความกว้างข้อความให้ดู premium */
+.services-page .container p{
+max-width:650px;
+}
+
+/* service card text center */
+.services-page .service-card{
+text-align:center;
+}
