@@ -316,3 +316,33 @@ margin-top:-20px;   /* ขยับขึ้น */
 margin-top:-30px;
 }
 }
+/* =================================
+ULTRA GLOBAL FIX (FINAL SAFE PATCH)
+แก้ layout เพี้ยนทุกหน้า
+================================ */
+
+/* คืน container เป็น normal layout */
+.container{
+  text-align:unset;
+}
+
+/* คืน text default */
+h1,h2,h3,p{
+  text-align:inherit;
+}
+
+/* ยกเลิก block overflow */
+section{
+  overflow:visible;
+}
+
+/* hero ต้องไม่โดน text align global */
+.hero-master,
+.hero-master *{
+  text-align:left;
+}
+
+/* contact layout restore */
+.contact-section{
+  text-align:center;
+}
