@@ -469,3 +469,56 @@ margin-right:auto;
 text-align:center;
 width:fit-content;
 }
+/* =================================
+ULTRA HERO ALIGN ENGINE
+MASTER SAFE SYSTEM
+ADD ONLY
+================================ */
+
+/* ความสูง navbar (แก้ตรงนี้ได้ทีเดียวทั้งเว็บ) */
+:root{
+  --nav-height:60px;
+}
+
+/* hero ทุกหน้า offset จาก nav fixed */
+.hero-master{
+  padding-top:var(--nav-height);
+  margin-top:0 !important;   /* kill margin hack เก่า */
+}
+
+/* hero image ไม่โดน push layout */
+.hero-master img{
+  display:block;
+  margin:auto;
+}
+
+/* =================================
+SEO HERO FINE ALIGN
+เฉพาะหน้า SEO
+================================ */
+
+.seo-page .hero-master{
+  padding-top:calc(var(--nav-height) - 20px);
+}
+
+/* mobile */
+@media(max-width:768px){
+  :root{
+    --nav-height:56px;
+  }
+
+  .seo-page .hero-master{
+    padding-top:calc(var(--nav-height) - 25px);
+  }
+}
+
+/* =================================
+SEO CTA CENTER HARD LOCK
+================================ */
+
+.seo-page .btn-primary{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:fit-content;
+}
