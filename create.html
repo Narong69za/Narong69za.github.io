@@ -16,14 +16,11 @@ content="Real AI Template Control Dashboard. Upload, process and export viral AI
 
 <body class="create-page">
 
-<!-- NAV GLOBAL -->
+<!-- NAV -->
 <div id="nav"></div>
 
 
-<!-- =========================
-HERO
-========================= -->
-
+<!-- HERO -->
 <section class="hero-master">
 
 <img src="assets/images/create-hero.png">
@@ -42,31 +39,48 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 
 
 <!-- =========================
-CONTROL PANEL (REAL STRUCTURE)
+CONTROL PANEL
 ========================= -->
 
 <section class="section">
 
 <div class="container">
 
-<h2 class="section-title">Template Control Panel</h2>
+<h2 class="section-title">AI Control Panel</h2>
 
 <div class="service-grid">
 
 
-<!-- UPLOAD MEDIA -->
+<!-- ================= IMAGE UPLOAD (TOP BLOCK) ================= -->
+
 <div class="service-card fade-up">
 
-<h3>Upload Media</h3>
+<h3>Upload Image (Character / Face)</h3>
 
-<input id="mediaInput" type="file" accept="image/*,video/*">
+<input id="imageInput" type="file" accept="image/*">
 
-<p id="fileStatus">No file selected</p>
+<p id="imageStatus">No image selected</p>
 
 </div>
 
 
-<!-- TEMPLATE SELECT -->
+
+<!-- ================= VIDEO UPLOAD (BOTTOM BLOCK) ================= -->
+
+<div class="service-card fade-up">
+
+<h3>Upload Video (Motion Source)</h3>
+
+<input id="videoInput" type="file" accept="video/*">
+
+<p id="videoStatus">No video selected</p>
+
+</div>
+
+
+
+<!-- ================= TEMPLATE SELECT ================= -->
+
 <div class="service-card fade-up">
 
 <h3>Select Template</h3>
@@ -83,14 +97,16 @@ CONTROL PANEL (REAL STRUCTURE)
 </div>
 
 
-<!-- AI PROCESS -->
+
+<!-- ================= AI PROCESS ================= -->
+
 <div class="service-card fade-up">
 
-<h3>AI Processing</h3>
+<h3>Run AI Process</h3>
 
 <button class="btn-primary" id="runAI">
 
-Run AI Process
+Start Processing
 
 </button>
 
@@ -99,18 +115,34 @@ Run AI Process
 </div>
 
 
-<!-- EXPORT -->
+
+<!-- ================= EXPORT ================= -->
+
 <div class="service-card fade-up">
 
-<h3>Export Video</h3>
+<h3>Export Result</h3>
 
 <button class="btn-primary" id="exportBtn">
 
-Export
+Export Video
 
 </button>
 
 <p id="exportStatus">Not ready</p>
+
+</div>
+
+
+
+<!-- ================= POINT SYSTEM (MARKET STYLE) ================= -->
+
+<div class="service-card fade-up">
+
+<h3>Creator Points</h3>
+
+<p>Remaining Credits:</p>
+
+<h2 id="creditPoint">100</h2>
 
 </div>
 
@@ -121,9 +153,7 @@ Export
 </section>
 
 
-<!-- =========================
-PREVIEW
-========================= -->
+<!-- PREVIEW -->
 
 <section class="section">
 
@@ -150,23 +180,34 @@ PREVIEW
 <!-- NAV -->
 <script src="assets/js/nav.js"></script>
 
-<!-- AI SYSTEM (คุณสร้างแล้ว) -->
+<!-- AI SYSTEM -->
 <script src="assets/js/api/api-core.js"></script>
 <script src="assets/js/api/ai-engine.js"></script>
 <script src="assets/js/api/ui-controller.js"></script>
 
 
-<!-- ULTRA BASIC CONTROLLER (SAFE) -->
+<!-- BASIC CONTROL (SAFE ONLY) -->
+
 <script>
 
-const fileInput = document.getElementById("mediaInput");
-const fileStatus = document.getElementById("fileStatus");
+const imgInput = document.getElementById("imageInput");
+const vidInput = document.getElementById("videoInput");
 
-fileInput.addEventListener("change", () => {
+imgInput.addEventListener("change", () => {
 
-if(fileInput.files.length){
+if(imgInput.files.length){
 
-fileStatus.innerText = fileInput.files[0].name;
+document.getElementById("imageStatus").innerText = imgInput.files[0].name;
+
+}
+
+});
+
+vidInput.addEventListener("change", () => {
+
+if(vidInput.files.length){
+
+document.getElementById("videoStatus").innerText = vidInput.files[0].name;
 
 }
 
