@@ -5,20 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Create System | SN Design Studio</title>
+<title>Template Control Dashboard | SN Design Studio</title>
 
 <meta name="description"
-content="Create viral AI videos using the SN Design Studio creator system. Build, automate and scale your content workflow.">
-
-<meta name="keywords"
-content="AI creator system, CapCut templates, AI video workflow, lip sync AI, face swap AI, creator automation, SN Design Studio">
-
-<meta property="og:title" content="Create System | SN Design Studio">
-<meta property="og:description" content="Create viral AI videos and scale creator workflows.">
-<meta property="og:image" content="assets/images/create-hero.png">
-<meta property="og:type" content="website">
-
-<link rel="canonical" href="create.html">
+content="AI Template Control Dashboard for creators. Upload, manage and build viral content with SN Design Studio.">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -30,24 +20,18 @@ content="AI creator system, CapCut templates, AI video workflow, lip sync AI, fa
 <div id="nav"></div>
 
 
-<!-- =========================
-HERO CREATE SYSTEM
-========================= -->
+<!-- DASHBOARD HERO -->
 
 <section class="hero-master">
 
-<img 
-src="assets/images/create-hero.png"
-alt="SN Design Studio AI Creator System"
-loading="eager"
->
+<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
 
 <div class="hero-content-bottom fade-up">
 
-<h1>Create Viral AI Content System</h1>
+<h1>Template Control Dashboard</h1>
 
 <p>
-Lip Sync • Motion • Face Swap • Creator Automation Pipeline
+AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 </p>
 
 </div>
@@ -55,32 +39,44 @@ Lip Sync • Motion • Face Swap • Creator Automation Pipeline
 </section>
 
 
-<!-- =========================
-CREATE FLOW
-========================= -->
+<!-- CONTROL PANEL -->
 
 <section class="section">
 
 <div class="container">
 
-<h2 class="section-title">How The System Works</h2>
+<h2 class="section-title">Template Control Panel</h2>
 
 <div class="service-grid">
 
-<div class="service-card fade-up">
-<h3>Create</h3>
-<p>Generate AI-ready content using advanced workflows.</p>
+
+<div class="service-card">
+<h3>Upload Media</h3>
+<p>Upload image or video to start AI workflow.</p>
+<input type="file">
 </div>
 
-<div class="service-card fade-up">
-<h3>Automate</h3>
-<p>CapCut optimized templates built for fast production.</p>
+
+<div class="service-card">
+<h3>Select Template</h3>
+<p>Auto-linked from template selection.</p>
+<p id="template-selected">Template: Loading...</p>
 </div>
 
-<div class="service-card fade-up">
-<h3>Scale</h3>
-<p>Grow traffic, monetization and audience reach.</p>
+
+<div class="service-card">
+<h3>AI Processing</h3>
+<p>Prepare motion, lipsync or swap pipeline.</p>
+<button class="btn-primary">Run AI Process</button>
 </div>
+
+
+<div class="service-card">
+<h3>Export Video</h3>
+<p>Download or send to CapCut workflow.</p>
+<button class="btn-primary">Export</button>
+</div>
+
 
 </div>
 
@@ -89,19 +85,17 @@ CREATE FLOW
 </section>
 
 
-<!-- =========================
-CTA
-========================= -->
+<!-- READY SECTION -->
 
 <section class="section">
 
 <div class="container">
 
-<h2>Ready To Build Viral Content?</h2>
+<h2>Creator Workflow Ready</h2>
 
-<a href="templates.html" class="btn-primary">
-Explore Templates
-</a>
+<p>
+Build faster using AI control system designed for creators.
+</p>
 
 </div>
 
@@ -112,7 +106,20 @@ Explore Templates
 © SN Design Studio, 2026 · All rights reserved.
 </footer>
 
+
 <script src="assets/js/nav.js"></script>
+
+
+<!-- TEMPLATE PARAM AUTO LOAD -->
+<script>
+const params = new URLSearchParams(window.location.search);
+const template = params.get("template");
+
+if(template){
+document.getElementById("template-selected").innerText =
+"Template: " + template;
+}
+</script>
 
 </body>
 </html>
