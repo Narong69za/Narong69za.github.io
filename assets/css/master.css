@@ -395,3 +395,34 @@ max-width:100%;
 height:auto;
 
 }
+/* ===============================
+ULTRA CREATE VIDEO SAFE FRAME
+FINAL LOCK
+================================ */
+
+.create-page video{
+
+width:100% !important;
+max-width:100% !important;
+height:auto !important;
+
+display:block;
+margin:0 auto;
+
+}
+
+/* ป้องกัน container ดัน layout */
+.create-page .section,
+.create-page .container{
+
+max-width:100%;
+overflow-x:hidden;
+
+}
+
+/* กัน element ดัน viewport */
+body.create-page{
+
+overflow-x:hidden;
+
+}
