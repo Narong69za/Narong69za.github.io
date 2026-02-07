@@ -16,17 +16,20 @@ content="AI Template Control Panel for LipSync, Motion, Face Swap and Creator Wo
 
 <body class="create-page">
 
-<!-- NAV GLOBAL -->
+<!-- =========================
+NAV GLOBAL (LOCK)
+========================= -->
 <div id="nav"></div>
 
 
 <!-- =========================
-ULTRA HERO PANEL
+HERO PANEL
 ========================= -->
 
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
+<img src="assets/images/create-hero.png"
+alt="Template Control Dashboard">
 
 <div class="hero-content-bottom fade-up">
 
@@ -42,7 +45,7 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 
 
 <!-- =========================
-ULTRA TEMPLATE CONTROL PANEL
+ULTRA AI CONTROL PANEL
 ========================= -->
 
 <section class="section">
@@ -52,85 +55,59 @@ ULTRA TEMPLATE CONTROL PANEL
 <h2 class="section-title">AI Control Panel</h2>
 
 <!-- IMAGE UPLOAD -->
-<div class="service-card">
+<label>Upload Image (Character / Face)</label>
+<input type="file" id="imageInput" accept="image/*">
 
-<h3>Upload Image (Character / Face)</h3>
-
-<input type="file" id="imageUpload" accept="image/*">
-
-<img id="imagePreview"
-style="max-width:100%;margin-top:12px;">
-
-</div>
+<img id="imagePreview" style="max-width:100%;margin-top:15px;display:none;">
 
 
 <!-- VIDEO UPLOAD -->
-<div class="service-card">
-
-<h3>Upload Video (Motion Source)</h3>
-
-<input type="file" id="videoUpload" accept="video/*">
+<label style="margin-top:30px;">Upload Video (Motion Source)</label>
+<input type="file" id="videoInput" accept="video/*">
 
 <video id="videoPreview"
 controls
-style="max-width:100%;margin-top:12px;"></video>
-
-</div>
+style="max-width:100%;margin-top:15px;display:none;"></video>
 
 
 <!-- TEMPLATE SELECT -->
-<div class="service-card">
-
-<h3>Select Template</h3>
+<label style="margin-top:30px;">Select Template</label>
 
 <select id="templateSelect">
 
-<option>Dance Motion</option>
-<option>AI LipSync</option>
-<option>Face Swap</option>
-<option>Dark Viral Style</option>
+<option value="dance">Dance Motion</option>
+<option value="lipsync">AI LipSync</option>
+<option value="faceswap">Face Swap</option>
+<option value="darkviral">Dark Viral</option>
 
 </select>
 
-</div>
 
+<!-- PROCESS BUTTON -->
+<h3 style="margin-top:30px;">Run AI Process</h3>
 
-<!-- RUN PROCESS -->
-<div class="service-card">
-
-<h3>Run AI Process</h3>
-
-<button class="btn-primary" id="runAI">
+<button id="runProcess" class="btn-primary">
 Start Processing
 </button>
 
 <p id="statusText">Waiting...</p>
 
-</div>
-
 
 <!-- EXPORT -->
-<div class="service-card">
+<h3 style="margin-top:30px;">Export Result</h3>
 
-<h3>Export Result</h3>
-
-<button class="btn-primary" id="exportBtn">
+<button id="exportBtn" class="btn-primary">
 Export Video
 </button>
 
-<p>Not ready</p>
-
-</div>
+<p id="exportStatus">Not ready</p>
 
 
 <!-- CREATOR POINT -->
-<div class="service-card">
+<h3 style="margin-top:30px;">Creator Points</h3>
 
-<h3>Creator Points</h3>
-
-<p>Remaining Credits: <strong>100</strong></p>
-
-</div>
+<p>Remaining Credits:</p>
+<h1 id="creditCount">100</h1>
 
 </div>
 
@@ -138,58 +115,26 @@ Export Video
 
 
 <footer>
+
 © SN Design Studio, 2026 · All rights reserved.
+
 </footer>
 
 
-<script src="assets/js/nav.js"></script>
-
-
 <!-- =========================
-ULTRA PANEL SCRIPT
-(RECHECK + TAG SAFE)
+SYSTEM SCRIPTS (ULTRA TAG LOCK)
 ========================= -->
 
-<script>
+<script src="assets/js/nav.js"></script>
 
-/* IMAGE PREVIEW */
-document.getElementById("imageUpload").addEventListener("change", function(e){
+<!-- AI SYSTEM CORE -->
+<script src="assets/js/api/api-core.js"></script>
 
-const file = e.target.files[0];
+<!-- AI ENGINE PROCESS -->
+<script src="assets/js/api/ai-engine.js"></script>
 
-if(file){
-document.getElementById("imagePreview").src =
-URL.createObjectURL(file);
-}
-
-});
-
-
-/* VIDEO PREVIEW */
-document.getElementById("videoUpload").addEventListener("change", function(e){
-
-const file = e.target.files[0];
-
-if(file){
-document.getElementById("videoPreview").src =
-URL.createObjectURL(file);
-}
-
-});
-
-
-/* AI PROCESS MOCK */
-document.getElementById("runAI").addEventListener("click", function(){
-
-document.getElementById("statusText").innerText = "Processing...";
-
-setTimeout(()=>{
-document.getElementById("statusText").innerText = "Ready";
-},2000);
-
-});
-
-</script>
+<!-- UI CONTROLLER (Preview / Panel Logic) -->
+<script src="assets/js/api/ui-controller.js"></script>
 
 </body>
 </html>
