@@ -295,3 +295,37 @@ margin:auto;
 .packages-page .section{
 display:block !important;
 }
+/* =========================
+ULTRA TEXT DEPTH SYSTEM
+========================= */
+
+.glow-title{
+color:#ffffff;
+
+text-shadow:
+
+0 0 4px rgba(255,255,255,0.4),
+
+0 0 12px rgba(80,160,255,0.25),
+
+0 0 28px rgba(255,80,80,0.15);
+
+}
+
+.glow-subtle{
+text-shadow:
+
+0 0 2px rgba(255,255,255,0.25),
+
+0 0 8px rgba(0,150,255,0.18);
+
+}
+
+.glow-red{
+text-shadow:
+
+0 0 6px rgba(255,60,60,0.35),
+
+0 0 18px rgba(255,30,30,0.2);
+
+}
