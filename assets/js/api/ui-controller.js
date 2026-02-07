@@ -1,18 +1,18 @@
+const imageUpload = document.getElementById("imageUpload");
+const videoUpload = document.getElementById("videoUpload");
 
-document.addEventListener("DOMContentLoaded",()=>{
-
-const btn=document.querySelector(".btn-ai-create");
-
-if(btn){
-
-btn.addEventListener("click",async()=>{
-
-const result = await AI.createVideo("viral creator");
-
-console.log(result);
-
+imageUpload?.addEventListener("change", function(e){
+ const file = e.target.files[0];
+ if(file){
+   document.getElementById("imagePreview").src =
+   URL.createObjectURL(file);
+ }
 });
 
-}
-
+videoUpload?.addEventListener("change", function(e){
+ const file = e.target.files[0];
+ if(file){
+   document.getElementById("videoPreview").src =
+   URL.createObjectURL(file);
+ }
 });
