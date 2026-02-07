@@ -16,16 +16,9 @@ content="CapCut Templates, AI Creator system, Viral template collection by SN De
 
 <body class="template-page">
 
-<!-- ===============================
-ULTRA NAV GLOBAL (LOCK)
-================================ -->
 <div id="nav"></div>
 
-
-<!-- ===============================
-ULTRA HERO SAFE (MASTER IMAGE)
-================================ -->
-
+<!-- HERO -->
 <section class="hero-master">
 
 <img src="assets/images/landing.png"
@@ -44,10 +37,7 @@ Create faster. Grow faster. Built for real creators.
 </section>
 
 
-<!-- ===============================
-TEMPLATE COLLECTION
-================================ -->
-
+<!-- TEMPLATE COLLECTION -->
 <section class="section">
 
 <div class="container">
@@ -56,89 +46,25 @@ TEMPLATE COLLECTION
 
 <div class="template-grid">
 
-
-<!-- DARK VIRAL -->
-<a href="create.html?template=dark-viral">
-
-<div class="template-card fade-up">
-
+<div class="template-card fade-up" data-template="dark-viral">
 <img src="assets/images/template-dark-viral.jpg">
-
 <h3>Dark Viral Style</h3>
-
 </div>
 
-</a>
-
-
-<!-- AI LIPSYNC -->
-<a href="create.html?template=ai-lipsync">
-
-<div class="template-card fade-up">
-
+<div class="template-card fade-up" data-template="ai-lipsync">
 <img src="assets/images/template-ai-lipsync.jpg">
-
 <h3>AI LipSync</h3>
-
 </div>
 
-</a>
-
-
-<!-- DANCE MOTION -->
-<a href="create.html?template=dance-motion">
-
-<div class="template-card fade-up">
-
+<div class="template-card fade-up" data-template="dance-motion">
 <img src="assets/images/template-dance-motion.jpg">
-
 <h3>Dance Motion</h3>
-
 </div>
 
-</a>
-
-
-<!-- FACE SWAP -->
-<a href="create.html?template=face-swap">
-
-<div class="template-card fade-up">
-
+<div class="template-card fade-up" data-template="face-swap">
 <img src="assets/images/template-face-swap.jpg">
-
 <h3>Face Swap</h3>
-
 </div>
-
-</a>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ===============================
-CTA SECTION
-================================ -->
-
-<section class="section section-dark">
-
-<div class="container">
-
-<h2 class="section-title fade-up">Ready To Create?</h2>
-
-<div class="cta-center fade-up">
-
-<a href="packages.html" class="btn-secondary">
-View Packages
-</a>
-
-<a href="create.html" class="btn-primary">
-Start Now
-</a>
 
 </div>
 
@@ -148,17 +74,32 @@ Start Now
 
 
 <footer>
-
 © SN Design Studio, 2026 · All rights reserved.
-
 </footer>
 
-
-<!-- ===============================
-ULTRA NAV AUTO SYNC
-================================ -->
-
 <script src="assets/js/nav.js"></script>
+
+<!-- ULTRA TEMPLATE SYNC ENGINE -->
+
+<script>
+
+document.querySelectorAll(".template-card").forEach(card => {
+
+  card.addEventListener("click", function(){
+
+    const templateName = this.dataset.template;
+
+    // SAVE TEMPLATE
+    localStorage.setItem("selectedTemplate", templateName);
+
+    // GO CREATE PAGE
+    window.location.href = "create.html";
+
+  });
+
+});
+
+</script>
 
 </body>
 </html>
