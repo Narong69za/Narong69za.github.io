@@ -11,15 +11,24 @@
 
 <style>
 
-/* SAFE FIX MOBILE OVERFLOW */
-
-.container,
-.card,
-video,
-img,
-select{
+.container, img, video, select{
 max-width:100%;
 width:100%;
+}
+
+.btn-ai{
+background:#18c964;
+padding:14px;
+border-radius:10px;
+border:none;
+color:#fff;
+font-weight:bold;
+margin-top:20px;
+}
+
+.status{
+margin-top:10px;
+opacity:0.7;
 }
 
 </style>
@@ -48,10 +57,12 @@ Select Template to Begin
 </section>
 
 
+
 <section class="section">
+
 <div class="container">
 
-<h2 class="section-title">Select Template</h2>
+<h2>Select Template</h2>
 
 <select id="templateSelect">
 
@@ -64,6 +75,7 @@ Select Template to Begin
 </select>
 
 </div>
+
 </section>
 
 
@@ -72,8 +84,7 @@ Select Template to Begin
 
 <div class="container">
 
-<h2 class="section-title">Upload Media</h2>
-
+<h2>Upload Media</h2>
 
 <div class="card">
 
@@ -86,7 +97,6 @@ Select Template to Begin
 </div>
 
 
-
 <div class="card">
 
 <h3>Upload Video</h3>
@@ -97,16 +107,30 @@ Select Template to Begin
 
 </div>
 
+
+<!-- 🔥 CONFIRM AI PROCESS -->
+
+<button id="runAI" class="btn-ai">
+
+Start AI Processing
+
+</button>
+
+<p id="processStatus" class="status">
+
+Waiting...
+
+</p>
+
+
 </div>
 
 </section>
 
 
-
 <footer>
 © SN Design Studio, 2026 · All rights reserved.
 </footer>
-
 
 <script src="assets/js/nav.js"></script>
 
@@ -116,28 +140,31 @@ Select Template to Begin
 document.addEventListener("DOMContentLoaded", function(){
 
 const urlParams = new URLSearchParams(window.location.search);
+
 const template = urlParams.get('template');
 
 const select = document.getElementById('templateSelect');
+
 const status = document.getElementById('templateStatus');
 
+const processStatus = document.getElementById('processStatus');
 
-/* AUTO LOAD TEMPLATE FROM URL */
 
 if(template){
+
 select.value = template;
+
 status.innerText = "Selected Template: " + template;
+
 }
 
-
-/* CHANGE UI WHEN SELECT */
 
 select.addEventListener("change", function(){
 
 if(this.value){
+
 status.innerText = "Selected Template: " + this.value;
-}else{
-status.innerText = "Select Template to Begin";
+
 }
 
 });
@@ -146,6 +173,7 @@ status.innerText = "Select Template to Begin";
 /* IMAGE PREVIEW */
 
 document.getElementById("imageUpload")
+
 .addEventListener("change", function(e){
 
 const file = e.target.files[0];
@@ -171,6 +199,7 @@ reader.readAsDataURL(file);
 /* VIDEO PREVIEW */
 
 document.getElementById("videoUpload")
+
 .addEventListener("change", function(e){
 
 const file = e.target.files[0];
@@ -180,11 +209,32 @@ if(file){
 const url = URL.createObjectURL(file);
 
 document.getElementById("videoPreview").innerHTML =
-`<video controls>
-<source src="${url}">
-</video>`;
+`<video controls><source src="${url}"></video>`;
 
 }
+
+});
+
+
+/* AI RUN BUTTON */
+
+document.getElementById("runAI").addEventListener("click", function(){
+
+if(!select.value){
+
+processStatus.innerText = "Please select template first.";
+
+return;
+
+}
+
+processStatus.innerText = "AI Processing Started...";
+
+setTimeout(()=>{
+
+processStatus.innerText = "Processing Complete (Demo State)";
+
+},2000);
 
 });
 
