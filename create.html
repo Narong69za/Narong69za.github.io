@@ -8,7 +8,7 @@
 <title>Template Control Dashboard | SN Design Studio</title>
 
 <meta name="description"
-content="AI Template Control Dashboard for creators. Upload, manage and build viral content with SN Design Studio.">
+content="Real AI Template Control Dashboard. Upload, process and export viral AI content.">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -20,11 +20,13 @@ content="AI Template Control Dashboard for creators. Upload, manage and build vi
 <div id="nav"></div>
 
 
-<!-- DASHBOARD HERO -->
+<!-- =========================
+HERO
+========================= -->
 
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
+<img src="assets/images/create-hero.png">
 
 <div class="hero-content-bottom fade-up">
 
@@ -39,7 +41,9 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 </section>
 
 
-<!-- CONTROL PANEL -->
+<!-- =========================
+CONTROL PANEL (REAL STRUCTURE)
+========================= -->
 
 <section class="section">
 
@@ -50,33 +54,65 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 <div class="service-grid">
 
 
-<div class="service-card">
+<!-- UPLOAD MEDIA -->
+<div class="service-card fade-up">
+
 <h3>Upload Media</h3>
-<p>Upload image or video to start AI workflow.</p>
-<input type="file">
+
+<input id="mediaInput" type="file" accept="image/*,video/*">
+
+<p id="fileStatus">No file selected</p>
+
 </div>
 
 
-<div class="service-card">
+<!-- TEMPLATE SELECT -->
+<div class="service-card fade-up">
+
 <h3>Select Template</h3>
-<p>Auto-linked from template selection.</p>
-<p id="template-selected">Template: Loading...</p>
+
+<select id="templateSelect">
+
+<option value="dark">Dark Viral</option>
+<option value="lipsync">AI LipSync</option>
+<option value="dance">Dance Motion</option>
+<option value="swap">Face Swap</option>
+
+</select>
+
 </div>
 
 
-<div class="service-card">
+<!-- AI PROCESS -->
+<div class="service-card fade-up">
+
 <h3>AI Processing</h3>
-<p>Prepare motion, lipsync or swap pipeline.</p>
-<button class="btn-primary">Run AI Process</button>
+
+<button class="btn-primary" id="runAI">
+
+Run AI Process
+
+</button>
+
+<p id="processStatus">Waiting...</p>
+
 </div>
 
 
-<div class="service-card">
+<!-- EXPORT -->
+<div class="service-card fade-up">
+
 <h3>Export Video</h3>
-<p>Download or send to CapCut workflow.</p>
-<button class="btn-primary">Export</button>
-</div>
 
+<button class="btn-primary" id="exportBtn">
+
+Export
+
+</button>
+
+<p id="exportStatus">Not ready</p>
+
+</div>
 
 </div>
 
@@ -85,17 +121,21 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 </section>
 
 
-<!-- READY SECTION -->
+<!-- =========================
+PREVIEW
+========================= -->
 
 <section class="section">
 
 <div class="container">
 
-<h2>Creator Workflow Ready</h2>
+<h2>Preview Output</h2>
 
-<p>
-Build faster using AI control system designed for creators.
-</p>
+<div class="card">
+
+<video id="previewVideo" controls style="width:100%;display:none;"></video>
+
+</div>
 
 </div>
 
@@ -107,19 +147,32 @@ Build faster using AI control system designed for creators.
 </footer>
 
 
+<!-- NAV -->
 <script src="assets/js/nav.js"></script>
 
+<!-- AI SYSTEM (คุณสร้างแล้ว) -->
+<script src="assets/js/api/api-core.js"></script>
+<script src="assets/js/api/ai-engine.js"></script>
+<script src="assets/js/api/ui-controller.js"></script>
 
-<!-- TEMPLATE PARAM AUTO LOAD -->
+
+<!-- ULTRA BASIC CONTROLLER (SAFE) -->
 <script>
-const params = new URLSearchParams(window.location.search);
-const template = params.get("template");
 
-if(template){
-document.getElementById("template-selected").innerText =
-"Template: " + template;
+const fileInput = document.getElementById("mediaInput");
+const fileStatus = document.getElementById("fileStatus");
+
+fileInput.addEventListener("change", () => {
+
+if(fileInput.files.length){
+
+fileStatus.innerText = fileInput.files[0].name;
+
 }
+
+});
+
 </script>
 
 </body>
-</html>
+  </html>
