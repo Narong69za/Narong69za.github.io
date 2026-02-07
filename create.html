@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Template Control Dashboard | SN Design Studio</title>
 
@@ -13,96 +13,86 @@
 
 <body class="create-page">
 
-<!-- NAV GLOBAL -->
+<!-- NAV -->
 <div id="nav"></div>
-
 
 <!-- HERO -->
 <section class="hero-master">
+<img src="assets/images/landing.png">
+</section>
 
-<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
-
-<div class="hero-content-bottom fade-up">
+<section class="section">
+<div class="container">
 
 <h1>Template Control Dashboard</h1>
 
-<p>
-AI Platform for LipSync • Motion • Face Swap • Creator Workflow
+<p id="selectedTemplateLabel">
+Select Template: none
 </p>
 
-<p id="templateStatus"></p>
-
 </div>
-
 </section>
 
-
-<!-- AI CONTROL PANEL -->
+<!-- CONTROL PANEL -->
 
 <section class="section">
-
 <div class="container">
 
-<h2 class="section-title">AI Control Panel</h2>
+<h2>AI Control Panel</h2>
 
 <!-- SELECT TEMPLATE -->
 
 <label>Select Template</label>
 
-<select id="templateSelect" style="width:100%;padding:10px;margin-bottom:30px;">
-<option value="">Select Template</option>
-<option value="ai-lipsync">AI LipSync</option>
-<option value="dance-motion">Dance Motion</option>
-<option value="face-swap">Face Swap</option>
+<select id="templateSelect">
+
+<option value="">Select</option>
+
 <option value="dark-viral">Dark Viral</option>
+
+<option value="ai-lipsync">AI LipSync</option>
+
+<option value="dance-motion">Dance Motion</option>
+
+<option value="face-swap">Face Swap</option>
+
 </select>
 
 
 <!-- UPLOAD IMAGE -->
 
-<div class="card">
-
 <h3>Upload Image (Character / Face)</h3>
 
-<input type="file" id="imageUpload" accept="image/*">
+<input type="file" id="imageInput" accept="image/*">
 
-<div id="imagePreview" style="margin-top:15px;"></div>
-
-</div>
+<img id="imagePreview" style="width:100%;margin-top:10px;display:none;">
 
 
 <!-- UPLOAD VIDEO -->
 
-<div class="card" style="margin-top:30px;">
-
 <h3>Upload Video (Motion Source)</h3>
 
-<input type="file" id="videoUpload" accept="video/*">
+<input type="file" id="videoInput" accept="video/*">
 
-<div id="videoPreview" style="margin-top:15px;"></div>
-
-</div>
+<video id="videoPreview" controls style="width:100%;margin-top:10px;display:none;"></video>
 
 
 <!-- RUN AI -->
 
-<div style="margin-top:30px;">
+<h3>Run AI Process</h3>
 
 <button id="runAI" class="btn-primary">
-Start AI Processing
+Start Processing
 </button>
 
-<p id="processStatus" style="margin-top:10px;">
-Waiting...
-</p>
+<p id="statusText">Waiting...</p>
 
+<div id="progressBar"
+style="height:8px;background:#00ff66;width:0%;margin-top:10px;">
 </div>
 
-
 </div>
-
 </section>
-
 
 <footer>
 © SN Design Studio, 2026 · All rights reserved.
@@ -112,152 +102,120 @@ Waiting...
 <!-- NAV AUTO -->
 <script src="assets/js/nav.js"></script>
 
-<!-- API SYSTEM -->
-<script src="assets/js/api/api-core.js"></script>
-<script src="assets/js/api/ai-engine.js"></script>
-<script src="assets/js/api/ui-controller.js"></script>
 
+<!-- =========================
+ULTRA PLATFORM SYNC ENGINE
+========================= -->
 
-<!-- ULTRA AI PANEL ENGINE -->
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+/* =========================
+AUTO TEMPLATE FROM URL
+========================= */
 
-const select = document.getElementById('templateSelect');
-const statusText = document.getElementById('templateStatus');
-const processStatus = document.getElementById('processStatus');
-const runBtn = document.getElementById('runAI');
+const params = new URLSearchParams(window.location.search);
 
-const imageUpload = document.getElementById('imageUpload');
-const videoUpload = document.getElementById('videoUpload');
-const imagePreview = document.getElementById('imagePreview');
-const videoPreview = document.getElementById('videoPreview');
+const template = params.get("template");
 
-let STATE = "WAITING";
+const select = document.getElementById("templateSelect");
 
-/* PROGRESS BAR */
+const label = document.getElementById("selectedTemplateLabel");
 
-const progress = document.createElement("div");
+if(template){
 
-progress.style.width="100%";
-progress.style.height="6px";
-progress.style.background="#222";
-progress.style.marginTop="15px";
-progress.style.borderRadius="6px";
-progress.style.overflow="hidden";
+select.value = template;
 
-const bar = document.createElement("div");
+label.innerText = "Select Template: " + template;
 
-bar.style.height="100%";
-bar.style.width="0%";
-bar.style.background="#18c964";
-bar.style.transition="width .4s";
-
-progress.appendChild(bar);
-
-runBtn.after(progress);
+}
 
 
-/* TEMPLATE SELECT */
+/* =========================
+SELECT CHANGE UI SYNC
+========================= */
 
-select.addEventListener("change",function(){
+select.addEventListener("change",()=>{
 
-STATE="READY";
-statusText.innerText="Selected Template: "+this.value;
+label.innerText = "Select Template: " + select.value;
 
 });
 
 
-/* IMAGE PREVIEW */
+/* =========================
+UPLOAD PREVIEW
+========================= */
 
-imageUpload.addEventListener("change", function(e){
+document.getElementById("imageInput").addEventListener("change",(e)=>{
 
-const file=e.target.files[0];
+const file = e.target.files[0];
 
 if(file){
 
-const reader=new FileReader();
+const url = URL.createObjectURL(file);
 
-reader.onload=function(ev){
+const img = document.getElementById("imagePreview");
 
-imagePreview.innerHTML=`<img src="${ev.target.result}" style="max-width:100%;border-radius:12px;">`;
+img.src = url;
 
-};
-
-reader.readAsDataURL(file);
+img.style.display="block";
 
 }
 
 });
 
 
-/* VIDEO PREVIEW */
+document.getElementById("videoInput").addEventListener("change",(e)=>{
 
-videoUpload.addEventListener("change", function(e){
-
-const file=e.target.files[0];
+const file = e.target.files[0];
 
 if(file){
 
-const url=URL.createObjectURL(file);
+const url = URL.createObjectURL(file);
 
-videoPreview.innerHTML=`<video controls style="max-width:100%;border-radius:12px;"><source src="${url}"></video>`;
+const vid = document.getElementById("videoPreview");
 
-}
+vid.src = url;
 
-});
-
-
-/* AI PROCESS */
-
-runBtn.addEventListener("click",function(){
-
-if(STATE!=="READY"){
-
-processStatus.innerText="Select template first.";
-return;
+vid.style.display="block";
 
 }
 
-STATE="PROCESSING";
+});
 
-runBtn.disabled=true;
-select.disabled=true;
-imageUpload.disabled=true;
-videoUpload.disabled=true;
 
-processStatus.innerText="Initializing AI Engine...";
-bar.style.width="15%";
+/* =========================
+FAKE AI PROCESS (UI DEMO)
+========================= */
 
-setTimeout(()=>{
+document.getElementById("runAI").addEventListener("click",()=>{
 
-processStatus.innerText="Generating Motion...";
-bar.style.width="45%";
+const status = document.getElementById("statusText");
 
-},1200);
+const bar = document.getElementById("progressBar");
 
-setTimeout(()=>{
+status.innerText="Processing...";
 
-processStatus.innerText="Rendering Output...";
-bar.style.width="80%";
+let progress = 0;
 
-},2600);
+const interval = setInterval(()=>{
 
-setTimeout(()=>{
+progress+=10;
 
-processStatus.innerText="Complete ✅";
-bar.style.width="100%";
+bar.style.width=progress+"%";
 
-STATE="COMPLETE";
+if(progress>=100){
 
-runBtn.innerText="Export Ready";
+clearInterval(interval);
 
-},4200);
+status.innerText="Complete ✅";
+
+}
+
+},300);
 
 });
 
-});
 </script>
 
 </body>
-  </html>
+</html>
