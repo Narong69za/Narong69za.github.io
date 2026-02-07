@@ -1,6 +1,6 @@
 /* ===============================
    ULTRA NAV AUTO CORE
-   AUTO INJECT GLOBAL NAV
+   AUTO INJECT GLOBAL NAV (STABLE DOM)
 ================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -25,12 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
   </header>
   `;
 
-  document.body.insertAdjacentHTML("afterbegin", navHTML);
+  // ✅ FIX สำคัญ — inject เข้า placeholder ไม่ใช่ body
+  const navContainer = document.getElementById("nav");
+
+  if(navContainer){
+    navContainer.innerHTML = navHTML;
+  }
 
 });
 
 
-/* NAV AUTO HIDE (mobile scroll) */
+/* ===============================
+   NAV AUTO HIDE (mobile scroll)
+================================ */
 
 let lastScroll = 0;
 
