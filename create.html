@@ -8,7 +8,7 @@
 <title>Template Control Dashboard | SN Design Studio</title>
 
 <meta name="description"
-content="Real AI Template Control Dashboard. Upload, process and export viral AI content.">
+content="AI Template Control Panel for LipSync, Motion, Face Swap and Creator Workflow.">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -16,14 +16,17 @@ content="Real AI Template Control Dashboard. Upload, process and export viral AI
 
 <body class="create-page">
 
-<!-- NAV -->
+<!-- NAV GLOBAL -->
 <div id="nav"></div>
 
 
-<!-- HERO -->
+<!-- =========================
+ULTRA HERO PANEL
+========================= -->
+
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png">
+<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
 
 <div class="hero-content-bottom fade-up">
 
@@ -39,7 +42,7 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 
 
 <!-- =========================
-CONTROL PANEL
+ULTRA TEMPLATE CONTROL PANEL
 ========================= -->
 
 <section class="section">
@@ -48,122 +51,84 @@ CONTROL PANEL
 
 <h2 class="section-title">AI Control Panel</h2>
 
-<div class="service-grid">
-
-
-<!-- ================= IMAGE UPLOAD (TOP BLOCK) ================= -->
-
-<div class="service-card fade-up">
+<!-- IMAGE UPLOAD -->
+<div class="service-card">
 
 <h3>Upload Image (Character / Face)</h3>
 
-<input id="imageInput" type="file" accept="image/*">
+<input type="file" id="imageUpload" accept="image/*">
 
-<p id="imageStatus">No image selected</p>
+<img id="imagePreview"
+style="max-width:100%;margin-top:12px;">
 
 </div>
 
 
-
-<!-- ================= VIDEO UPLOAD (BOTTOM BLOCK) ================= -->
-
-<div class="service-card fade-up">
+<!-- VIDEO UPLOAD -->
+<div class="service-card">
 
 <h3>Upload Video (Motion Source)</h3>
 
-<input id="videoInput" type="file" accept="video/*">
+<input type="file" id="videoUpload" accept="video/*">
 
-<p id="videoStatus">No video selected</p>
+<video id="videoPreview"
+controls
+style="max-width:100%;margin-top:12px;"></video>
 
 </div>
 
 
-
-<!-- ================= TEMPLATE SELECT ================= -->
-
-<div class="service-card fade-up">
+<!-- TEMPLATE SELECT -->
+<div class="service-card">
 
 <h3>Select Template</h3>
 
 <select id="templateSelect">
 
-<option value="dark">Dark Viral</option>
-<option value="lipsync">AI LipSync</option>
-<option value="dance">Dance Motion</option>
-<option value="swap">Face Swap</option>
+<option>Dance Motion</option>
+<option>AI LipSync</option>
+<option>Face Swap</option>
+<option>Dark Viral Style</option>
 
 </select>
 
 </div>
 
 
-
-<!-- ================= AI PROCESS ================= -->
-
-<div class="service-card fade-up">
+<!-- RUN PROCESS -->
+<div class="service-card">
 
 <h3>Run AI Process</h3>
 
 <button class="btn-primary" id="runAI">
-
 Start Processing
-
 </button>
 
-<p id="processStatus">Waiting...</p>
+<p id="statusText">Waiting...</p>
 
 </div>
 
 
-
-<!-- ================= EXPORT ================= -->
-
-<div class="service-card fade-up">
+<!-- EXPORT -->
+<div class="service-card">
 
 <h3>Export Result</h3>
 
 <button class="btn-primary" id="exportBtn">
-
 Export Video
-
 </button>
 
-<p id="exportStatus">Not ready</p>
+<p>Not ready</p>
 
 </div>
 
 
-
-<!-- ================= POINT SYSTEM (MARKET STYLE) ================= -->
-
-<div class="service-card fade-up">
+<!-- CREATOR POINT -->
+<div class="service-card">
 
 <h3>Creator Points</h3>
 
-<p>Remaining Credits:</p>
-
-<h2 id="creditPoint">100</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PREVIEW -->
-
-<section class="section">
-
-<div class="container">
-
-<h2>Preview Output</h2>
-
-<div class="card">
-
-<video id="previewVideo" controls style="width:100%;display:none;"></video>
+<p>Remaining Credits: <strong>100</strong></p>
 
 </div>
 
@@ -177,39 +142,50 @@ Export Video
 </footer>
 
 
-<!-- NAV -->
 <script src="assets/js/nav.js"></script>
 
-<!-- AI SYSTEM -->
-<script src="assets/js/api/api-core.js"></script>
-<script src="assets/js/api/ai-engine.js"></script>
-<script src="assets/js/api/ui-controller.js"></script>
 
-
-<!-- BASIC CONTROL (SAFE ONLY) -->
+<!-- =========================
+ULTRA PANEL SCRIPT
+(RECHECK + TAG SAFE)
+========================= -->
 
 <script>
 
-const imgInput = document.getElementById("imageInput");
-const vidInput = document.getElementById("videoInput");
+/* IMAGE PREVIEW */
+document.getElementById("imageUpload").addEventListener("change", function(e){
 
-imgInput.addEventListener("change", () => {
+const file = e.target.files[0];
 
-if(imgInput.files.length){
-
-document.getElementById("imageStatus").innerText = imgInput.files[0].name;
-
+if(file){
+document.getElementById("imagePreview").src =
+URL.createObjectURL(file);
 }
 
 });
 
-vidInput.addEventListener("change", () => {
 
-if(vidInput.files.length){
+/* VIDEO PREVIEW */
+document.getElementById("videoUpload").addEventListener("change", function(e){
 
-document.getElementById("videoStatus").innerText = vidInput.files[0].name;
+const file = e.target.files[0];
 
+if(file){
+document.getElementById("videoPreview").src =
+URL.createObjectURL(file);
 }
+
+});
+
+
+/* AI PROCESS MOCK */
+document.getElementById("runAI").addEventListener("click", function(){
+
+document.getElementById("statusText").innerText = "Processing...";
+
+setTimeout(()=>{
+document.getElementById("statusText").innerText = "Ready";
+},2000);
 
 });
 
