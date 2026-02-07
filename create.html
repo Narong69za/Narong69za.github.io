@@ -7,24 +7,33 @@
 
 <title>Template Control Dashboard | SN Design Studio</title>
 
-<meta name="description"
-content="AI Template Control Dashboard for creators. Upload media, preview and build viral AI content.">
-
 <link rel="stylesheet" href="assets/css/master.css">
+
+<style>
+
+/* SAFE FIX MOBILE OVERFLOW */
+
+.container,
+.card,
+video,
+img,
+select{
+max-width:100%;
+width:100%;
+}
+
+</style>
 
 </head>
 
 <body class="create-page">
 
-<!-- NAV GLOBAL -->
 <div id="nav"></div>
 
 
-<!-- HERO CONTROL PANEL -->
-
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
+<img src="assets/images/create-hero.png">
 
 <div class="hero-content-bottom">
 
@@ -39,33 +48,25 @@ Select Template to Begin
 </section>
 
 
-
-<!-- ======================
-CONTROL PANEL
-====================== -->
-
 <section class="section">
-
 <div class="container">
 
 <h2 class="section-title">Select Template</h2>
 
-<select id="templateSelect" class="card">
+<select id="templateSelect">
+
 <option value="">Choose Template</option>
 <option value="dark-viral">Dark Viral</option>
 <option value="lipsync">AI LipSync</option>
 <option value="dance-motion">Dance Motion</option>
 <option value="face-swap">Face Swap</option>
+
 </select>
 
 </div>
-
 </section>
 
 
-<!-- ======================
-UPLOAD PANEL
-====================== -->
 
 <section class="section">
 
@@ -73,7 +74,6 @@ UPLOAD PANEL
 
 <h2 class="section-title">Upload Media</h2>
 
-<!-- IMAGE -->
 
 <div class="card">
 
@@ -86,7 +86,6 @@ UPLOAD PANEL
 </div>
 
 
-<!-- VIDEO -->
 
 <div class="card">
 
@@ -114,9 +113,7 @@ UPLOAD PANEL
 
 <script>
 
-/* =========================
-ULTRA TEMPLATE AUTO DETECT
-========================= */
+document.addEventListener("DOMContentLoaded", function(){
 
 const urlParams = new URLSearchParams(window.location.search);
 const template = urlParams.get('template');
@@ -124,31 +121,29 @@ const template = urlParams.get('template');
 const select = document.getElementById('templateSelect');
 const status = document.getElementById('templateStatus');
 
+
+/* AUTO LOAD TEMPLATE FROM URL */
+
 if(template){
-
-    select.value = template;
-    status.innerText = "Selected Template: " + template;
-
+select.value = template;
+status.innerText = "Selected Template: " + template;
 }
 
-/* =========================
-CHANGE TEMPLATE UI STATE
-========================= */
+
+/* CHANGE UI WHEN SELECT */
 
 select.addEventListener("change", function(){
 
-    if(this.value){
-        status.innerText = "Selected Template: " + this.value;
-    } else {
-        status.innerText = "Select Template to Begin";
-    }
+if(this.value){
+status.innerText = "Selected Template: " + this.value;
+}else{
+status.innerText = "Select Template to Begin";
+}
 
 });
 
 
-/* =========================
-IMAGE PREVIEW
-========================= */
+/* IMAGE PREVIEW */
 
 document.getElementById("imageUpload")
 .addEventListener("change", function(e){
@@ -162,7 +157,7 @@ const reader = new FileReader();
 reader.onload = function(event){
 
 document.getElementById("imagePreview").innerHTML =
-`<img src="${event.target.result}" style="max-width:260px;margin:auto;">`;
+`<img src="${event.target.result}">`;
 
 };
 
@@ -173,9 +168,7 @@ reader.readAsDataURL(file);
 });
 
 
-/* =========================
-VIDEO PREVIEW
-========================= */
+/* VIDEO PREVIEW */
 
 document.getElementById("videoUpload")
 .addEventListener("change", function(e){
@@ -187,11 +180,13 @@ if(file){
 const url = URL.createObjectURL(file);
 
 document.getElementById("videoPreview").innerHTML =
-`<video controls style="max-width:260px;margin:auto;">
+`<video controls>
 <source src="${url}">
 </video>`;
 
 }
+
+});
 
 });
 
