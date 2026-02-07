@@ -255,3 +255,43 @@ max-width:650px;
 .services-page .service-card{
 text-align:center;
 }
+/* =================================
+EMERGENCY LAYOUT FIX (ULTRA SAFE)
+ห้ามลบ — ใช้แก้ layout แตก
+================================= */
+
+/* Reset flex ที่หลุด */
+.section,
+.container,
+.hero-master{
+display:block !important;
+width:100%;
+}
+
+/* Hero ต้อง stack แนวตั้ง */
+.hero-master{
+position:relative;
+text-align:center;
+}
+
+/* ภาพต้องอยู่กลาง */
+.hero-master img{
+display:block;
+margin:auto;
+max-width:100%;
+height:auto;
+}
+
+/* Text hero */
+.hero-content-bottom{
+text-align:center;
+max-width:800px;
+margin:auto;
+}
+
+/* ป้องกัน split layout ทุกหน้า */
+.index-page .section,
+.services-page .section,
+.packages-page .section{
+display:block !important;
+}
