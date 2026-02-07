@@ -1,18 +1,11 @@
+const runBtn = document.getElementById("runAI");
 
-const AI = {
+runBtn?.addEventListener("click", ()=>{
 
-async createVideo(prompt){
+ document.getElementById("statusText").innerText="Processing...";
 
-return await API.request("ai/create-video",{
-prompt:prompt
+ setTimeout(()=>{
+   document.getElementById("statusText").innerText="Ready";
+ },2000);
+
 });
-
-},
-
-async swapFace(data){
-
-return await API.request("ai/swap-face",data);
-
-}
-
-};
