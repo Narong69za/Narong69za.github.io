@@ -8,7 +8,7 @@
 <title>Template Control Dashboard | SN Design Studio</title>
 
 <meta name="description"
-content="AI Template Control Panel for LipSync, Motion, Face Swap and Creator Workflow.">
+content="AI Template Control Dashboard for creators. Upload media, preview and build viral AI content.">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -16,27 +16,22 @@ content="AI Template Control Panel for LipSync, Motion, Face Swap and Creator Wo
 
 <body class="create-page">
 
-<!-- =========================
-NAV GLOBAL (LOCK)
-========================= -->
+<!-- NAV GLOBAL -->
 <div id="nav"></div>
 
 
-<!-- =========================
-HERO PANEL
-========================= -->
+<!-- HERO CONTROL PANEL -->
 
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png"
-alt="Template Control Dashboard">
+<img src="assets/images/create-hero.png" alt="Template Control Dashboard">
 
-<div class="hero-content-bottom fade-up">
+<div class="hero-content-bottom">
 
 <h1>Template Control Dashboard</h1>
 
-<p>
-AI Platform for LipSync • Motion • Face Swap • Creator Workflow
+<p id="templateStatus">
+Select Template to Begin
 </p>
 
 </div>
@@ -44,97 +39,163 @@ AI Platform for LipSync • Motion • Face Swap • Creator Workflow
 </section>
 
 
-<!-- =========================
-ULTRA AI CONTROL PANEL
-========================= -->
+
+<!-- ======================
+CONTROL PANEL
+====================== -->
 
 <section class="section">
 
 <div class="container">
 
-<h2 class="section-title">AI Control Panel</h2>
+<h2 class="section-title">Select Template</h2>
 
-<!-- IMAGE UPLOAD -->
-<label>Upload Image (Character / Face)</label>
-<input type="file" id="imageInput" accept="image/*">
-
-<img id="imagePreview" style="max-width:100%;margin-top:15px;display:none;">
-
-
-<!-- VIDEO UPLOAD -->
-<label style="margin-top:30px;">Upload Video (Motion Source)</label>
-<input type="file" id="videoInput" accept="video/*">
-
-<video id="videoPreview"
-controls
-style="max-width:100%;margin-top:15px;display:none;"></video>
-
-
-<!-- TEMPLATE SELECT -->
-<label style="margin-top:30px;">Select Template</label>
-
-<select id="templateSelect">
-
-<option value="dance">Dance Motion</option>
+<select id="templateSelect" class="card">
+<option value="">Choose Template</option>
+<option value="dark-viral">Dark Viral</option>
 <option value="lipsync">AI LipSync</option>
-<option value="faceswap">Face Swap</option>
-<option value="darkviral">Dark Viral</option>
-
+<option value="dance-motion">Dance Motion</option>
+<option value="face-swap">Face Swap</option>
 </select>
-
-
-<!-- PROCESS BUTTON -->
-<h3 style="margin-top:30px;">Run AI Process</h3>
-
-<button id="runProcess" class="btn-primary">
-Start Processing
-</button>
-
-<p id="statusText">Waiting...</p>
-
-
-<!-- EXPORT -->
-<h3 style="margin-top:30px;">Export Result</h3>
-
-<button id="exportBtn" class="btn-primary">
-Export Video
-</button>
-
-<p id="exportStatus">Not ready</p>
-
-
-<!-- CREATOR POINT -->
-<h3 style="margin-top:30px;">Creator Points</h3>
-
-<p>Remaining Credits:</p>
-<h1 id="creditCount">100</h1>
 
 </div>
 
 </section>
 
 
+<!-- ======================
+UPLOAD PANEL
+====================== -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">Upload Media</h2>
+
+<!-- IMAGE -->
+
+<div class="card">
+
+<h3>Upload Image</h3>
+
+<input type="file" id="imageUpload" accept="image/*">
+
+<div id="imagePreview"></div>
+
+</div>
+
+
+<!-- VIDEO -->
+
+<div class="card">
+
+<h3>Upload Video</h3>
+
+<input type="file" id="videoUpload" accept="video/*">
+
+<div id="videoPreview"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
 <footer>
-
 © SN Design Studio, 2026 · All rights reserved.
-
 </footer>
 
 
-<!-- =========================
-SYSTEM SCRIPTS (ULTRA TAG LOCK)
-========================= -->
-
 <script src="assets/js/nav.js"></script>
 
-<!-- AI SYSTEM CORE -->
-<script src="assets/js/api/api-core.js"></script>
 
-<!-- AI ENGINE PROCESS -->
-<script src="assets/js/api/ai-engine.js"></script>
+<script>
 
-<!-- UI CONTROLLER (Preview / Panel Logic) -->
-<script src="assets/js/api/ui-controller.js"></script>
+/* =========================
+ULTRA TEMPLATE AUTO DETECT
+========================= */
+
+const urlParams = new URLSearchParams(window.location.search);
+const template = urlParams.get('template');
+
+const select = document.getElementById('templateSelect');
+const status = document.getElementById('templateStatus');
+
+if(template){
+
+    select.value = template;
+    status.innerText = "Selected Template: " + template;
+
+}
+
+/* =========================
+CHANGE TEMPLATE UI STATE
+========================= */
+
+select.addEventListener("change", function(){
+
+    if(this.value){
+        status.innerText = "Selected Template: " + this.value;
+    } else {
+        status.innerText = "Select Template to Begin";
+    }
+
+});
+
+
+/* =========================
+IMAGE PREVIEW
+========================= */
+
+document.getElementById("imageUpload")
+.addEventListener("change", function(e){
+
+const file = e.target.files[0];
+
+if(file){
+
+const reader = new FileReader();
+
+reader.onload = function(event){
+
+document.getElementById("imagePreview").innerHTML =
+`<img src="${event.target.result}" style="max-width:260px;margin:auto;">`;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+
+/* =========================
+VIDEO PREVIEW
+========================= */
+
+document.getElementById("videoUpload")
+.addEventListener("change", function(e){
+
+const file = e.target.files[0];
+
+if(file){
+
+const url = URL.createObjectURL(file);
+
+document.getElementById("videoPreview").innerHTML =
+`<video controls style="max-width:260px;margin:auto;">
+<source src="${url}">
+</video>`;
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
