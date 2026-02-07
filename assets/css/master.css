@@ -329,3 +329,35 @@ text-shadow:
 0 0 18px rgba(255,30,30,0.2);
 
 }
+/* ===============================
+ULTRA TEXT GLOW (PREMIUM NEON)
+SAFE ADD ONLY
+================================ */
+
+/* headline glow */
+h1, h2 {
+  color:#ffffff;
+  text-shadow:
+    0 0 4px rgba(255,255,255,0.25),
+    0 0 12px rgba(0,200,255,0.25),
+    0 0 22px rgba(255,40,80,0.18);
+}
+
+/* subtitle / paragraph glow */
+p, .th {
+  color:#e8e8e8;
+  text-shadow:
+    0 0 3px rgba(255,255,255,0.15),
+    0 0 8px rgba(0,120,255,0.12);
+}
+
+/* navigation glow subtle */
+.nav-menu a {
+  transition:all .25s ease;
+}
+
+.nav-menu a:hover{
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.5),
+    0 0 14px rgba(0,200,255,0.4);
+}
