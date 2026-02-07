@@ -361,3 +361,37 @@ p, .th {
     0 0 6px rgba(255,255,255,0.5),
     0 0 14px rgba(0,200,255,0.4);
 }
+/* ===============================
+ULTRA CREATE PREVIEW FRAME FIX
+ADD ONLY — SAFE
+================================ */
+
+.create-page #imagePreview,
+.create-page #videoPreview{
+
+max-width:100%;
+width:100%;
+height:auto;
+
+display:block;
+margin:20px auto;
+
+border-radius:12px;
+overflow:hidden;
+
+}
+
+/* กันล้น container */
+.create-page .container{
+
+overflow:hidden;
+
+}
+
+/* video responsive */
+.create-page video{
+
+max-width:100%;
+height:auto;
+
+}
