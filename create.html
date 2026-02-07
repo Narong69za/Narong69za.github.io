@@ -3,9 +3,12 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Template Control Dashboard | SN Design Studio</title>
+<title>Create System | SN Design Studio</title>
+
+<meta name="description"
+content="Create viral AI videos using the SN Design Studio creator system. Build, automate and scale your content workflow.">
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -13,205 +16,146 @@
 
 <body class="create-page">
 
-<!-- NAV -->
+<!-- NAV GLOBAL -->
 <div id="nav"></div>
 
-<!-- HERO -->
+<!-- =========================
+HERO CREATE SYSTEM
+========================= -->
+
 <section class="hero-master">
-<img src="assets/images/landing.png">
-</section>
 
-<section class="section">
-<div class="container">
+<img src="assets/images/create-hero.png" alt="SN Design Studio Create System">
 
-<h1>Template Control Dashboard</h1>
+<div class="hero-content-bottom fade-up">
 
-<p id="selectedTemplateLabel">
-Select Template: none
+<h1>Create Viral AI Content System</h1>
+
+<p>
+Lip Sync • Motion • Face Swap • Creator Automation Pipeline
 </p>
 
 </div>
+
 </section>
 
-<!-- CONTROL PANEL -->
+
+<!-- =========================
+TEMPLATE CONTROL PANEL
+========================= -->
 
 <section class="section">
+
 <div class="container">
 
-<h2>AI Control Panel</h2>
+<h2 class="section-title">Template Control Dashboard</h2>
 
-<!-- SELECT TEMPLATE -->
-
-<label>Select Template</label>
-
-<select id="templateSelect">
-
-<option value="">Select</option>
-
+<!-- SELECT TEMPLATE (AUTO SYNC) -->
+<select id="template-select" class="card" style="width:100%;padding:12px;margin-bottom:20px;">
+<option value="">Select Template</option>
 <option value="dark-viral">Dark Viral</option>
-
 <option value="ai-lipsync">AI LipSync</option>
-
 <option value="dance-motion">Dance Motion</option>
-
 <option value="face-swap">Face Swap</option>
-
 </select>
 
+<!-- IMAGE UPLOAD -->
+<div class="card">
 
-<!-- UPLOAD IMAGE -->
+<h3>Upload Image</h3>
 
-<h3>Upload Image (Character / Face)</h3>
+<input type="file" id="image-upload" accept="image/*">
 
-<input type="file" id="imageInput" accept="image/*">
+<img id="image-preview" style="margin-top:15px;display:none;">
 
-<img id="imagePreview" style="width:100%;margin-top:10px;display:none;">
+</div>
 
+<!-- VIDEO UPLOAD -->
+<div class="card">
 
-<!-- UPLOAD VIDEO -->
+<h3>Upload Video</h3>
 
-<h3>Upload Video (Motion Source)</h3>
+<input type="file" id="video-upload" accept="video/*">
 
-<input type="file" id="videoInput" accept="video/*">
+<video id="video-preview" controls style="margin-top:15px;width:100%;display:none;"></video>
 
-<video id="videoPreview" controls style="width:100%;margin-top:10px;display:none;"></video>
+</div>
 
+<!-- CONFIRM BUTTON -->
+<div class="cta-center">
 
-<!-- RUN AI -->
-
-<h3>Run AI Process</h3>
-
-<button id="runAI" class="btn-primary">
-Start Processing
+<button id="create-confirm" class="btn-primary">
+Confirm Create
 </button>
 
-<p id="statusText">Waiting...</p>
-
-<div id="progressBar"
-style="height:8px;background:#00ff66;width:0%;margin-top:10px;">
 </div>
 
 </div>
+
 </section>
+
 
 <footer>
 © SN Design Studio, 2026 · All rights reserved.
 </footer>
 
 
-<!-- NAV AUTO -->
+<!-- =========================
+ULTRA NAV AUTO SYNC
+========================= -->
 <script src="assets/js/nav.js"></script>
 
+<!-- =========================
+ULTRA API CORE
+ADD ONLY SAFE
+========================= -->
+
+<script src="assets/js/api/template-sync.js"></script>
+<script src="assets/js/api/api-core.js"></script>
+<script src="assets/js/api/ai-engine.js"></script>
+<script src="assets/js/api/ui-controller.js"></script>
 
 <!-- =========================
-ULTRA PLATFORM SYNC ENGINE
+LOCAL CONTROL LOGIC (SAFE)
 ========================= -->
 
 <script>
 
-/* =========================
-AUTO TEMPLATE FROM URL
-========================= */
+document.addEventListener("DOMContentLoaded", function(){
 
-const params = new URLSearchParams(window.location.search);
+  const templateSelect = document.getElementById("template-select");
 
-const template = params.get("template");
+  // AUTO LOAD TEMPLATE FROM TEMPLATE PAGE
+  const savedTemplate = localStorage.getItem("selectedTemplate");
 
-const select = document.getElementById("templateSelect");
+  if(savedTemplate && templateSelect){
+      templateSelect.value = savedTemplate;
+      templateSelect.dispatchEvent(new Event("change"));
+  }
 
-const label = document.getElementById("selectedTemplateLabel");
+  // IMAGE PREVIEW
+  const imgInput = document.getElementById("image-upload");
+  const imgPreview = document.getElementById("image-preview");
 
-if(template){
+  imgInput.addEventListener("change", function(){
+      const file = this.files[0];
+      if(file){
+          imgPreview.src = URL.createObjectURL(file);
+          imgPreview.style.display = "block";
+      }
+  });
 
-select.value = template;
+  // VIDEO PREVIEW
+  const videoInput = document.getElementById("video-upload");
+  const videoPreview = document.getElementById("video-preview");
 
-label.innerText = "Select Template: " + template;
-
-}
-
-
-/* =========================
-SELECT CHANGE UI SYNC
-========================= */
-
-select.addEventListener("change",()=>{
-
-label.innerText = "Select Template: " + select.value;
-
-});
-
-
-/* =========================
-UPLOAD PREVIEW
-========================= */
-
-document.getElementById("imageInput").addEventListener("change",(e)=>{
-
-const file = e.target.files[0];
-
-if(file){
-
-const url = URL.createObjectURL(file);
-
-const img = document.getElementById("imagePreview");
-
-img.src = url;
-
-img.style.display="block";
-
-}
-
-});
-
-
-document.getElementById("videoInput").addEventListener("change",(e)=>{
-
-const file = e.target.files[0];
-
-if(file){
-
-const url = URL.createObjectURL(file);
-
-const vid = document.getElementById("videoPreview");
-
-vid.src = url;
-
-vid.style.display="block";
-
-}
-
-});
-
-
-/* =========================
-FAKE AI PROCESS (UI DEMO)
-========================= */
-
-document.getElementById("runAI").addEventListener("click",()=>{
-
-const status = document.getElementById("statusText");
-
-const bar = document.getElementById("progressBar");
-
-status.innerText="Processing...";
-
-let progress = 0;
-
-const interval = setInterval(()=>{
-
-progress+=10;
-
-bar.style.width=progress+"%";
-
-if(progress>=100){
-
-clearInterval(interval);
-
-status.innerText="Complete ✅";
-
-}
-
-},300);
+  videoInput.addEventListener("change", function(){
+      const file = this.files[0];
+      if(file){
+          videoPreview.src = URL.createObjectURL(file);
+          videoPreview.style.display = "block";
+      }
+  });
 
 });
 
