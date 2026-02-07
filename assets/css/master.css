@@ -426,3 +426,42 @@ body.create-page{
 overflow-x:hidden;
 
 }
+/* =================================
+ULTRA CREATE PREVIEW HARD LOCK
+แก้ video ล้น mobile FINAL
+================================= */
+
+/* lock page */
+body.create-page{
+overflow-x:hidden;
+}
+
+/* lock all containers */
+.create-page .section,
+.create-page .container{
+width:100%;
+max-width:100%;
+overflow-x:hidden;
+}
+
+/* lock preview blocks */
+.create-page img,
+.create-page video{
+
+width:100% !important;
+max-width:100% !important;
+height:auto !important;
+
+object-fit:contain;
+display:block;
+
+}
+
+/* ป้องกัน video control bar ดัน layout */
+.create-page video{
+
+position:relative;
+left:0;
+right:0;
+
+}
