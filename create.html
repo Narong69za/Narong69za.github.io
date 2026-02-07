@@ -5,10 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Create System | SN Design Studio</title>
-
-<meta name="description"
-content="Create viral AI videos using the SN Design Studio creator system. Build, automate and scale your content workflow.">
+<title>Template Control Dashboard | SN Design Studio</title>
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -16,23 +13,20 @@ content="Create viral AI videos using the SN Design Studio creator system. Build
 
 <body class="create-page">
 
-<!-- NAV GLOBAL -->
 <div id="nav"></div>
 
-<!-- =========================
-HERO CREATE SYSTEM
-========================= -->
 
+<!-- HERO -->
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png" alt="SN Design Studio Create System">
+<img src="assets/images/create-hero.png">
 
-<div class="hero-content-bottom fade-up">
+<div class="hero-content-bottom">
 
-<h1>Create Viral AI Content System</h1>
+<h1 id="template-title">Template Control Panel</h1>
 
-<p>
-Lip Sync • Motion • Face Swap • Creator Automation Pipeline
+<p id="template-mode">
+Select template to start.
 </p>
 
 </div>
@@ -40,55 +34,64 @@ Lip Sync • Motion • Face Swap • Creator Automation Pipeline
 </section>
 
 
-<!-- =========================
-TEMPLATE CONTROL PANEL
-========================= -->
+<section class="section">
+
+<div class="container">
+
+<h2>Select Template</h2>
+
+<select id="templateSelect">
+
+<option value="">Choose Template</option>
+<option value="dark-viral">Dark Viral</option>
+<option value="ai-lipsync">AI LipSync</option>
+<option value="dance-motion">Dance Motion</option>
+<option value="face-swap">Face Swap</option>
+
+</select>
+
+</div>
+
+</section>
+
 
 <section class="section">
 
 <div class="container">
 
-<h2 class="section-title">Template Control Dashboard</h2>
+<h2>Upload Image</h2>
 
-<!-- SELECT TEMPLATE (AUTO SYNC) -->
-<select id="template-select" class="card" style="width:100%;padding:12px;margin-bottom:20px;">
-<option value="">Select Template</option>
-<option value="dark-viral">Dark Viral</option>
-<option value="ai-lipsync">AI LipSync</option>
-<option value="dance-motion">Dance Motion</option>
-<option value="face-swap">Face Swap</option>
-</select>
+<input type="file" id="imageUpload" accept="image/*">
 
-<!-- IMAGE UPLOAD -->
-<div class="card">
-
-<h3>Upload Image</h3>
-
-<input type="file" id="image-upload" accept="image/*">
-
-<img id="image-preview" style="margin-top:15px;display:none;">
+<img id="imagePreview">
 
 </div>
 
-<!-- VIDEO UPLOAD -->
-<div class="card">
+</section>
 
-<h3>Upload Video</h3>
 
-<input type="file" id="video-upload" accept="video/*">
+<section class="section">
 
-<video id="video-preview" controls style="margin-top:15px;width:100%;display:none;"></video>
+<div class="container">
+
+<h2>Upload Video</h2>
+
+<input type="file" id="videoUpload" accept="video/*">
+
+<video id="videoPreview" controls></video>
 
 </div>
 
-<!-- CONFIRM BUTTON -->
-<div class="cta-center">
+</section>
 
-<button id="create-confirm" class="btn-primary">
-Confirm Create
+
+<section class="section">
+
+<div class="container">
+
+<button id="createBtn" class="btn-primary">
+Start AI Creation
 </button>
-
-</div>
 
 </div>
 
@@ -96,66 +99,106 @@ Confirm Create
 
 
 <footer>
+
 © SN Design Studio, 2026 · All rights reserved.
+
 </footer>
 
 
-<!-- =========================
-ULTRA NAV AUTO SYNC
-========================= -->
 <script src="assets/js/nav.js"></script>
 
-<!-- =========================
-ULTRA API CORE
-ADD ONLY SAFE
-========================= -->
-
-<script src="assets/js/api/template-sync.js"></script>
-<script src="assets/js/api/api-core.js"></script>
-<script src="assets/js/api/ai-engine.js"></script>
-<script src="assets/js/api/ui-controller.js"></script>
-
-<!-- =========================
-LOCAL CONTROL LOGIC (SAFE)
-========================= -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+/* ===============================
+ULTRA LIVE TEMPLATE ENGINE
+ADD ONLY
+================================ */
 
-  const templateSelect = document.getElementById("template-select");
+const templateSelect = document.getElementById("templateSelect");
+const title = document.getElementById("template-title");
+const mode = document.getElementById("template-mode");
 
-  // AUTO LOAD TEMPLATE FROM TEMPLATE PAGE
-  const savedTemplate = localStorage.getItem("selectedTemplate");
+function applyTemplate(template){
 
-  if(savedTemplate && templateSelect){
-      templateSelect.value = savedTemplate;
-      templateSelect.dispatchEvent(new Event("change"));
-  }
+localStorage.setItem("selectedTemplate", template);
 
-  // IMAGE PREVIEW
-  const imgInput = document.getElementById("image-upload");
-  const imgPreview = document.getElementById("image-preview");
+document.body.classList.remove(
+"mode-cinematic",
+"mode-lipsync",
+"mode-motion",
+"mode-faceswap"
+);
 
-  imgInput.addEventListener("change", function(){
-      const file = this.files[0];
-      if(file){
-          imgPreview.src = URL.createObjectURL(file);
-          imgPreview.style.display = "block";
-      }
-  });
+if(template==="dark-viral"){
 
-  // VIDEO PREVIEW
-  const videoInput = document.getElementById("video-upload");
-  const videoPreview = document.getElementById("video-preview");
+title.innerText="Dark Viral Mode";
+mode.innerText="Cinematic AI video system.";
+document.body.classList.add("mode-cinematic");
 
-  videoInput.addEventListener("change", function(){
-      const file = this.files[0];
-      if(file){
-          videoPreview.src = URL.createObjectURL(file);
-          videoPreview.style.display = "block";
-      }
-  });
+}
+
+if(template==="ai-lipsync"){
+
+title.innerText="AI LipSync Mode";
+mode.innerText="Auto speech sync workflow.";
+document.body.classList.add("mode-lipsync");
+
+}
+
+if(template==="dance-motion"){
+
+title.innerText="Dance Motion Mode";
+mode.innerText="Motion animation engine.";
+document.body.classList.add("mode-motion");
+
+}
+
+if(template==="face-swap"){
+
+title.innerText="Face Swap Mode";
+mode.innerText="Face transformation system.";
+document.body.classList.add("mode-faceswap");
+
+}
+
+}
+
+templateSelect.addEventListener("change", e=>{
+applyTemplate(e.target.value);
+});
+
+const saved = localStorage.getItem("selectedTemplate");
+if(saved){
+
+templateSelect.value = saved;
+applyTemplate(saved);
+
+}
+
+
+/* image preview */
+
+document.getElementById("imageUpload").addEventListener("change", e=>{
+
+const file = e.target.files[0];
+if(!file) return;
+
+document.getElementById("imagePreview").src =
+URL.createObjectURL(file);
+
+});
+
+
+/* video preview */
+
+document.getElementById("videoUpload").addEventListener("change", e=>{
+
+const file = e.target.files[0];
+if(!file) return;
+
+document.getElementById("videoPreview").src =
+URL.createObjectURL(file);
 
 });
 
