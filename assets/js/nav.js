@@ -5,6 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  // ถ้ามี nav อยู่แล้ว ไม่ต้องสร้างซ้ำ
   if (document.querySelector(".global-nav")) return;
 
   const navHTML = `
@@ -29,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ===============================
      ULTRA NAV LOCK (EVENT SAFE)
-     ป้องกัน nav block click
   ================================= */
 
   const nav = document.querySelector(".global-nav");
@@ -47,10 +47,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
+
+  /* ===============================
+     ULTRA NAV ACTIVE STATE ENGINE
+     highlight current page
+  ================================= */
+
+  const currentPath = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if(href === currentPath || (href === "index.html" && currentPath === "")){
+        link.classList.add("nav-active");
+    }
+
+  });
+
 });
 
 
-/* NAV AUTO HIDE (mobile scroll) */
+/* ===============================
+   NAV AUTO HIDE (mobile scroll)
+================================ */
 
 let lastScroll = 0;
 
