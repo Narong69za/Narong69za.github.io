@@ -1,11 +1,10 @@
 /* ===============================
    ULTRA NAV AUTO CORE
-   AUTO INJECT GLOBAL NAV (STABLE DOM)
+   AUTO INJECT GLOBAL NAV
 ================================ */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ถ้ามี nav อยู่แล้ว ไม่ต้องสร้างซ้ำ
   if (document.querySelector(".global-nav")) return;
 
   const navHTML = `
@@ -25,19 +24,33 @@ document.addEventListener("DOMContentLoaded", function () {
   </header>
   `;
 
-  // ✅ FIX สำคัญ — inject เข้า placeholder ไม่ใช่ body
-  const navContainer = document.getElementById("nav");
+  document.body.insertAdjacentHTML("afterbegin", navHTML);
 
-  if(navContainer){
-    navContainer.innerHTML = navHTML;
+
+  /* ===============================
+     ULTRA NAV LOCK (EVENT SAFE)
+     ป้องกัน nav block click
+  ================================= */
+
+  const nav = document.querySelector(".global-nav");
+
+  if(nav){
+
+    nav.addEventListener("click", function(e){
+
+      // allow only link clicks
+      if(e.target.tagName !== "A"){
+        e.stopPropagation();
+      }
+
+    }, true);
+
   }
 
 });
 
 
-/* ===============================
-   NAV AUTO HIDE (mobile scroll)
-================================ */
+/* NAV AUTO HIDE (mobile scroll) */
 
 let lastScroll = 0;
 
