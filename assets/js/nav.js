@@ -28,8 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.insertAdjacentHTML("afterbegin", navHTML);
 
 
+
   /* ===============================
      ULTRA NAV LOCK (EVENT SAFE)
+     ป้องกัน nav block click
   ================================= */
 
   const nav = document.querySelector(".global-nav");
@@ -48,18 +50,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
+
   /* ===============================
      ULTRA NAV ACTIVE STATE ENGINE
-     highlight current page
+     FIXED FOR GITHUB + LOCAL + DOMAIN
   ================================= */
 
-  const currentPath = window.location.pathname.split("/").pop();
+  const path = window.location.pathname.toLowerCase();
 
   document.querySelectorAll(".nav-menu a").forEach(link => {
 
-    const href = link.getAttribute("href");
+    const href = link.getAttribute("href").toLowerCase();
 
-    if(href === currentPath || (href === "index.html" && currentPath === "")){
+    // match when path ends with file
+    if(path.endsWith(href)){
+        link.classList.add("nav-active");
+    }
+
+    // homepage fallback
+    if((path === "/" || path.endsWith("/index.html")) && href === "index.html"){
         link.classList.add("nav-active");
     }
 
