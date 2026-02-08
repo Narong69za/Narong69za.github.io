@@ -1,25 +1,17 @@
-/* =================================
-ULTRA TEMPLATE SYNC ENGINE
-FINAL LOCK
-================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function(){
 
   const cards = document.querySelectorAll(".template-card");
 
   cards.forEach(card => {
 
-    card.addEventListener("click", function(e){
+    card.addEventListener("click", function(){
 
-      const templateName = this.dataset.template;
+      const template = this.dataset.template;
 
-      if(!templateName) return;
+      if(!template) return;
 
-      // save selected template
-      localStorage.setItem("selectedTemplate", templateName);
-
-      /* FORCE REDIRECT */
-      window.location.href = "create.html";
+      // redirect ไป create พร้อม param
+      window.location.href = "create.html?template=" + template;
 
     });
 
