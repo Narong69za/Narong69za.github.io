@@ -18,7 +18,6 @@ content="CapCut Templates, AI Creator system, Viral template collection by SN De
 
 <div id="nav"></div>
 
-<!-- HERO -->
 <section class="hero-master">
 
 <img src="assets/images/landing.png"
@@ -28,16 +27,12 @@ alt="SN Design Studio Template Hero">
 
 <h1>Template Collection</h1>
 
-<p>
-Create faster. Grow faster. Built for real creators.
-</p>
+<p>Create faster. Grow faster. Built for real creators.</p>
 
 </div>
 
 </section>
 
-
-<!-- TEMPLATE COLLECTION -->
 <section class="section">
 
 <div class="container">
@@ -46,22 +41,26 @@ Create faster. Grow faster. Built for real creators.
 
 <div class="template-grid">
 
-<div class="template-card fade-up" data-template="dark-viral">
+<!-- DARK VIRAL -->
+<div class="template-card fade-up" onclick="goTemplate('dark-viral')">
 <img src="assets/images/template-dark-viral.jpg">
 <h3>Dark Viral Style</h3>
 </div>
 
-<div class="template-card fade-up" data-template="ai-lipsync">
+<!-- AI LIPSYNC -->
+<div class="template-card fade-up" onclick="goTemplate('ai-lipsync')">
 <img src="assets/images/template-ai-lipsync.jpg">
 <h3>AI LipSync</h3>
 </div>
 
-<div class="template-card fade-up" data-template="dance-motion">
+<!-- DANCE MOTION -->
+<div class="template-card fade-up" onclick="goTemplate('dance-motion')">
 <img src="assets/images/template-dance-motion.jpg">
 <h3>Dance Motion</h3>
 </div>
 
-<div class="template-card fade-up" data-template="face-swap">
+<!-- FACE SWAP -->
+<div class="template-card fade-up" onclick="goTemplate('face-swap')">
 <img src="assets/images/template-face-swap.jpg">
 <h3>Face Swap</h3>
 </div>
@@ -72,32 +71,44 @@ Create faster. Grow faster. Built for real creators.
 
 </section>
 
+<section class="section section-dark">
+
+<div class="container">
+
+<h2 class="section-title fade-up">Ready To Create?</h2>
+
+<div class="cta-center fade-up">
+
+<a href="packages.html" class="btn-secondary">
+View Packages
+</a>
+
+<a href="contact.html" class="btn-primary">
+Start Now
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 <footer>
+
 © SN Design Studio, 2026 · All rights reserved.
+
 </footer>
 
 <script src="assets/js/nav.js"></script>
 
-<!-- ULTRA TEMPLATE SYNC ENGINE -->
-
+<!-- ULTRA TEMPLATE SYNC (ADD ONLY) -->
 <script>
 
-document.querySelectorAll(".template-card").forEach(card => {
+function goTemplate(mode){
 
-  card.addEventListener("click", function(){
+    window.location.href = "create.html?template=" + mode;
 
-    const templateName = this.dataset.template;
-
-    // SAVE TEMPLATE
-    localStorage.setItem("selectedTemplate", templateName);
-
-    // GO CREATE PAGE
-    window.location.href = "create.html";
-
-  });
-
-});
+}
 
 </script>
 
