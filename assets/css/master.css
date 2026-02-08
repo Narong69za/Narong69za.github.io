@@ -465,3 +465,8 @@ left:0;
 right:0;
 
 }
+.nav-active{
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.6),
+    0 0 16px rgba(0,200,255,0.5);
+}
