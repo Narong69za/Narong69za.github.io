@@ -1,36 +1,27 @@
-
 /* =================================
-ULTRA TEMPLATE → CREATE SYNC
-ADD ONLY — SAFE LAYER
+ULTRA TEMPLATE SYNC ENGINE
+FINAL LOCK
 ================================ */
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", () => {
 
-  // หา template card ทั้งหมด
   const cards = document.querySelectorAll(".template-card");
 
-  if(!cards.length) return;
+  cards.forEach(card => {
 
-  cards.forEach((card,index)=>{
+    card.addEventListener("click", function(e){
 
-      card.style.cursor="pointer";
+      const templateName = this.dataset.template;
 
-      card.addEventListener("click", function(){
+      if(!templateName) return;
 
-          // อ่านชื่อ template จาก heading
-          const title = card.querySelector("h3");
+      // save selected template
+      localStorage.setItem("selectedTemplate", templateName);
 
-          if(!title) return;
+      /* FORCE REDIRECT */
+      window.location.href = "create.html";
 
-          const templateName = title.innerText.trim();
-
-          // บันทึกลง localStorage
-          localStorage.setItem("selectedTemplate", templateName);
-
-          // redirect ไป create
-          window.location.href = "create.html";
-
-      });
+    });
 
   });
 
