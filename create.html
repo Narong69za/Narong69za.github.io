@@ -11,58 +11,60 @@
 
 </head>
 
-<body class="create-page">
+<body>
 
 <div id="nav"></div>
 
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png">
+<img src="assets/images/landing.png">
 
 <div class="hero-content-bottom">
 
 <h1>Template Control Dashboard</h1>
-<p id="selectedTemplateLabel">Select Template</p>
+
+<p id="modeTitle">Select Template</p>
 
 </div>
 
 </section>
 
-
 <section class="section">
 
 <div class="container">
 
-<h2>Select Files</h2>
+<h2>AI Control Panel</h2>
 
-<input type="file" id="imageUpload">
-<br><br>
-<input type="file" id="videoUpload">
+<select id="templateSelect">
 
-<br><br>
+<option value="">Select Template</option>
+<option value="dark-viral">Dark Viral</option>
+<option value="ai-lipsync">AI LipSync</option>
+<option value="dance-motion">Dance Motion</option>
+<option value="face-swap">Face Swap</option>
 
-<div id="previewArea"></div>
+</select>
 
-<br>
+<h3>Upload Image</h3>
+<input type="file" id="imageInput" accept="image/*">
 
-<button id="confirmCreate" class="btn-primary">
-Confirm Create
-</button>
+<img id="imagePreview" style="display:none;">
 
-<div style="margin-top:30px;display:none;" id="resultPreview">
+<h3>Upload Video</h3>
+<input type="file" id="videoInput" accept="video/*">
+
+<video id="videoPreview" controls style="display:none;"></video>
+
+<button id="startBtn">Confirm Create</button>
+
+<div id="resultBox" style="display:none;">
 
 <h3>Result Preview</h3>
 
-<img src="assets/images/create-hero.png">
+<img src="assets/images/landing.png">
 
-</div>
+<p>Completed ✅</p>
 
-<div style="margin-top:20px;display:none;" id="processStatus">
-Processing...
-</div>
-
-<div style="width:100%;background:#111;margin-top:10px;height:10px;border-radius:10px;overflow:hidden;">
-<div id="progressBar" style="width:0%;height:100%;background:#06c755;"></div>
 </div>
 
 </div>
@@ -73,10 +75,54 @@ Processing...
 © SN Design Studio, 2026 · All rights reserved.
 </footer>
 
-
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/api/template-sync.js"></script>
-<script src="assets/js/api/process-engine.js"></script>
+
+<script>
+
+const imageInput = document.getElementById("imageInput");
+const imagePreview = document.getElementById("imagePreview");
+
+imageInput.onchange = e=>{
+const file = e.target.files[0];
+if(file){
+imagePreview.src = URL.createObjectURL(file);
+imagePreview.style.display="block";
+}
+}
+
+const videoInput = document.getElementById("videoInput");
+const videoPreview = document.getElementById("videoPreview");
+
+videoInput.onchange = e=>{
+const file = e.target.files[0];
+if(file){
+videoPreview.src = URL.createObjectURL(file);
+videoPreview.style.display="block";
+}
+}
+
+document.getElementById("startBtn").onclick = function(){
+
+document.getElementById("resultBox").style.display="block";
+
+}
+
+// ULTRA TEMPLATE AUTO MODE
+
+const params = new URLSearchParams(window.location.search);
+const mode = params.get("template");
+
+if(mode){
+
+const dropdown = document.getElementById("templateSelect");
+const title = document.getElementById("modeTitle");
+
+dropdown.value = mode;
+title.innerText = mode.replace("-"," ") + " Mode";
+
+}
+
+</script>
 
 </body>
 </html>
