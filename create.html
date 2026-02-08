@@ -15,19 +15,14 @@
 
 <div id="nav"></div>
 
-
-<!-- HERO -->
 <section class="hero-master">
 
 <img src="assets/images/create-hero.png">
 
 <div class="hero-content-bottom">
 
-<h1 id="template-title">Template Control Panel</h1>
-
-<p id="template-mode">
-Select template to start.
-</p>
+<h1>Template Control Dashboard</h1>
+<p id="selectedTemplateLabel">Select Template</p>
 
 </div>
 
@@ -38,171 +33,50 @@ Select template to start.
 
 <div class="container">
 
-<h2>Select Template</h2>
+<h2>Select Files</h2>
 
-<select id="templateSelect">
+<input type="file" id="imageUpload">
+<br><br>
+<input type="file" id="videoUpload">
 
-<option value="">Choose Template</option>
-<option value="dark-viral">Dark Viral</option>
-<option value="ai-lipsync">AI LipSync</option>
-<option value="dance-motion">Dance Motion</option>
-<option value="face-swap">Face Swap</option>
+<br><br>
 
-</select>
+<div id="previewArea"></div>
 
-</div>
+<br>
 
-</section>
-
-
-<section class="section">
-
-<div class="container">
-
-<h2>Upload Image</h2>
-
-<input type="file" id="imageUpload" accept="image/*">
-
-<img id="imagePreview">
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="container">
-
-<h2>Upload Video</h2>
-
-<input type="file" id="videoUpload" accept="video/*">
-
-<video id="videoPreview" controls></video>
-
-</div>
-
-</section>
-
-
-<section class="section">
-
-<div class="container">
-
-<button id="createBtn" class="btn-primary">
-Start AI Creation
+<button id="confirmCreate" class="btn-primary">
+Confirm Create
 </button>
 
+<div style="margin-top:30px;display:none;" id="resultPreview">
+
+<h3>Result Preview</h3>
+
+<img src="assets/images/create-hero.png">
+
+</div>
+
+<div style="margin-top:20px;display:none;" id="processStatus">
+Processing...
+</div>
+
+<div style="width:100%;background:#111;margin-top:10px;height:10px;border-radius:10px;overflow:hidden;">
+<div id="progressBar" style="width:0%;height:100%;background:#06c755;"></div>
+</div>
+
 </div>
 
 </section>
 
-
 <footer>
-
 © SN Design Studio, 2026 · All rights reserved.
-
 </footer>
 
 
 <script src="assets/js/nav.js"></script>
-
-
-<script>
-
-/* ===============================
-ULTRA LIVE TEMPLATE ENGINE
-ADD ONLY
-================================ */
-
-const templateSelect = document.getElementById("templateSelect");
-const title = document.getElementById("template-title");
-const mode = document.getElementById("template-mode");
-
-function applyTemplate(template){
-
-localStorage.setItem("selectedTemplate", template);
-
-document.body.classList.remove(
-"mode-cinematic",
-"mode-lipsync",
-"mode-motion",
-"mode-faceswap"
-);
-
-if(template==="dark-viral"){
-
-title.innerText="Dark Viral Mode";
-mode.innerText="Cinematic AI video system.";
-document.body.classList.add("mode-cinematic");
-
-}
-
-if(template==="ai-lipsync"){
-
-title.innerText="AI LipSync Mode";
-mode.innerText="Auto speech sync workflow.";
-document.body.classList.add("mode-lipsync");
-
-}
-
-if(template==="dance-motion"){
-
-title.innerText="Dance Motion Mode";
-mode.innerText="Motion animation engine.";
-document.body.classList.add("mode-motion");
-
-}
-
-if(template==="face-swap"){
-
-title.innerText="Face Swap Mode";
-mode.innerText="Face transformation system.";
-document.body.classList.add("mode-faceswap");
-
-}
-
-}
-
-templateSelect.addEventListener("change", e=>{
-applyTemplate(e.target.value);
-});
-
-const saved = localStorage.getItem("selectedTemplate");
-if(saved){
-
-templateSelect.value = saved;
-applyTemplate(saved);
-
-}
-
-
-/* image preview */
-
-document.getElementById("imageUpload").addEventListener("change", e=>{
-
-const file = e.target.files[0];
-if(!file) return;
-
-document.getElementById("imagePreview").src =
-URL.createObjectURL(file);
-
-});
-
-
-/* video preview */
-
-document.getElementById("videoUpload").addEventListener("change", e=>{
-
-const file = e.target.files[0];
-if(!file) return;
-
-document.getElementById("videoPreview").src =
-URL.createObjectURL(file);
-
-});
-
-</script>
+<script src="assets/js/api/template-sync.js"></script>
+<script src="assets/js/api/process-engine.js"></script>
 
 </body>
 </html>
