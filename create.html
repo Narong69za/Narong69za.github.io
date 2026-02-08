@@ -11,19 +11,19 @@
 
 </head>
 
-<body>
+<body class="create-page">
 
 <div id="nav"></div>
 
 <section class="hero-master">
 
-<img src="assets/images/landing.png">
+<img src="assets/images/create-hero.png">
 
 <div class="hero-content-bottom">
 
 <h1>Template Control Dashboard</h1>
 
-<p id="modeTitle">Select Template</p>
+<p id="selectedTemplate">Select Template</p>
 
 </div>
 
@@ -33,39 +33,15 @@
 
 <div class="container">
 
-<h2>AI Control Panel</h2>
+<h2>Upload Image</h2>
+<input type="file" id="imageInput">
 
-<select id="templateSelect">
+<img id="imagePreview">
 
-<option value="">Select Template</option>
-<option value="dark-viral">Dark Viral</option>
-<option value="ai-lipsync">AI LipSync</option>
-<option value="dance-motion">Dance Motion</option>
-<option value="face-swap">Face Swap</option>
+<h2>Upload Video</h2>
+<input type="file" id="videoInput">
 
-</select>
-
-<h3>Upload Image</h3>
-<input type="file" id="imageInput" accept="image/*">
-
-<img id="imagePreview" style="display:none;">
-
-<h3>Upload Video</h3>
-<input type="file" id="videoInput" accept="video/*">
-
-<video id="videoPreview" controls style="display:none;"></video>
-
-<button id="startBtn">Confirm Create</button>
-
-<div id="resultBox" style="display:none;">
-
-<h3>Result Preview</h3>
-
-<img src="assets/images/landing.png">
-
-<p>Completed ✅</p>
-
-</div>
+<video id="videoPreview" controls></video>
 
 </div>
 
@@ -79,48 +55,36 @@
 
 <script>
 
-const imageInput = document.getElementById("imageInput");
-const imagePreview = document.getElementById("imagePreview");
-
-imageInput.onchange = e=>{
-const file = e.target.files[0];
-if(file){
-imagePreview.src = URL.createObjectURL(file);
-imagePreview.style.display="block";
-}
-}
-
-const videoInput = document.getElementById("videoInput");
-const videoPreview = document.getElementById("videoPreview");
-
-videoInput.onchange = e=>{
-const file = e.target.files[0];
-if(file){
-videoPreview.src = URL.createObjectURL(file);
-videoPreview.style.display="block";
-}
-}
-
-document.getElementById("startBtn").onclick = function(){
-
-document.getElementById("resultBox").style.display="block";
-
-}
-
-// ULTRA TEMPLATE AUTO MODE
-
 const params = new URLSearchParams(window.location.search);
-const mode = params.get("template");
+const template = params.get("template");
 
-if(mode){
+if(template){
 
-const dropdown = document.getElementById("templateSelect");
-const title = document.getElementById("modeTitle");
+  const label = document.getElementById("selectedTemplate");
 
-dropdown.value = mode;
-title.innerText = mode.replace("-"," ") + " Mode";
+  label.innerText = "Selected: " + template;
 
 }
+
+document.getElementById("imageInput").onchange = e => {
+
+  const file = e.target.files[0];
+
+  if(file){
+    document.getElementById("imagePreview").src = URL.createObjectURL(file);
+  }
+
+};
+
+document.getElementById("videoInput").onchange = e => {
+
+  const file = e.target.files[0];
+
+  if(file){
+    document.getElementById("videoPreview").src = URL.createObjectURL(file);
+  }
+
+};
 
 </script>
 
