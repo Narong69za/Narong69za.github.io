@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Template Control Dashboard | SN Design Studio</title>
+<title>Create System | SN Design Studio</title>
 
 <link rel="stylesheet" href="assets/css/master.css">
 
@@ -13,76 +13,136 @@
 
 <body class="create-page">
 
+<!-- NAV GLOBAL -->
 <div id="nav"></div>
 
+
+<!-- HERO -->
 <section class="hero-master">
 
-<img src="assets/images/create-hero.png">
+<img src="assets/images/create-hero.png" alt="Create System">
 
 <div class="hero-content-bottom">
 
-<h1>Template Control Dashboard</h1>
+<h1>Create Viral AI Content System</h1>
 
-<p id="selectedTemplate">Select Template</p>
+<p>
+Lip Sync • Motion • Face Swap • Creator Automation Pipeline
+</p>
 
 </div>
 
 </section>
+
+
+<!-- CONTROL PANEL -->
 
 <section class="section">
 
 <div class="container">
 
-<h2>Upload Image</h2>
-<input type="file" id="imageInput">
+<h2>Select Template</h2>
 
-<img id="imagePreview">
+<div id="selectedTemplate"></div>
 
-<h2>Upload Video</h2>
-<input type="file" id="videoInput">
 
-<video id="videoPreview" controls></video>
+<!-- IMAGE UPLOAD -->
+
+<input type="file" id="imageInput" accept="image/*">
+
+<img id="imagePreview" style="max-width:300px;margin-top:10px;">
+
+
+<!-- VIDEO UPLOAD -->
+
+<input type="file" id="videoInput" accept="video/*">
+
+<video id="videoPreview" controls style="max-width:300px;margin-top:10px;"></video>
+
+
+<!-- CREATE BUTTON -->
+
+<div class="cta-center">
+
+<button id="createBtn" class="btn-primary">
+CREATE NOW
+</button>
+
+</div>
+
+<div id="processStatus"></div>
 
 </div>
 
 </section>
 
+
 <footer>
 © SN Design Studio, 2026 · All rights reserved.
 </footer>
 
+
 <script src="assets/js/nav.js"></script>
+<script src="assets/js/api/template-sync.js"></script>
+
 
 <script>
+
+/* TEMPLATE AUTO SELECT */
 
 const params = new URLSearchParams(window.location.search);
 const template = params.get("template");
 
 if(template){
 
-  const label = document.getElementById("selectedTemplate");
-
-  label.innerText = "Selected: " + template;
+document.getElementById("selectedTemplate").innerText =
+"Selected: " + template;
 
 }
 
-document.getElementById("imageInput").onchange = e => {
 
-  const file = e.target.files[0];
+/* IMAGE PREVIEW */
 
-  if(file){
-    document.getElementById("imagePreview").src = URL.createObjectURL(file);
-  }
-
+imageInput.onchange = e=>{
+imagePreview.src = URL.createObjectURL(e.target.files[0]);
 };
 
-document.getElementById("videoInput").onchange = e => {
 
-  const file = e.target.files[0];
+/* VIDEO PREVIEW */
 
-  if(file){
-    document.getElementById("videoPreview").src = URL.createObjectURL(file);
-  }
+videoInput.onchange = e=>{
+videoPreview.src = URL.createObjectURL(e.target.files[0]);
+};
+
+
+/* CREATE API */
+
+createBtn.onclick = async ()=>{
+
+processStatus.innerText = "Processing...";
+
+const formData = new FormData();
+
+formData.append("template", template);
+formData.append("image", imageInput.files[0]);
+formData.append("video", videoInput.files[0]);
+
+try{
+
+const res = await fetch("api/process.php",{
+method:"POST",
+body:formData
+});
+
+const data = await res.json();
+
+processStatus.innerText = "DONE";
+
+}catch(e){
+
+processStatus.innerText = "ERROR";
+
+}
 
 };
 
